@@ -1,0 +1,68 @@
+#usda 1.0
+(
+    metersPerUnit = 1
+    upAxis = "Z"
+    defaultPrim = "classification_ball"
+    subLayers = [
+        @ball_class_base.usd@
+    ]
+)
+
+over "classification_ball"
+{
+    over "Physics"
+    {
+        over "root_joint" (
+            active = false
+        )
+        {
+        }
+    }
+
+    over "Geometry"
+    {
+        over "ball" (
+            prepend apiSchemas = ["PhysicsMassAPI", "PhysicsRigidBodyAPI"]
+        )
+        {
+            bool physics:kinematicEnabled = true
+            float physics:mass = 0.25
+            bool physics:rigidBodyEnabled = 1
+
+            over "ball_task_base_square_1" (
+                apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+            )
+            {
+                token visibility = "invisible"
+                rel material:binding:physics = </classification_ball/BlindContactMaterial> (
+                    bindMaterialAs = "strongerThanDescendants"
+                )
+                uniform token physics:approximation = "none"
+                custom float physxCollision:contactOffset = 0.0005
+                custom float physxCollision:restOffset = 0
+            }
+
+            over "support_collision" (
+                apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </classification_ball/BlindContactMaterial> (
+                    bindMaterialAs = "strongerThanDescendants"
+                )
+                custom float physxCollision:contactOffset = 0.0005
+                custom float physxCollision:restOffset = 0
+                bool physics:collisionEnabled = false
+                token visibility = "invisible"
+            }
+        }
+    }
+
+    def Material "BlindContactMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.48
+        float physics:restitution = 0
+        float physics:staticFriction = 0.6
+    }
+}

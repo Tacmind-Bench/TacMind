@@ -1,0 +1,51 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    subLayers = [
+        @gear_medium.usd@
+    ]
+    upAxis = "Z"
+)
+
+over "World" (
+    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsMassAPI"]
+)
+{
+    rel material:binding:physics = </World/ContactMaterial>
+    float physics:mass = 0.025
+
+    def Material "ContactMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.5
+        float physics:restitution = 0
+        float physics:staticFriction = 0.6
+    }
+
+    over "gear_medium_collision" (
+        prepend apiSchemas = ["PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        uniform token physics:approximation = "convexDecomposition"
+        bool physics:collisionEnabled = 0
+    }
+
+    def Mesh "PrecisionCollision" (
+        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxSDFMeshCollisionAPI", "PhysxCollisionAPI"]
+        prepend references = @./collision.usdc@
+    )
+    {
+        rel material:binding:physics = </World/ContactMaterial>
+        uniform token physics:approximation = "sdf"
+        bool physics:collisionEnabled = 1
+        float physxCollision:contactOffset = 0.0003
+        float physxCollision:restOffset = 0
+        uniform float physxSDFMeshCollision:sdfMargin = 0
+        uniform float physxSDFMeshCollision:sdfNarrowBandThickness = 0.01
+        uniform int physxSDFMeshCollision:sdfResolution = 512
+        token visibility = "invisible"
+    }
+}
+

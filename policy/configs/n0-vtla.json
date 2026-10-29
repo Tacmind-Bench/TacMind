@@ -1,0 +1,18 @@
+{
+  "policy_type": "n0-vtla",
+  "dataset": {
+    "repo_id": "tacmind/gsmini_precision0",
+    "root": "data/lerobot/gsmini_precision0"
+  },
+  "output_dir": "data/runs/precision0_n0-vtla",
+  "runtime_python": "/path/to/envs/n0-vtla/bin/python",
+  "steps": 20000,
+  "batch_size": 64,
+  "chunk_size": 50,
+  "seed": 42,
+  "save_freq": 2000,
+  "num_workers": 8,
+  "learning_rate": 5e-05,
+  "model": {},
+  "pretrained_path": "/path/to/checkpoints/n0-vtla"
+}

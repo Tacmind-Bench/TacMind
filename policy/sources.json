@@ -1,0 +1,20 @@
+{
+  "openpi": {
+    "url": "https://github.com/Physical-Intelligence/openpi.git",
+    "commit": "215abfb217dbac7d5f1273282331b9b1866c0479"
+  },
+  "opendm": {
+    "url": "https://github.com/dexmal/opendm.git",
+    "commit": "fe1ed79a22d81cc1bfbeb2b4418bbb79fc75fc50"
+  },
+  "n0-vtla": {
+    "url": "https://github.com/neoteai/N0-VTLA.git",
+    "commit": "03a0ce4d7091ca2354864796770715aa212601b7"
+  },
+  "act_tactile": {
+    "url": "https://github.com/univtac/UniVTAC.git",
+    "commit": "0dafa10262e22f486f160a55d6f11aeab12d8e7b",
+    "subtree": "policy/ACT",
+    "local_changes": "Model subset only; training and evaluation use policy/adapters/act_tactile.py."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "policy_type": "act_tactile",
+  "dataset": {
+    "repo_id": "tacmind/gsmini_precision0",
+    "root": "data/lerobot/gsmini_precision0"
+  },
+  "output_dir": "data/runs/precision0_act_tactile",
+  "runtime_python": "/path/to/envs/act_tactile/bin/python",
+  "steps": 4000,
+  "batch_size": 64,
+  "chunk_size": 50,
+  "temporal_ensemble_coeff": 0.01,
+  "validation_fraction": 0.2,
+  "seed": 42,
+  "save_freq": 1000,
+  "num_workers": 4,
+  "learning_rate": 1e-05,
+  "model": {}
+}

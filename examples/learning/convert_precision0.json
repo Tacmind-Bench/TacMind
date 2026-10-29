@@ -1,0 +1,16 @@
+{
+  "collection_manifest": "/path/to/precision0/collection.json",
+  "dataset_root": "data/lerobot/gsmini_precision0",
+  "repo_id": "tacmind/gsmini_precision0",
+  "suite": "tac_precision",
+  "task_id": 0,
+  "episodes": 100,
+  "camera_names": [
+    "agentview",
+    "wristview",
+    "gsmini_left",
+    "gsmini_right"
+  ],
+  "include_markers": true,
+  "include_deformation": true
+}

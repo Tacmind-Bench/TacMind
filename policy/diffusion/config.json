@@ -1,0 +1,47 @@
+{
+  "dataset": {
+    "repo_id": "tacmind/gsmini_precision0",
+    "root": "data/lerobot/gsmini_precision0",
+    "video_backend": "pyav",
+    "use_imagenet_stats": true,
+    "image_transforms": {
+      "enable": true,
+      "max_num_transforms": 3,
+      "tfs": {
+        "brightness": {"type": "ColorJitter", "kwargs": {"brightness": [0.9, 1.1]}},
+        "contrast": {"type": "ColorJitter", "kwargs": {"contrast": [0.9, 1.1]}},
+        "saturation": {"type": "ColorJitter", "kwargs": {"saturation": [0.9, 1.1]}},
+        "sharpness": {"type": "SharpnessJitter", "kwargs": {"sharpness": [0.9, 1.1]}}
+      }
+    }
+  },
+  "policy": {
+    "type": "diffusion",
+    "device": "cuda:0",
+    "push_to_hub": false,
+    "n_obs_steps": 2,
+    "horizon": 32,
+    "n_action_steps": 16,
+    "drop_n_last_frames": 0,
+    "resize_shape": null,
+    "crop_shape": null,
+    "crop_ratio": 1.0,
+    "noise_scheduler_type": "DDIM",
+    "num_train_timesteps": 100,
+    "num_inference_steps": 20,
+    "clip_sample": false,
+    "do_mask_loss_for_padding": true,
+    "normalization_mapping": {"VISUAL": "MEAN_STD", "STATE": "MEAN_STD", "ACTION": "MEAN_STD"},
+    "optimizer_lr": 0.0001,
+    "scheduler_warmup_steps": 500
+  },
+  "ema": {"decay": 0.9999, "inv_gamma": 1.0, "power": 0.75},
+  "output_dir": "data/runs/gsmini_precision0_dp",
+  "seed": 42,
+  "steps": 50000,
+  "batch_size": 16,
+  "num_workers": 4,
+  "save_freq": 10000,
+  "eval_freq": 0,
+  "wandb": {"enable": false}
+}

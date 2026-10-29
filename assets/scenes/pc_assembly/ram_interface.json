@@ -1,0 +1,112 @@
+{
+  "model": "Independent rigid keyed RAM insertion specimen; not a vendor socket replica.",
+  "specification": {
+    "length_m": 0.13335,
+    "height_m": 0.03125,
+    "notch_center_x_m": 0.005574999999999997,
+    "notch_width_m": 0.0015,
+    "notch_depth_m": 0.0038,
+    "pcb_thickness_m": 0.0014,
+    "spreader_thickness_m": 0.0088,
+    "spreader_bottom_m": 0.012,
+    "spreader_length_m": 0.127,
+    "spreader_height_m": 0.044,
+    "spreader_wall_m": 0.0006,
+    "slot_width_m": 0.0018,
+    "socket_outer_width_m": 0.008,
+    "socket_height_m": 0.008,
+    "floor_height_m": 0.002,
+    "mount_height_m": 0.035,
+    "end_clearance_m": 0.00025,
+    "key_width_m": 0.0011,
+    "key_height_m": 0.0035,
+    "contact_offset_m": 5e-05,
+    "rest_offset_m": 0.0,
+    "grasp_point_module_m": [
+      0.0,
+      0.0,
+      -0.005
+    ],
+    "grip_tape_thickness_m": 0.0008,
+    "grip_tape_length_m": 0.06,
+    "grip_tape_bottom_m": 0.03,
+    "grip_tape_height_m": 0.014,
+    "grip_tape_areal_mass_kg_m2": 0.44,
+    "grip_tape_friction": 1.1,
+    "grip_extension_length_m": 0.04,
+    "grip_extension_bottom_m": -0.015,
+    "grip_extension_top_m": 0.018,
+    "grip_extension_inner_y_m": 0.006,
+    "grip_extension_projection_m": 0.0018,
+    "grip_extension_bridge_bottom_m": 0.014
+  },
+  "dimension_reference": {
+    "url": "https://www.kingston.com/datasheets/KVR24R17D8_16.pdf",
+    "page": 2,
+    "used": "Length 133.35, height 31.25, notch center 72.25 from left, width 1.50, depth 3.80 mm.",
+    "simplifications": "Flat contact edge, rectangular key/notch; no end latch notches, electrical spring contacts or retention."
+  },
+  "engineering_parameters": "PCB thickness, 0.6 mm aluminium shell with upper connecting bridges, package envelopes, fixture clearances, densities and friction are estimates. The 44 mm spreader height and 8.8 mm envelope follow the original visual reference, not a vendor heat-spreader drawing. Insertion forces are uncalibrated.",
+  "density_kg_m3": {
+    "PCB": 1850.0,
+    "Spreader": 2700.0,
+    "IC": 2200.0,
+    "socket": 1400.0,
+    "Grip": 550.0
+  },
+  "grip_surface": {
+    "source": "https://multimedia.3m.com/mws/media/1001810O/3m-gripping-material-trial-bags.pdf",
+    "page": 2,
+    "used": "TB400/GM400: 0.8 mm without liner, 440 g/m2, dry kinetic friction 1.1 in the stated mating test.",
+    "added_mass_kg": 0.0019008000000000007,
+    "model": "Visible homogenized TPU strips on the upper shell and thin aluminium contact extensions. Microstems, coating deformation and adhesive failure are unresolved.",
+    "calibration": "The Panda/tape friction pair and static coefficient are engineering estimates. The manufacturer mating-test coefficient is not a measurement of this robot interface."
+  },
+  "physics_material": {
+    "static_friction": 0.4,
+    "dynamic_friction": 0.3,
+    "restitution": 0.0
+  },
+  "bodies": {
+    "module": {
+      "mass_kg": 0.03468200062500002,
+      "center_of_mass_m": [
+        -2.37309623195873e-06,
+        -8.303765552061832e-19,
+        0.02036099231056469
+      ],
+      "diagonal_inertia_kg_m2": [
+        5.094511852240021e-06,
+        4.194694943177976e-05,
+        4.6248111196082285e-05
+      ],
+      "principal_axes_wxyz": [
+        -0.7071067810362983,
+        0.7071067810362985,
+        1.457683777562139e-05,
+        1.4576837775621455e-05
+      ]
+    },
+    "socket": {
+      "mass_kg": 0.07726341000000003,
+      "center_of_mass_m": [
+        7.000551748880867e-07,
+        0.0,
+        -0.01723537593668206
+      ],
+      "diagonal_inertia_kg_m2": [
+        1.4609394021757584e-05,
+        0.0001255320007634614,
+        0.000137670006244619
+      ],
+      "principal_axes_wxyz": [
+        0.707106781177292,
+        0.7071067811772922,
+        -3.6179106329614884e-06,
+        3.617910632961545e-06
+      ]
+    }
+  },
+  "grasp_validated": false,
+  "benchmark_ready": false
+}

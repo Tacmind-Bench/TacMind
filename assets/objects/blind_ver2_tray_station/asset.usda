@@ -1,0 +1,12 @@
+#usda 1.0
+(
+    defaultPrim = "blind_ver2_tray_station"
+    metersPerUnit = 1
+    subLayers = [@blind_ver2_tray_station.usd@]
+    upAxis = "Z"
+)
+
+over "blind_ver2_tray_station"
+{
+    bool physics:kinematicEnabled = true
+}

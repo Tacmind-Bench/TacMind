@@ -1,0 +1,15 @@
+dataset:
+  format: lerobot
+  name: lerobot://lerobot/pusht
+  root: ./data/pusht
+  num_steps: ${eval:'${wm.num_preds} + ${wm.history_size}'}
+  frameskip: 5
+  # 该数据集图像键来自 meta/info.json: observation.image
+  primary_camera_key: observation.image
+  keys_to_load:
+    - pixels
+    - action
+    - proprio
+  keys_to_cache:
+    - action
+    - proprio

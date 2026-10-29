@@ -1,0 +1,486 @@
+{
+  "assetCategories": {
+    "surface": {
+      "wood": {
+        "veneer": {}
+      }
+    }
+  },
+  "averageColor": "#B4894E",
+  "categories": [
+    "surface",
+    "wood",
+    "veneer"
+  ],
+  "comp_version": 1,
+  "description": "",
+  "environment": {
+    "biome": "undefined",
+    "region": "undefined"
+  },
+  "highest_available_res": 8192,
+  "id": "teqbcizc",
+  "json": {
+    "contentLength": 9967,
+    "uri": "teqbcizc.json"
+  },
+  "maps": [
+    {
+      "averageColor": "#B4894E",
+      "bitDepth": 16,
+      "colorSpace": "sRGB",
+      "contentLength": 120373801,
+      "maxIntensity": 168,
+      "mimeType": "image/x-exr",
+      "minIntensity": 108,
+      "name": "Basecolor",
+      "physicalSize": "0.5x1",
+      "resolution": "4096x8192",
+      "type": "basecolor",
+      "uri": "teqbcizc_8K_Basecolor.exr"
+    },
+    {
+      "averageColor": "#B4894E",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 32078041,
+      "maxIntensity": 168,
+      "mimeType": "image/jpeg",
+      "minIntensity": 108,
+      "name": "Basecolor",
+      "physicalSize": "0.5x1",
+      "resolution": "4096x8192",
+      "type": "basecolor",
+      "uri": "teqbcizc_8K_Basecolor.jpg"
+    },
+    {
+      "averageColor": "#FEFEFE",
+      "bitDepth": 32,
+      "colorSpace": "sRGB",
+      "contentLength": 90419879,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 240.91,
+      "name": "Cavity",
+      "physicalSize": "0.5x1",
+      "resolution": "4096x8192",
+      "type": "cavity",
+      "uri": "teqbcizc_8K_Cavity.exr"
+    },
+    {
+      "averageColor": "#FEFEFE",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 13893387,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 240.91,
+      "name": "Cavity",
+      "physicalSize": "0.5x1",
+      "resolution": "4096x8192",
+      "type": "cavity",
+      "uri": "teqbcizc_8K_Cavity.jpg"
+    },
+    {
+      "averageColor": "#7F7F7F",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 56509756,
+      "maxIntensity": 156,
+      "mimeType": "image/x-exr",
+      "minIntensity": 87,
+      "name": "Gloss",
+      "physicalSize": "0.5x1",
+      "resolution": "4096x8192",
+      "type": "gloss",
+      "uri": "teqbcizc_8K_Gloss.exr"
+    },
+    {
+      "averageColor": "#7F7F7F",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 19158081,
+      "maxIntensity": 156,
+      "mimeType": "image/jpeg",
+      "minIntensity": 87,
+      "name": "Gloss",
+      "physicalSize": "0.5x1",
+      "resolution": "4096x8192",
+      "type": "gloss",
+      "uri": "teqbcizc_8K_Gloss.jpg"
+    },
+    {
+      "averageColor": "#8181FF",
+      "bitDepth": 16,
+      "colorSpace": "Linear",
+      "contentLength": 53541639,
+      "maxIntensity": 146,
+      "mimeType": "image/x-exr",
+      "minIntensity": 140,
+      "name": "Normal",
+      "physicalSize": "0.5x1",
+      "resolution": "4096x8192",
+      "type": "normal",
+      "uri": "teqbcizc_8K_Normal.exr"
+    },
+    {
+      "averageColor": "#8181FF",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 9947713,
+      "maxIntensity": 146,
+      "mimeType": "image/jpeg",
+      "minIntensity": 140,
+      "name": "Normal",
+      "physicalSize": "0.5x1",
+      "resolution": "4096x8192",
+      "type": "normal",
+      "uri": "teqbcizc_8K_Normal.jpg"
+    },
+    {
+      "averageColor": "#808080",
+      "bitDepth": 32,
+      "colorSpace": "sRGB",
+      "contentLength": 52906033,
+      "maxIntensity": 168,
+      "mimeType": "image/x-exr",
+      "minIntensity": 99,
+      "name": "Roughness",
+      "physicalSize": "0.5x1",
+      "resolution": "4096x8192",
+      "type": "roughness",
+      "uri": "teqbcizc_8K_Roughness.exr"
+    },
+    {
+      "averageColor": "#808080",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 19163910,
+      "maxIntensity": 168,
+      "mimeType": "image/jpeg",
+      "minIntensity": 99,
+      "name": "Roughness",
+      "physicalSize": "0.5x1",
+      "resolution": "4096x8192",
+      "type": "roughness",
+      "uri": "teqbcizc_8K_Roughness.jpg"
+    },
+    {
+      "averageColor": "#383838",
+      "bitDepth": 16,
+      "colorSpace": "sRGB",
+      "contentLength": 76613818,
+      "maxIntensity": 58,
+      "mimeType": "image/x-exr",
+      "minIntensity": 53,
+      "name": "Specular",
+      "physicalSize": "0.5x1",
+      "resolution": "4096x8192",
+      "type": "specular",
+      "uri": "teqbcizc_8K_Specular.exr"
+    },
+    {
+      "averageColor": "#383838",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 4461737,
+      "maxIntensity": 58,
+      "mimeType": "image/jpeg",
+      "minIntensity": 53,
+      "name": "Specular",
+      "physicalSize": "0.5x1",
+      "resolution": "4096x8192",
+      "type": "specular",
+      "uri": "teqbcizc_8K_Specular.jpg"
+    }
+  ],
+  "meta": [
+    {
+      "key": "scanArea",
+      "name": "Scan Area",
+      "value": "0.5x1 m"
+    },
+    {
+      "key": "height",
+      "name": "Height",
+      "value": "20 m"
+    },
+    {
+      "key": "tileable",
+      "name": "Tileable",
+      "value": true
+    },
+    {
+      "key": "texelDensity",
+      "name": "Texel Density",
+      "value": "8192 px/m"
+    },
+    {
+      "key": "calibration",
+      "name": "Calibration",
+      "value": "GretagMacbeth ColorChecker Color Rendition Chart"
+    },
+    {
+      "key": "scanner",
+      "name": "Scanner",
+      "value": "MKX"
+    }
+  ],
+  "models": [],
+  "name": "Poplar Veneer",
+  "pack": {
+    "_id": "ultimate-wood-veneers",
+    "name": "Ultimate Wood Veneers"
+  },
+  "physicalSize": null,
+  "points": 2,
+  "previews": {
+    "images": [
+      {
+        "contentLength": 249025,
+        "resolution": "360x360",
+        "tags": [
+          "thumb"
+        ],
+        "uri": "teqbcizc_Grid_360.png"
+      },
+      {
+        "contentLength": 335777,
+        "resolution": "420x420",
+        "tags": [
+          "thumb"
+        ],
+        "uri": "teqbcizc_Grid_420.png"
+      },
+      {
+        "contentLength": 981867,
+        "resolution": "720x720",
+        "tags": [
+          "thumb",
+          "retina"
+        ],
+        "uri": "teqbcizc_Grid_720.png"
+      },
+      {
+        "contentLength": 1334796,
+        "resolution": "840x840",
+        "tags": [
+          "thumb",
+          "retina"
+        ],
+        "uri": "teqbcizc_Grid_840.png"
+      },
+      {
+        "contentLength": 1792736,
+        "resolution": "1440x768",
+        "tags": [
+          "preview",
+          "clay"
+        ],
+        "uri": "teqbcizc_PopupClay_1440.png"
+      },
+      {
+        "contentLength": 3289811,
+        "resolution": "1920x1080",
+        "tags": [
+          "preview",
+          "clay"
+        ],
+        "uri": "teqbcizc_PopupClay_1920.png"
+      },
+      {
+        "contentLength": 7007749,
+        "resolution": "2880x1536",
+        "tags": [
+          "preview",
+          "clay",
+          "retina"
+        ],
+        "uri": "teqbcizc_PopupClay_2880.png"
+      },
+      {
+        "contentLength": 13078819,
+        "resolution": "3840x2160",
+        "tags": [
+          "preview",
+          "clay",
+          "retina"
+        ],
+        "uri": "teqbcizc_PopupClay_3840.png"
+      },
+      {
+        "contentLength": 2831531,
+        "resolution": "1440x768",
+        "tags": [
+          "preview",
+          "tiled"
+        ],
+        "uri": "teqbcizc_PopupTiled_1440.png"
+      },
+      {
+        "contentLength": 5187711,
+        "resolution": "1920x1080",
+        "tags": [
+          "preview",
+          "tiled"
+        ],
+        "uri": "teqbcizc_PopupTiled_1920.png"
+      },
+      {
+        "contentLength": 10945874,
+        "resolution": "2880x1536",
+        "tags": [
+          "preview",
+          "tiled",
+          "retina"
+        ],
+        "uri": "teqbcizc_PopupTiled_2880.png"
+      },
+      {
+        "contentLength": 20432780,
+        "resolution": "3840x2160",
+        "tags": [
+          "preview",
+          "tiled",
+          "retina"
+        ],
+        "uri": "teqbcizc_PopupTiled_3840.png"
+      },
+      {
+        "contentLength": 2788603,
+        "resolution": "1440x768",
+        "tags": [
+          "preview"
+        ],
+        "uri": "teqbcizc_Popup_1440.png"
+      },
+      {
+        "contentLength": 5139147,
+        "resolution": "1920x1080",
+        "tags": [
+          "preview"
+        ],
+        "uri": "teqbcizc_Popup_1920.png"
+      },
+      {
+        "contentLength": 11016747,
+        "resolution": "2880x1536",
+        "tags": [
+          "preview",
+          "retina"
+        ],
+        "uri": "teqbcizc_Popup_2880.png"
+      },
+      {
+        "contentLength": 20874296,
+        "resolution": "3840x2160",
+        "tags": [
+          "preview",
+          "retina"
+        ],
+        "uri": "teqbcizc_Popup_3840.png"
+      }
+    ],
+    "relativeSize": "1x1",
+    "scaleReferences": []
+  },
+  "process_date": "2024-04-17 10:34:47",
+  "properties": [],
+  "referencePreviews": {
+    "maps": [],
+    "models": []
+  },
+  "references": [],
+  "revised": false,
+  "revision": 0,
+  "semanticTags": {
+    "3d_mesh": [],
+    "architectural_style": {},
+    "asset_type": "surface",
+    "contains": [
+      "veneer",
+      "poplar wood"
+    ],
+    "descriptive": [
+      "smooth",
+      " clean",
+      " polished"
+    ],
+    "environment": [
+      "urban"
+    ],
+    "industry": [
+      "archviz",
+      "games",
+      "VFX"
+    ],
+    "interior_exterior": [
+      "interior"
+    ],
+    "latin_name": [],
+    "locations": {
+      "Global": {
+        "Global": {}
+      }
+    },
+    "maxSize": 1,
+    "minSize": 0.5,
+    "name": "Poplar Veneer",
+    "orientation": [
+      "floor"
+    ],
+    "resolution": 8192,
+    "season": [],
+    "state": [
+      "new"
+    ],
+    "subject_matter": "manmade",
+    "theme": [
+      "decorative",
+      " furniture"
+    ]
+  },
+  "tags": [
+    "wood",
+    "veneer",
+    "archviz",
+    "populus"
+  ],
+  "texelDensity": 8192,
+  "texture_type": "basic",
+  "ue_plugin_archives": [
+    {
+      "contentLength": 106336376,
+      "gltfVersion": "2.0",
+      "tier": 0,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_0/teqbcizc_tier_0.zip",
+      "version": 1
+    },
+    {
+      "contentLength": 29775801,
+      "gltfVersion": "2.0",
+      "tier": 1,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_1/teqbcizc_tier_1.zip",
+      "version": 1
+    },
+    {
+      "contentLength": 7531989,
+      "gltfVersion": "2.0",
+      "tier": 2,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_2/teqbcizc_tier_2.zip",
+      "version": 1
+    },
+    {
+      "contentLength": 505283,
+      "gltfVersion": "2.0",
+      "tier": 3,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_3/teqbcizc_tier_3.zip",
+      "version": 1
+    }
+  ],
+  "version": 2
+}

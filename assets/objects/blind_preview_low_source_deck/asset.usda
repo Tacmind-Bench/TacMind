@@ -1,0 +1,21 @@
+#usda 1.0
+(
+    defaultPrim = "blind_preview_low_source_deck"
+    metersPerUnit = 1
+    subLayers = [@blind_preview_low_source_deck.usd@]
+    upAxis = "Z"
+)
+
+over "blind_preview_low_source_deck"
+{
+    bool physics:kinematicEnabled = true
+
+    over "Deck"
+    {
+        over "Geometry"
+        {
+            # Preserve dimpled SDF contacts at the 100 Hz physics step.
+            float physxCollision:contactOffset = 0.005
+        }
+    }
+}

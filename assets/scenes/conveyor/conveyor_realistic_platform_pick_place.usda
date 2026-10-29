@@ -1,0 +1,27 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    subLayers = [@conveyor_platform_pick_place.usda@]
+    upAxis = "Z"
+)
+
+# Custom task 4 intentionally inherits every prim, transform, and physics
+# property from custom task 3.  Only the platform's visual material is
+# overridden here; the runtime gives the spawned cube its cardboard material.
+over "World"
+{
+    over "BeltPlatformLooks"
+    {
+        over "PlatformMaterial"
+        {
+            over "Shader"
+            {
+                color3f inputs:diffuseColor = (0.18, 0.205, 0.23)
+                color3f inputs:emissiveColor = (0.0, 0.0, 0.0)
+                float inputs:metallic = 0.92
+                float inputs:roughness = 0.26
+            }
+        }
+    }
+}

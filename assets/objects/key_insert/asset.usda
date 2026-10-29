@@ -1,0 +1,44 @@
+#usda 1.0
+(
+    defaultPrim = "Key"
+    metersPerUnit = 1
+    subLayers = [@key_insert.usd@]
+    upAxis = "Z"
+)
+
+over "Key" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysxRigidBodyAPI"]
+)
+{
+    bool physics:kinematicEnabled = false
+    bool physics:rigidBodyEnabled = true
+    float physics:mass = 0.008
+    bool physxRigidBody:disableGravity = false
+    bool physxRigidBody:enableCCD = true
+
+    over "mesh" (
+        prepend apiSchemas = ["MaterialBindingAPI", "PhysxCollisionAPI", "PhysxSDFMeshCollisionAPI"]
+    )
+    {
+        rel material:binding:physics = </Key/PhysicsMaterial> (
+            bindMaterialAs = "strongerThanDescendants"
+        )
+        uniform token physics:approximation = "sdf"
+        uniform float physxSDFMeshCollision:sdfMargin = 0
+        uniform float physxSDFMeshCollision:sdfNarrowBandThickness = 0.01
+        uniform int physxSDFMeshCollision:sdfResolution = 512
+        float physxCollision:contactOffset = 0.00005
+        float physxCollision:restOffset = -0.00002
+    }
+
+    def Material "PhysicsMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI", "PhysxMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.45
+        float physics:restitution = 0
+        float physics:staticFriction = 0.6
+        uniform token physxMaterial:frictionCombineMode = "average"
+        uniform token physxMaterial:restitutionCombineMode = "min"
+    }
+}

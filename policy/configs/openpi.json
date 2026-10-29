@@ -1,0 +1,18 @@
+{
+  "policy_type": "openpi",
+  "dataset": {
+    "repo_id": "tacmind/gsmini_precision0",
+    "root": "data/lerobot/gsmini_precision0"
+  },
+  "output_dir": "data/runs/precision0_openpi",
+  "runtime_python": "/path/to/envs/openpi/bin/python",
+  "steps": 30000,
+  "batch_size": 256,
+  "chunk_size": 10,
+  "seed": 42,
+  "save_freq": 1000,
+  "num_workers": 2,
+  "learning_rate": 5e-05,
+  "model": {},
+  "pretrained_path": "/path/to/checkpoints/openpi"
+}

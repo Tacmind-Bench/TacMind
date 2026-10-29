@@ -1,0 +1,16 @@
+dataset:
+  num_steps: ${eval:'${num_preds} + ${history_size}'}
+  frameskip: 1
+  name: ${oc.env:STABLEWM_HOME}/datasets/tacbench_official_visuo_tactile.h5
+  keys_to_load:
+    - pixels
+    - vision
+    - wrist
+    - action
+    - proprio
+  keys_to_cache:
+    - action
+    - proprio
+  # When model.vision_history=current, read only the selected camera row and
+  # zero-fill older camera slots. Tactile/action windows remain unchanged.
+  current_vision_only: true

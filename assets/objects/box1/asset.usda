@@ -1,0 +1,76 @@
+#usda 1.0
+(
+    defaultPrim = "box_insert"
+    metersPerUnit = 1
+    subLayers = [
+        @box1.usd@
+    ]
+    upAxis = "Z"
+)
+
+over "box_insert"
+{
+    over "Physics"
+    {
+        over "root_joint" (
+            active = false
+        )
+        {
+        }
+    }
+
+    over "Geometry"
+    {
+        over "box" (
+            prepend apiSchemas = ["PhysicsMassAPI", "PhysicsRigidBodyAPI"]
+        )
+        {
+            bool physics:kinematicEnabled = 1
+            float physics:mass = 0.34
+            bool physics:rigidBodyEnabled = 1
+
+            over "box_socket_big_update7_1"
+            {
+                token visibility = "invisible"
+
+                over "tn__001_y4ya4k3Y3" (
+                    delete apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                }
+
+                over "industreal_tray_pick_rectangular_peg_16mm" (
+                    delete apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                }
+            }
+
+            def Material "BlindContactMaterial" (
+                prepend apiSchemas = ["PhysicsMaterialAPI"]
+            )
+            {
+                float physics:dynamicFriction = 0.55
+                float physics:restitution = 0
+                float physics:staticFriction = 0.7
+            }
+
+            def Xform "DetailedCollision" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                prepend references = @./collision.usda@
+            )
+            {
+                rel material:binding:physics = </box_insert/Geometry/box/BlindContactMaterial>
+            }
+        }
+    }
+
+    def Material "BlindContactMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.48
+        float physics:restitution = 0
+        float physics:staticFriction = 0.6
+    }
+}

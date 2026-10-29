@@ -1,0 +1,77 @@
+{
+  "source_root": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/",
+  "entries": {
+    "soup_can": "Isaac/Props/YCB/Axis_Aligned/005_tomato_soup_can.usd",
+    "mug": "Isaac/Props/YCB/Axis_Aligned/025_mug.usd",
+    "pitcher": "Isaac/Props/YCB/Axis_Aligned/019_pitcher_base.usd",
+    "gear_base": "Isaac/IsaacLab/Factory/factory_gear_base.usd",
+    "gear_small": "Isaac/IsaacLab/Factory/factory_gear_small.usd",
+    "gear_medium": "Isaac/IsaacLab/Factory/factory_gear_medium.usd",
+    "gear_large": "Isaac/IsaacLab/Factory/factory_gear_large.usd"
+  },
+  "sources": {
+    "Isaac/IsaacLab/Factory/factory_gear_base.usd": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_gear_base.usd",
+      "etag": "\"ffd954ffe320348bb48200dc5caf2bab\"",
+      "last_modified": "Tue, 14 Oct 2025 19:49:18 GMT"
+    },
+    "Isaac/IsaacLab/Factory/factory_gear_large.usd": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_gear_large.usd",
+      "etag": "\"de9c3b56008e0d14d71d295bc6a31a23\"",
+      "last_modified": "Tue, 14 Oct 2025 19:49:18 GMT"
+    },
+    "Isaac/IsaacLab/Factory/factory_gear_medium.usd": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_gear_medium.usd",
+      "etag": "\"cb60c4d236c45043ba22d0b0e2f3de1c\"",
+      "last_modified": "Tue, 14 Oct 2025 19:49:18 GMT"
+    },
+    "Isaac/IsaacLab/Factory/factory_gear_small.usd": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/IsaacLab/Factory/factory_gear_small.usd",
+      "etag": "\"060de2511665f96733c6580609d532e2\"",
+      "last_modified": "Tue, 14 Oct 2025 19:49:18 GMT"
+    },
+    "Isaac/Props/YCB/Axis_Aligned/005_tomato_soup_can.usd": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/YCB/Axis_Aligned/005_tomato_soup_can.usd",
+      "etag": "\"7dad4182bdcfb67d6aca2fd020ffb662\"",
+      "last_modified": "Tue, 14 Oct 2025 19:53:43 GMT"
+    },
+    "Isaac/Props/YCB/Axis_Aligned/019_pitcher_base.usd": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/YCB/Axis_Aligned/019_pitcher_base.usd",
+      "etag": "\"f1c8ba72a7439cdf79bbbdc46cfd190e\"",
+      "last_modified": "Tue, 14 Oct 2025 19:53:43 GMT"
+    },
+    "Isaac/Props/YCB/Axis_Aligned/025_mug.usd": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/YCB/Axis_Aligned/025_mug.usd",
+      "etag": "\"0edcf571c0c7aa815a43d9342cbc2449\"",
+      "last_modified": "Tue, 14 Oct 2025 19:53:44 GMT"
+    },
+    "Isaac/Props/YCB/Axis_Aligned/Materials/Textures/005_tomato_soup_can_COLOR.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/YCB/Axis_Aligned/Materials/Textures/005_tomato_soup_can_COLOR.png",
+      "etag": "\"d6a119303aa6553403bf9196f8b02b2b-2\"",
+      "last_modified": "Tue, 14 Oct 2025 19:53:45 GMT"
+    },
+    "Isaac/Props/YCB/Axis_Aligned/Materials/Textures/019_pitcher_base_COLOR.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/YCB/Axis_Aligned/Materials/Textures/019_pitcher_base_COLOR.png",
+      "etag": "\"7993b53cbed589ef7dbb70b93c207b5a\"",
+      "last_modified": "Tue, 14 Oct 2025 19:53:45 GMT"
+    },
+    "Isaac/Props/YCB/Axis_Aligned/Materials/Textures/025_mug_COLOR.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/YCB/Axis_Aligned/Materials/Textures/025_mug_COLOR.png",
+      "etag": "\"a2b2a2f4f7bf7e71d2498e7a6fc10139\"",
+      "last_modified": "Tue, 14 Oct 2025 19:53:45 GMT"
+    }
+  },
+  "runtime_dependencies": [
+    "OmniPBR.mdl"
+  ],
+  "excluded_source": "OpenViTac",
+  "source_terms_url": "https://www.nvidia.com/en-us/agreements/enterprise-software/isaac-sim-additional-software-and-materials-license/",
+  "ycb_attribution": {
+    "authors": "Berk C. Calli, Arjun Singh, Aaron Walsman, Siddhartha Srinivasa, Pieter Abbeel, Aaron M. Dollar",
+    "upstream": "https://ycb-benchmarks.s3.amazonaws.com/index.html",
+    "upstream_data_license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "local_changes": "None. NVIDIA-distributed USDs and textures preserved byte-for-byte; NVIDIA distribution terms also retained."
+  },
+  "scope": "Immutable NVIDIA-distributed source assets; no physics certification or upstream-license substitution."
+}

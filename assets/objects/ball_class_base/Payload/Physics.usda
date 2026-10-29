@@ -1,0 +1,53 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.0"
+    }
+    defaultPrim = "classification_ball"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "classification_ball"
+{
+    def Scope "Physics"
+    {
+        def PhysicsFixedJoint "root_joint"
+        {
+            rel physics:body0 = </classification_ball>
+            rel physics:body1 = </classification_ball/Geometry/ball>
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+    }
+
+    over "Geometry"
+    {
+        over "ball" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+        )
+        {
+            def Cube "support_collision" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                bool physics:collisionEnabled = 1
+                float[] primvars:displayOpacity = [0]
+                double size = 1
+                double3 xformOp:scale = (0.14, 0.22, 0.01)
+                double3 xformOp:translate = (0, 0.003, 0.005)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            over "ball_task_base_square_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+}

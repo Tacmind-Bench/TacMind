@@ -1,0 +1,45 @@
+#usda 1.0
+(
+    defaultPrim = "box_search"
+    metersPerUnit = 1
+    subLayers = [@box2.usd@]
+    upAxis = "Z"
+)
+
+over "box_search" (
+    prepend apiSchemas = ["MaterialBindingAPI"]
+)
+{
+    over "Physics"
+    {
+        over "root_joint" (
+            active = false
+        )
+        {
+        }
+    }
+
+    rel material:binding:physics = </box_search/ContactMaterial>
+
+    def Material "ContactMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:staticFriction = 0.5
+        float physics:dynamicFriction = 0.5
+        float physics:restitution = 0
+    }
+
+    over "Geometry"
+    {
+        over "box"
+        {
+            bool physics:kinematicEnabled = true
+
+            over "box1_update2_1"
+            {
+                token visibility = "invisible"
+            }
+        }
+    }
+}

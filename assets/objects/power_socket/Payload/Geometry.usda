@@ -1,0 +1,46 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.0"
+    }
+    defaultPrim = "power_socekt_medium"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "power_socekt_medium"
+{
+    def Scope "Geometry"
+    {
+        def Xform "power_socekt_medium"
+        {
+            def Mesh "power_socekt_medium" (
+                prepend references = @./GeometryLibrary.usdc@</Geometry/power_socekt_medium>
+            )
+            {
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Mesh "power_socekt_medium_1" (
+                displayName = "power_socekt_medium"
+                prepend references = @./GeometryLibrary.usdc@</Geometry/power_socekt_medium>
+            )
+            {
+                uniform token purpose = "guide"
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Scope "sdf"
+                {
+                    custom string urdf:resolution = "128"
+                }
+            }
+        }
+    }
+}

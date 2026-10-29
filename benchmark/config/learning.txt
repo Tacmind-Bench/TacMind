@@ -1,0 +1,26 @@
+# DP/ACT and conversion: install official lerobot==0.4.4 separately with --no-deps.
+# Retain the unsourced Conda training Torch/vision and NumPy pins (README.md#installation).
+numpy==1.26.4
+scipy==1.17.1
+h5py==3.16.0
+hdf5plugin==7.1.0
+Pillow==11.3.0
+imageio==2.37.4
+packaging==25.0
+accelerate==1.14.0
+diffusers==0.35.2
+einops==0.8.2
+gymnasium==1.2.1
+safetensors==0.8.0
+wandb==0.24.2
+draccus==0.10.0
+datasets==4.8.5
+pyarrow==24.0.0
+pandas==2.3.3
+huggingface-hub==0.35.3
+jsonlines==4.0.0
+termcolor==3.3.0
+av==15.1.0
+deepdiff==8.6.2
+pyserial==3.5
+opencv-python-headless==4.11.0.86

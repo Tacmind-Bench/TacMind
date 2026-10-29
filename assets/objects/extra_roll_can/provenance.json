@@ -1,0 +1,73 @@
+{
+  "asset": "extra_roll_can",
+  "bodies": [
+    "Can"
+  ],
+  "mass_kg": 0.2,
+  "radius_m": 0.03384,
+  "length_m": 0.101855,
+  "axis": "Y",
+  "bounds_m": [
+    [
+      -0.03384,
+      -0.0509275,
+      -0.03384
+    ],
+    [
+      0.03384,
+      0.0509275,
+      0.03384
+    ]
+  ],
+  "collision_geometry": "UsdGeom.Cylinder",
+  "collision_reference_url": "https://docs.omniverse.nvidia.com/kit/docs/omni_physics/latest/dev_guide/rigid_bodies_articulations/collision.html",
+  "angular_damping_s_inv": 2.0,
+  "angular_damping_basis": "Rolling resistance of a hard can on a tabletop, Crr=0.0035; PhysX default 0.05 s^-1 is effectively frictionless rolling and leaves the reset settle rolling indefinitely.",
+  "model": "Immutable NVIDIA can visuals and fitted independent cylinder collision; solid-cylinder inertia approximation and authored rolling resistance.",
+  "sources": {
+    "can": {
+      "relative_path": "objects/005_tomato_soup_can/005_tomato_soup_can.usd"
+    }
+  },
+  "authored_bounds_m": [
+    [
+      -0.033829800326456105,
+      -0.05092699890746921,
+      -0.03385759993215798
+    ],
+    [
+      0.0338295785971825,
+      0.050928000265479056,
+      0.03385665817879158
+    ]
+  ],
+  "body_mass_properties": {
+    "Can": {
+      "mass_kg": 0.2,
+      "center_of_mass_m": [
+        7.708334259377853e-19,
+        9.635417824222317e-19,
+        1.5416668518755707e-18
+      ],
+      "diagonal_inertia_kg_m2": [
+        0.00011451456000000002,
+        0.0002301646304166667,
+        0.0002301646304166667
+      ],
+      "principal_axes_wxyz": [
+        -0.7071067811865475,
+        0.0,
+        0.0,
+        0.7071067811865475
+      ]
+    }
+  },
+  "physics_material": {
+    "static_friction": 0.6,
+    "dynamic_friction": 0.5,
+    "restitution": 0,
+    "combine": "average"
+  },
+  "contact_offset_m": 0.0003,
+  "rest_offset_m": 0
+}

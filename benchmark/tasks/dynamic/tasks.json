@@ -1,0 +1,2553 @@
+{
+  "task_suite_name": "tac_dynamic",
+  "total_tasks": 11,
+  "tasks": [
+    {
+      "task_id": 0,
+      "task_name": "insert_the_held_power_plug_into_the_moving_socket",
+      "language_instruction": "Insert the three-prong power plug already held by the gripper into the power socket on the moving conveyor platform",
+      "scene_layout": "conveyor/conveyor_insertion.usda",
+      "problem_name": "tactile_dynamic_manipulation",
+      "bddl_file": "",
+      "obj_of_interest": [],
+      "targets": [],
+      "goals": [],
+      "fixtures": {},
+      "objects": {},
+      "regions": [],
+      "goal_conditioning_options": [],
+      "episode_config": {
+        "task_type": "conveyor_in_hand_insert",
+        "expert_family": "dynamic_in_hand_insert",
+        "object_family": "power_plug",
+        "profile": "table_to_platform",
+        "layout_kind": "single_pair",
+        "moving_asset": "target_fixture",
+        "target_payload_index": 0,
+        "target_fixture_index": 0,
+        "platform_size_m": [
+          0.1248,
+          0.1368,
+          0.02
+        ],
+        "platform_x_offset_range_m": [
+          -0.045,
+          -0.015
+        ],
+        "platform_entry_phase_range_m": [
+          0.25,
+          0.275
+        ],
+        "belt_speed_range_mps": [
+          0.006,
+          0.009
+        ],
+        "target_motion_policy": "continuous",
+        "carrier_motion_policy": "dynamic_one_way_yielding",
+        "carrier_reverse_velocity_tolerance_mps": 0.001,
+        "carrier_max_speed_factor": 1.25,
+        "carrier_mount": "bolted_fixture",
+        "base_mount_clearance_m": 0.002,
+        "fixture_mount_clearance_m": 0.003,
+        "payload_scale": 1.0,
+        "fixture_scale": 1.0,
+        "payload_mass_kg": 0.097,
+        "fixture_mass_kg": 0.18,
+        "fixture_yaw_deg": 0.0,
+        "base_yaw_deg": 0.0,
+        "goal_offset_in_fixture_m": [
+          -0.00625,
+          0.003406,
+          0.0215
+        ],
+        "target_entry_local_m": [
+          -0.00625,
+          0.003406,
+          0.041389
+        ],
+        "insert_align_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "expected_object_local_quat_wxyz": [
+          0.0,
+          0.177552142,
+          0.0,
+          0.984111395
+        ],
+        "bore_axis_local": [
+          0.3494621723,
+          0.0,
+          0.9369504737
+        ],
+        "success_xy_tolerance_m": 0.004,
+        "success_z_tolerance_m": 0.012,
+        "success_radial_tolerance_m": 0.002,
+        "success_axial_range_m": [
+          -0.001,
+          0.004
+        ],
+        "success_axis_alignment": 0.98,
+        "success_stable_steps": 3,
+        "release_after_insert": false,
+        "source_holder_type": null,
+        "source_payload_offset_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "in_hand_grasp_local_m": [
+          0.01715,
+          0.0,
+          0.12
+        ],
+        "in_hand_object_local_quat_wxyz": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "in_hand_reset": {
+          "mode": "in_hand",
+          "fingertip_height": 0.24,
+          "source_gripper_joint_pos": 0.012,
+          "gelsight_hold_command": -0.7,
+          "gelsight_transport_command": -0.7,
+          "gelsight_settle_steps": 8,
+          "gelsight_clearance_lift_steps": 16,
+          "gelsight_clearance_lift_m": 0.05,
+          "preclose_command": -0.55
+        },
+        "tactile_target_depth_mm": 3.0,
+        "tactile_max_depth_mm": 4.44,
+        "tactile_critical_depth_mm": 4.51,
+        "transport_preload_command": -0.7,
+        "transport_preload_steps": 4,
+        "carry_clearance_m": 0.09,
+        "carry_steps": 56,
+        "expert_insert_steps": 48,
+        "insert_segments": 4,
+        "insert_push_steps": 48,
+        "insert_live_dls_step_scale": 0.5,
+        "insert_push_xy_axis_steps_m": [
+          0.004,
+          0.006
+        ],
+        "post_insert_xy_realign_rounds": 2,
+        "post_insert_xy_realign_limit_m": 0.003,
+        "target_prediction_horizon_s": 1.0,
+        "insert_live_dls_damping": 0.05,
+        "insert_live_dls_hard_orientation": false,
+        "insert_dls_orientation_weight": 0.1,
+        "insert_live_dls_orientation_weight": 0.1,
+        "live_target_follow": true,
+        "insert_hold_steps": 4,
+        "insert_overshoot_m": 0.0,
+        "insert_xy_correction_limit_m": 0.0005,
+        "insert_xy_correction_axis_limits_m": [
+          0.006,
+          0.006
+        ],
+        "max_fine_align": 0,
+        "fine_align_tolerance_m": 0.001,
+        "episode_timeout_s": 32.0,
+        "payload_instances": [
+          {
+            "material": "black",
+            "role": "held_payload"
+          }
+        ],
+        "fixture_instances": [
+          {
+            "material": "white",
+            "role": "moving_target"
+          }
+        ],
+        "gear_instances": [
+          {
+            "material": "black",
+            "role": "held_payload"
+          }
+        ],
+        "base_instances": [
+          {
+            "material": "white",
+            "role": "moving_target"
+          }
+        ],
+        "contact_offset_m": 0.0001,
+        "payload_contact_offset_m": 0.0001,
+        "fixture_contact_offset_m": 0.0001,
+        "rest_offset_m": 0.0,
+        "payload_asset_type": "power_plug",
+        "fixture_asset_type": "power_socket",
+        "moving_asset_xy_jitter_range_m": {
+          "x": [
+            -0.012,
+            0.012
+          ],
+          "y": [
+            -0.012,
+            0.012
+          ]
+        }
+      },
+      "workspace_bounds": {
+        "x_bounds": [
+          -1,
+          1
+        ],
+        "y_bounds": [
+          -1.5,
+          1
+        ],
+        "z_bounds": [
+          -1,
+          1
+        ]
+      },
+      "workspace_name": "floor",
+      "robot_base_pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "robot_base_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tactile_targets": [
+        "/World/TacDynamicPowerPlug/payload_0"
+      ],
+      "migration_status": "experimental_geometry_only",
+      "scene_backend": "custom_usd",
+      "source_task_id": 11,
+      "source_group": "dynamic_motion",
+      "sensor_profile": "gsmini",
+      "sensor_overrides": {
+        "gsmini": {
+          "payload_mass_kg": 0.055,
+          "episode_timeout_s": 60.0,
+          "tactile_target_depth_mm": 2.0,
+          "press_fit_static_friction": 2.0,
+          "press_fit_dynamic_friction": 1.5,
+          "target_prediction_horizon_s": 0.6,
+          "max_fine_align": 8,
+          "insert_hold_steps": 0,
+          "insert_live_dls_step_scale": 0.8,
+          "in_hand_reset": {
+            "fingertip_height": 0.28,
+            "source_gripper_joint_pos": 0.01,
+            "preclose_command": -0.85,
+            "gelsight_hold_command": -0.85,
+            "gelsight_transport_command": -0.85
+          }
+        },
+        "gd": {
+          "replay_seed_reset_only": false,
+          "gd_replay_contact_hold_steps": 0
+        }
+      }
+    },
+    {
+      "task_id": 1,
+      "task_name": "insert_the_held_bulb_into_the_moving_socket",
+      "language_instruction": "Insert the bulb already held by the gripper into the bulb socket on the moving conveyor platform",
+      "scene_layout": "conveyor/conveyor_insertion.usda",
+      "problem_name": "tactile_dynamic_manipulation",
+      "bddl_file": "",
+      "obj_of_interest": [],
+      "targets": [],
+      "goals": [],
+      "fixtures": {},
+      "objects": {},
+      "regions": [],
+      "goal_conditioning_options": [],
+      "episode_config": {
+        "task_type": "conveyor_in_hand_insert",
+        "expert_family": "dynamic_in_hand_insert",
+        "object_family": "bulb",
+        "profile": "table_to_platform",
+        "layout_kind": "single_pair",
+        "moving_asset": "target_fixture",
+        "carrier_mount": "bolted_fixture",
+        "target_payload_index": 0,
+        "target_fixture_index": 0,
+        "platform_size_m": [
+          0.1248,
+          0.1368,
+          0.02
+        ],
+        "platform_x_offset_range_m": [
+          -0.045,
+          -0.015
+        ],
+        "platform_entry_phase_range_m": [
+          0.0,
+          0.025
+        ],
+        "belt_speed_range_mps": [
+          0.008,
+          0.012
+        ],
+        "target_motion_policy": "continuous",
+        "carrier_motion_policy": "dynamic_one_way_yielding",
+        "carrier_reverse_velocity_tolerance_mps": 0.001,
+        "carrier_max_speed_factor": 1.25,
+        "base_mount_clearance_m": 0.002,
+        "fixture_mount_clearance_m": 0.003,
+        "payload_scale": 1.0,
+        "fixture_scale": 1.0,
+        "payload_mass_kg": 0.035,
+        "fixture_mass_kg": 0.12,
+        "fixture_yaw_deg": 0.0,
+        "base_yaw_deg": 0.0,
+        "goal_offset_in_fixture_m": [
+          0.0,
+          0.0,
+          0.0013
+        ],
+        "target_entry_local_m": [
+          0.0,
+          0.0,
+          0.032
+        ],
+        "insertion_mode": "axial_experimental",
+        "insert_align_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bore_axis_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "success_xy_tolerance_m": 0.004,
+        "success_z_tolerance_m": 0.006,
+        "success_radial_tolerance_m": 0.01,
+        "success_axial_range_m": [
+          -0.002,
+          0.002
+        ],
+        "success_axis_alignment": 0.9,
+        "min_thread_yaw_rad": 1.8,
+        "thread_command_margin_rad": 1.0,
+        "thread_engagement_range_m": [
+          -0.002,
+          0.004
+        ],
+        "target_prediction_horizon_s": 1.0,
+        "success_stable_steps": 3,
+        "replay_seed_reset_only": true,
+        "release_after_insert": false,
+        "source_holder_type": null,
+        "source_payload_offset_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "in_hand_grasp_local_m": [
+          0.0,
+          0.0,
+          0.01
+        ],
+        "in_hand_object_local_quat_wxyz": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "in_hand_reset": {
+          "mode": "in_hand",
+          "fingertip_height": 0.24,
+          "source_gripper_joint_pos": 0.012,
+          "preclose_command": -0.8
+        },
+        "tactile_target_depth_mm": 0.4,
+        "tactile_max_depth_mm": 4.5,
+        "tactile_critical_depth_mm": 4.51,
+        "carry_clearance_m": 0.08,
+        "carry_steps": 48,
+        "expert_insert_steps": 32,
+        "insert_segments": 8,
+        "live_target_follow": true,
+        "insert_hold_steps": 8,
+        "insert_overshoot_m": 0.0,
+        "insert_xy_correction_limit_m": 0.006,
+        "max_fine_align": 6,
+        "fine_align_tolerance_m": 0.003,
+        "episode_timeout_s": 120.0,
+        "payload_instances": [
+          {
+            "material": "white",
+            "role": "held_payload"
+          }
+        ],
+        "fixture_instances": [
+          {
+            "material": "steel",
+            "role": "moving_target"
+          }
+        ],
+        "gear_instances": [
+          {
+            "material": "white",
+            "role": "held_payload"
+          }
+        ],
+        "base_instances": [
+          {
+            "material": "steel",
+            "role": "moving_target"
+          }
+        ],
+        "require_contact": true,
+        "enable_force_threshold": "True",
+        "force_threshold": 0.25,
+        "contact_sensor_name": "contact_fixture_payload",
+        "contact_offset_m": 0.0002,
+        "payload_contact_offset_m": 0.0001,
+        "fixture_contact_offset_m": 0.0001,
+        "rest_offset_m": 0.0,
+        "payload_asset_type": "tactile_bulb",
+        "fixture_asset_type": "tactile_bulb_socket",
+        "moving_asset_xy_jitter_range_m": {
+          "x": [
+            -0.012,
+            0.012
+          ],
+          "y": [
+            -0.012,
+            0.012
+          ]
+        }
+      },
+      "workspace_bounds": {
+        "x_bounds": [
+          -1,
+          1
+        ],
+        "y_bounds": [
+          -1.5,
+          1
+        ],
+        "z_bounds": [
+          -1,
+          1
+        ]
+      },
+      "workspace_name": "floor",
+      "robot_base_pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "robot_base_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tactile_targets": [
+        "/World/TacDynamicBulb/payload_0"
+      ],
+      "migration_status": "experimental_geometry_only",
+      "scene_backend": "custom_usd",
+      "source_task_id": 9,
+      "source_group": "dynamic_motion",
+      "sensor_profile": "gsmini",
+      "sensor_overrides": {
+        "gsmini": {
+          "carrier_mount": "bolted_fixture",
+          "success_radial_tolerance_m": 0.004,
+          "episode_timeout_s": 120.0,
+          "thread_engagement_range_m": [
+            0.024,
+            0.028
+          ],
+          "in_hand_grasp_local_m": [
+            0.0,
+            0.0,
+            0.070
+          ],
+          "success_axial_range_m": [
+            -0.002,
+            0.002
+          ],
+          "insert_overshoot_m": 0.008,
+          "replay_seed_reset_only": false,
+          "in_hand_reset": {
+            "source_gripper_joint_pos": 0.0185,
+            "preclose_command": -1.0,
+            "gripper_joint_pos": 0.013
+          }
+        },
+        "gd": {
+          "replay_seed_reset_only": false
+        }
+      }
+    },
+    {
+      "task_id": 2,
+      "task_name": "insert_the_held_usb_plug_into_the_moving_socket",
+      "language_instruction": "Insert the USB plug already held by the gripper into the USB socket on the moving conveyor platform",
+      "scene_layout": "conveyor/conveyor_insertion.usda",
+      "problem_name": "tactile_dynamic_manipulation",
+      "bddl_file": "",
+      "obj_of_interest": [],
+      "targets": [],
+      "goals": [],
+      "fixtures": {},
+      "objects": {},
+      "regions": [],
+      "goal_conditioning_options": [],
+      "episode_config": {
+        "task_type": "conveyor_in_hand_insert",
+        "expert_family": "dynamic_in_hand_insert",
+        "object_family": "usb",
+        "profile": "table_to_platform",
+        "layout_kind": "single_pair",
+        "moving_asset": "target_fixture",
+        "target_payload_index": 0,
+        "target_fixture_index": 0,
+        "platform_size_m": [
+          0.1248,
+          0.1368,
+          0.02
+        ],
+        "platform_x_offset_range_m": [
+          -0.045,
+          -0.015
+        ],
+        "platform_entry_phase_range_m": [
+          0.0,
+          0.025
+        ],
+        "belt_speed_range_mps": [
+          0.008,
+          0.012
+        ],
+        "target_motion_policy": "continuous",
+        "carrier_motion_policy": "dynamic_one_way_yielding",
+        "carrier_reverse_velocity_tolerance_mps": 0.001,
+        "carrier_max_speed_factor": 1.25,
+        "base_mount_clearance_m": 0.002,
+        "fixture_mount_clearance_m": 0.003,
+        "payload_scale": 1.0,
+        "fixture_scale": 1.0,
+        "payload_mass_kg": 0.025,
+        "fixture_mass_kg": 0.12,
+        "fixture_yaw_deg": 0.0,
+        "base_yaw_deg": 0.0,
+        "goal_offset_in_fixture_m": [
+          -0.017159,
+          -0.015567,
+          0.022806
+        ],
+        "target_entry_local_m": [
+          -0.009989,
+          -0.000617,
+          0.040806
+        ],
+        "functional_target_local_m": [
+          -0.009989,
+          -0.000617,
+          0.022806
+        ],
+        "insert_align_local_m": [
+          0.00717,
+          0.01495,
+          0.0
+        ],
+        "bore_axis_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "success_xy_tolerance_m": 0.004,
+        "success_z_tolerance_m": 0.006,
+        "success_radial_tolerance_m": 0.0035,
+        "success_axial_range_m": [
+          -0.004,
+          0.002
+        ],
+        "success_axis_alignment": 0.94,
+        "success_stable_steps": 3,
+        "release_after_insert": false,
+        "source_holder_type": null,
+        "source_payload_offset_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "in_hand_grasp_local_m": [
+          0.006,
+          0.015,
+          0.065
+        ],
+        "transport_preload_command": -0.55,
+        "transport_preload_steps": 3,
+        "in_hand_object_local_quat_wxyz": [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "in_hand_reset": {
+          "mode": "in_hand",
+          "fingertip_height": 0.22,
+          "source_gripper_joint_pos": 0.011,
+          "preclose_command": -0.5
+        },
+        "tactile_target_depth_mm": 0.5,
+        "tactile_max_depth_mm": 4.25,
+        "tactile_critical_depth_mm": 4.4,
+        "carry_clearance_m": 0.08,
+        "carry_steps": 96,
+        "expert_insert_steps": 32,
+        "insert_segments": 8,
+        "live_target_follow": true,
+        "insert_hold_steps": 8,
+        "insert_overshoot_m": 0.002,
+        "insert_command_bias_m": [
+          -0.001,
+          -0.002,
+          0.0
+        ],
+        "insert_xy_correction_limit_m": 0.006,
+        "max_fine_align": 6,
+        "fine_align_tolerance_m": 0.003,
+        "episode_timeout_s": 28.0,
+        "payload_instances": [
+          {
+            "material": "steel",
+            "role": "held_payload"
+          }
+        ],
+        "fixture_instances": [
+          {
+            "material": "white",
+            "role": "moving_target"
+          }
+        ],
+        "gear_instances": [
+          {
+            "material": "steel",
+            "role": "held_payload"
+          }
+        ],
+        "base_instances": [
+          {
+            "material": "white",
+            "role": "moving_target"
+          }
+        ],
+        "contact_offset_m": 0.0002,
+        "payload_contact_offset_m": 0.0001,
+        "fixture_contact_offset_m": 0.0001,
+        "rest_offset_m": 0.0,
+        "payload_asset_type": "USB_plug",
+        "fixture_asset_type": "USB_socket",
+        "moving_asset_xy_jitter_range_m": {
+          "x": [
+            -0.012,
+            0.012
+          ],
+          "y": [
+            -0.012,
+            0.012
+          ]
+        }
+      },
+      "workspace_bounds": {
+        "x_bounds": [
+          -1,
+          1
+        ],
+        "y_bounds": [
+          -1.5,
+          1
+        ],
+        "z_bounds": [
+          -1,
+          1
+        ]
+      },
+      "workspace_name": "floor",
+      "robot_base_pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "robot_base_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tactile_targets": [
+        "/World/TacDynamicUsb/payload_0"
+      ],
+      "migration_status": "experimental_geometry_only",
+      "scene_backend": "custom_usd",
+      "source_task_id": 8,
+      "source_group": "dynamic_motion",
+      "sensor_profile": "gsmini",
+      "sensor_overrides": {
+        "gsmini": {
+          "payload_mass_kg": 0.018,
+          "episode_timeout_s": 45.0,
+          "insert_overshoot_m": 0.0035,
+          "insert_command_bias_m": [0.001, 0.0, 0.0],
+          "carry_steps": 48,
+          "in_hand_grasp_local_m": [0.006085, 0.015, 0.080],
+          "in_hand_reset": {
+            "preclose_command": -0.85,
+            "gelsight_hold_command": -0.85,
+            "gelsight_transport_command": -0.85
+          }
+        }
+      }
+    },
+    {
+      "task_id": 3,
+      "task_name": "pick_table_tube_and_insert_into_moving_fixture",
+      "language_instruction": "Pick the test tube from the table and insert it into the angled hole base mounted on the conveyor platform",
+      "scene_layout": "conveyor/conveyor_insertion.usda",
+      "problem_name": "tactile_dynamic_manipulation",
+      "bddl_file": "",
+      "obj_of_interest": [],
+      "targets": [],
+      "goals": [],
+      "fixtures": {},
+      "objects": {},
+      "regions": [],
+      "goal_conditioning_options": [],
+      "episode_config": {
+        "task_type": "conveyor_precision_insert",
+        "object_family": "tube",
+        "profile": "table_to_platform",
+        "layout_kind": "single_pair",
+        "moving_asset": "target_fixture",
+        "target_payload_index": 0,
+        "target_fixture_index": 0,
+        "target_gear_index": 0,
+        "target_base_index": 0,
+        "platform_x_offset_range_m": [
+          -0.045,
+          -0.015
+        ],
+        "platform_entry_phase_range_m": [
+          0.0,
+          0.025
+        ],
+        "moving_asset_x_offset_m": 0.0,
+        "payload_position_range_m": {
+          "x": [
+            -0.15,
+            -0.07
+          ],
+          "y": [
+            0.38,
+            0.48
+          ]
+        },
+        "gear_position_range_m": {
+          "x": [
+            -0.15,
+            -0.07
+          ],
+          "y": [
+            0.38,
+            0.48
+          ]
+        },
+        "selector_kind": "single_source",
+        "selector_value": "steel",
+        "platform_size_m": [
+          0.16,
+          0.15,
+          0.02
+        ],
+        "belt_speed_range_mps": [
+          0.004,
+          0.007
+        ],
+        "target_motion_policy": "continuous",
+        "carrier_motion_policy": "dynamic_one_way_yielding",
+        "carrier_reverse_velocity_tolerance_mps": 0.001,
+        "carrier_max_speed_factor": 1.25,
+        "carrier_mount": "bolted_fixture",
+        "fixture_mount_clearance_m": 0.003,
+        "base_mount_clearance_m": 0.003,
+        "press_fit_static_friction": 2.0,
+        "press_fit_dynamic_friction": 1.5,
+        "episode_timeout_s": 45.0,
+        "payload_scale": 1.0,
+        "fixture_scale": 1.0,
+        "source_holder_scale": 1.0,
+        "payload_mass_kg": 0.018,
+        "payload_linear_damping": 0.5,
+        "payload_angular_damping": 0.5,
+        "gear_scale": 1.0,
+        "base_scale": 1.0,
+        "gear_mass_kg": 0.018,
+        "gear_linear_damping": 0.5,
+        "gear_angular_damping": 0.5,
+        "fixture_yaw_deg": 0.0,
+        "base_yaw_deg": 0.0,
+        "goal_offset_in_fixture_m": [
+          0.02373,
+          0.0,
+          0.06
+        ],
+        "goal_offset_in_base_m": [
+          0.02373,
+          0.0,
+          0.06
+        ],
+        "bore_axis_local": [
+          -0.5,
+          0.0,
+          0.8660254
+        ],
+        "expert_release_compensation_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "success_xy_tolerance_m": 0.005,
+        "success_z_tolerance_m": 0.008,
+        "success_axis_alignment": 0.965,
+        "success_stable_steps": 3,
+        "release_after_insert": false,
+        "source_holder_type": "test_tube_base",
+        "source_payload_offset_m": [
+          0.0,
+          0.0,
+          0.0005
+        ],
+        "grasp_offset_m": 0.042,
+        "exit_policy": "fail_if_moving_fixture_leaves_before_insert",
+        "bore_entry_offset_in_fixture_m": [
+          0.0,
+          0.0,
+          0.1
+        ],
+        "payload_instances": [
+          {
+            "material": "steel",
+            "role": "table_source"
+          }
+        ],
+        "fixture_instances": [
+          {
+            "material": "steel",
+            "role": "moving_target"
+          }
+        ],
+        "gear_instances": [
+          {
+            "material": "steel",
+            "role": "table_source"
+          }
+        ],
+        "base_instances": [
+          {
+            "material": "steel",
+            "role": "moving_target"
+          }
+        ],
+        "source_fixture_instances": [
+          {
+            "material": "steel",
+            "role": "table_source_fixture"
+          }
+        ],
+        "contact_offset_m": 5e-05,
+        "rest_offset_m": -2e-05,
+        "payload_asset_type": "test_tube_insert",
+        "fixture_asset_type": "test_tube_hole_slot",
+        "holder_asset_type": "test_tube_base",
+        "payload_density": 800.0,
+        "expert_insert_steps": 30,
+        "transport_lift_distance_m": 0.2,
+        "expert_family": "dynamic_conveyor",
+        "sensor_profile": "gsmini",
+        "moving_asset_xy_jitter_range_m": {
+          "x": [
+            -0.012,
+            0.012
+          ],
+          "y": [
+            -0.012,
+            0.012
+          ]
+        }
+      },
+      "workspace_bounds": {
+        "x_bounds": [
+          -1,
+          1
+        ],
+        "y_bounds": [
+          -1.5,
+          1
+        ],
+        "z_bounds": [
+          -1,
+          1
+        ]
+      },
+      "workspace_name": "floor",
+      "robot_base_pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "robot_base_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tactile_targets": [
+        "/World/TacDynamicTube/payload_0"
+      ],
+      "scene_backend": "custom_usd",
+      "source_task_id": 7,
+      "source_group": "dynamic_motion",
+      "sensor_profile": "gsmini",
+      "sensor_overrides": {
+        "gsmini": {
+          "coalesce_airborne_insertions": true,
+          "source_approach_repeat_factor": 1,
+          "transfer_settle_seconds": 0.2,
+          "transfer_repeat_factor": 1,
+          "expert_insert_steps": 30
+        }
+      },
+      "migration_status": "experimental_geometry_only"
+    },
+    {
+      "task_id": 4,
+      "task_name": "pick_tube_from_moving_source_and_insert_into_table_fixture",
+      "language_instruction": "Pick the test tube from the moving source base and insert it into the angled hole base on the table",
+      "scene_layout": "conveyor/conveyor_insertion.usda",
+      "problem_name": "tactile_dynamic_manipulation",
+      "bddl_file": "",
+      "obj_of_interest": [],
+      "targets": [],
+      "goals": [],
+      "fixtures": {},
+      "objects": {},
+      "regions": [],
+      "goal_conditioning_options": [],
+      "episode_config": {
+        "task_type": "conveyor_precision_insert",
+        "object_family": "tube",
+        "profile": "platform_to_table",
+        "layout_kind": "single_pair",
+        "moving_asset": "source_assembly",
+        "target_payload_index": 0,
+        "target_fixture_index": 0,
+        "target_gear_index": 0,
+        "target_base_index": 0,
+        "platform_x_offset_range_m": [
+          -0.045,
+          -0.015
+        ],
+        "platform_entry_phase_range_m": [
+          0.0,
+          0.025
+        ],
+        "moving_asset_x_offset_m": 0.0,
+        "fixture_position_range_m": {
+          "x": [
+            -0.25,
+            -0.21
+          ],
+          "y": [
+            0.35,
+            0.45
+          ]
+        },
+        "base_position_range_m": {
+          "x": [
+            -0.25,
+            -0.21
+          ],
+          "y": [
+            0.35,
+            0.45
+          ]
+        },
+        "selector_kind": "single_target",
+        "selector_value": "steel",
+        "platform_size_m": [
+          0.15,
+          0.15,
+          0.02
+        ],
+        "belt_speed_range_mps": [
+          0.018,
+          0.028
+        ],
+        "target_motion_policy": "continuous",
+        "carrier_motion_policy": "dynamic_one_way_yielding",
+        "carrier_reverse_velocity_tolerance_mps": 0.001,
+        "carrier_max_speed_factor": 1.25,
+        "carrier_mount": "bolted_source_holder",
+        "fixture_mount_clearance_m": 0.003,
+        "base_mount_clearance_m": 0.0,
+        "press_fit_static_friction": 1.1,
+        "press_fit_dynamic_friction": 0.85,
+        "episode_timeout_s": 45.0,
+        "payload_scale": 1.0,
+        "fixture_scale": 1.0,
+        "source_holder_scale": 1.0,
+        "source_holder_mass_kg": 10.0,
+        "payload_mass_kg": 0.018,
+        "payload_linear_damping": 0.2,
+        "payload_angular_damping": 0.2,
+        "gear_scale": 1.0,
+        "base_scale": 1.0,
+        "gear_mass_kg": 0.018,
+        "gear_linear_damping": 0.2,
+        "gear_angular_damping": 0.2,
+        "fixture_yaw_deg": 0.0,
+        "base_yaw_deg": 0.0,
+        "goal_offset_in_fixture_m": [
+          0.02373,
+          0.0,
+          0.06
+        ],
+        "goal_offset_in_base_m": [
+          0.02373,
+          0.0,
+          0.06
+        ],
+        "bore_axis_local": [
+          -0.5,
+          0.0,
+          0.8660254
+        ],
+        "expert_release_compensation_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "success_xy_tolerance_m": 0.005,
+        "success_z_tolerance_m": 0.008,
+        "success_axis_alignment": 0.965,
+        "success_stable_steps": 3,
+        "release_after_insert": false,
+        "source_holder_type": "test_tube_base",
+        "source_payload_offset_m": [
+          0.0,
+          0.0,
+          0.0005
+        ],
+        "grasp_offset_m": 0.042,
+        "exit_policy": "fail_if_moving_source_leaves_before_grasp",
+        "bore_entry_offset_in_fixture_m": [
+          0.0,
+          0.0,
+          0.1
+        ],
+        "payload_instances": [
+          {
+            "material": "steel",
+            "role": "moving_source"
+          }
+        ],
+        "fixture_instances": [
+          {
+            "material": "steel",
+            "role": "table_target"
+          }
+        ],
+        "gear_instances": [
+          {
+            "material": "steel",
+            "role": "moving_source"
+          }
+        ],
+        "base_instances": [
+          {
+            "material": "steel",
+            "role": "table_target"
+          }
+        ],
+        "source_fixture_instances": [
+          {
+            "material": "steel",
+            "role": "moving_source_fixture"
+          }
+        ],
+        "contact_offset_m": 5e-05,
+        "rest_offset_m": -2e-05,
+        "payload_asset_type": "test_tube_insert",
+        "fixture_asset_type": "test_tube_hole_slot",
+        "holder_asset_type": "test_tube_base",
+        "payload_density": 800.0,
+        "replay_seed_reset_only": false,
+        "expert_insert_steps": 140,
+        "expert_family": "dynamic_conveyor",
+        "sensor_profile": "gsmini",
+        "moving_asset_xy_jitter_range_m": {
+          "x": [
+            -0.012,
+            0.012
+          ],
+          "y": [
+            -0.012,
+            0.012
+          ]
+        }
+      },
+      "workspace_bounds": {
+        "x_bounds": [
+          -1,
+          1
+        ],
+        "y_bounds": [
+          -1.5,
+          1
+        ],
+        "z_bounds": [
+          -1,
+          1
+        ]
+      },
+      "workspace_name": "floor",
+      "robot_base_pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "robot_base_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tactile_targets": [
+        "/World/TacDynamicTube/payload_0"
+      ],
+      "scene_backend": "custom_usd",
+      "source_task_id": 6,
+      "source_group": "dynamic_motion",
+      "sensor_profile": "gsmini",
+      "sensor_overrides": {
+        "gsmini": {
+          "coalesce_airborne_insertions": true,
+          "source_approach_repeat_factor": 1,
+          "transfer_repeat_factor": 1,
+          "expert_insert_steps": 30,
+          "source_holder_mass_kg": 0.05,
+          "replay_seed_reset_only": false
+        }
+      },
+      "migration_status": "experimental_geometry_only"
+    },
+    {
+      "task_id": 5,
+      "task_name": "pick_table_key_and_insert_into_moving_fixture",
+      "language_instruction": "Pick the key from the table and insert it into the target lock mounted on the conveyor platform",
+      "scene_layout": "conveyor/conveyor_insertion.usda",
+      "problem_name": "tactile_dynamic_manipulation",
+      "bddl_file": "",
+      "obj_of_interest": [],
+      "targets": [],
+      "goals": [],
+      "fixtures": {},
+      "objects": {},
+      "regions": [],
+      "goal_conditioning_options": [],
+      "episode_config": {
+        "task_type": "conveyor_precision_insert",
+        "object_family": "key",
+        "profile": "table_to_platform",
+        "layout_kind": "single_pair",
+        "moving_asset": "target_fixture",
+        "target_payload_index": 0,
+        "target_fixture_index": 0,
+        "target_gear_index": 0,
+        "target_base_index": 0,
+        "platform_x_offset_range_m": [
+          -0.045,
+          -0.015
+        ],
+        "platform_entry_phase_range_m": [
+          0.0,
+          0.025
+        ],
+        "moving_asset_x_offset_m": 0.0,
+        "payload_position_range_m": {
+          "x": [
+            -0.19,
+            -0.11
+          ],
+          "y": [
+            0.35,
+            0.45
+          ]
+        },
+        "gear_position_range_m": {
+          "x": [
+            -0.19,
+            -0.11
+          ],
+          "y": [
+            0.35,
+            0.45
+          ]
+        },
+        "selector_kind": "single_source",
+        "selector_value": "steel",
+        "platform_size_m": [
+          0.16,
+          0.15,
+          0.02
+        ],
+        "belt_speed_range_mps": [
+          0.005,
+          0.008
+        ],
+        "target_motion_policy": "continuous",
+        "carrier_motion_policy": "dynamic_one_way_yielding",
+        "carrier_reverse_velocity_tolerance_mps": 0.001,
+        "carrier_max_speed_factor": 1.25,
+        "carrier_mount": "bolted_fixture",
+        "fixture_mount_clearance_m": 0.003,
+        "base_mount_clearance_m": 0.003,
+        "press_fit_static_friction": 2.0,
+        "press_fit_dynamic_friction": 1.5,
+        "episode_timeout_s": 36.0,
+        "payload_scale": 1.0,
+        "fixture_scale": 1.0,
+        "source_holder_scale": 1.5,
+        "payload_mass_kg": 0.008,
+        "payload_linear_damping": 0.5,
+        "payload_angular_damping": 0.5,
+        "gear_scale": 1.0,
+        "base_scale": 1.0,
+        "gear_mass_kg": 0.008,
+        "gear_linear_damping": 0.5,
+        "gear_angular_damping": 0.5,
+        "fixture_yaw_deg": 0.0,
+        "base_yaw_deg": 0.0,
+        "goal_offset_in_fixture_m": [
+          -0.00343,
+          0.00015,
+          0.11677
+        ],
+        "goal_offset_in_base_m": [
+          -0.00343,
+          0.00015,
+          0.11677
+        ],
+        "bore_axis_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "expert_release_compensation_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "success_xy_tolerance_m": 0.003,
+        "success_z_tolerance_m": 0.005,
+        "success_axis_alignment": 0.94,
+        "success_stable_steps": 3,
+        "release_after_insert": false,
+        "source_holder_type": "key_slot",
+        "source_payload_offset_m": [
+          -0.00343,
+          0.00015,
+          0.11677
+        ],
+        "grasp_offset_m": -0.0125,
+        "tactile_target_depth_mm": 3.0,
+        "tactile_max_depth_mm": 5.0,
+        "tactile_critical_depth_mm": 4.55,
+        "key_source_grip_lock_drop_m": 0.0,
+        "precision_grip_extra_close_m": 0.0,
+        "grasp_lock_command": -0.47,
+        "source_interaction_contract": "physical_contact_v1",
+        "key_breakaway_lift_m": 0.035,
+        "key_breakaway_steps": 20,
+        "replay_seed_reset_only": true,
+        "exit_policy": "fail_if_moving_fixture_leaves_before_insert",
+        "payload_instances": [
+          {
+            "material": "steel",
+            "role": "table_source"
+          }
+        ],
+        "fixture_instances": [
+          {
+            "material": "steel",
+            "role": "moving_target"
+          }
+        ],
+        "gear_instances": [
+          {
+            "material": "steel",
+            "role": "table_source"
+          }
+        ],
+        "base_instances": [
+          {
+            "material": "steel",
+            "role": "moving_target"
+          }
+        ],
+        "source_fixture_instances": [
+          {
+            "material": "steel",
+            "role": "table_source_fixture"
+          }
+        ],
+        "contact_offset_m": 5e-05,
+        "rest_offset_m": -2e-05,
+        "payload_asset_type": "key_insert",
+        "fixture_asset_type": "key_slot",
+        "payload_density": 2000.0,
+        "expert_insert_steps": 28,
+        "insert_overshoot_m": 0.0,
+        "holder_asset_type": "key_slot",
+        "expert_family": "dynamic_conveyor",
+        "sensor_profile": "gsmini",
+        "moving_asset_xy_jitter_range_m": {
+          "x": [
+            -0.012,
+            0.012
+          ],
+          "y": [
+            -0.012,
+            0.012
+          ]
+        }
+      },
+      "workspace_bounds": {
+        "x_bounds": [
+          -1,
+          1
+        ],
+        "y_bounds": [
+          -1.5,
+          1
+        ],
+        "z_bounds": [
+          -1,
+          1
+        ]
+      },
+      "workspace_name": "floor",
+      "robot_base_pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "robot_base_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tactile_targets": [
+        "/World/TacDynamicKey/payload_0"
+      ],
+      "scene_backend": "custom_usd",
+      "source_task_id": 5,
+      "source_group": "dynamic_motion",
+      "sensor_profile": "gsmini",
+      "sensor_overrides": {
+        "gsmini": {
+          "coalesce_airborne_insertions": true,
+          "source_approach_repeat_factor": 1,
+          "transfer_settle_seconds": 0.2,
+          "transfer_repeat_factor": 1,
+          "episode_timeout_s": 60.0,
+          "grasp_offset_m": 0.0,
+          "grasp_lock_command": -1.0,
+          "grasp_lock_lift_m": 0.07,
+          "minimum_source_lift_m": 0.059,
+          "insert_segment_length_m": 0.005,
+          "transfer_approach_tolerance_m": 0.003,
+          "transfer_correction_attempts": 3,
+          "source_lift_segment_length_m": 0.07,
+          "source_holder_static_friction": 0.0,
+          "source_holder_dynamic_friction": 0.0,
+          "replay_seed_reset_only": false
+        }
+      },
+      "migration_status": "experimental_geometry_only"
+    },
+    {
+      "task_id": 6,
+      "task_name": "pick_key_from_moving_source_and_insert_into_table_fixture",
+      "language_instruction": "Pick the key from the moving source lock and insert it into the target lock on the table",
+      "scene_layout": "conveyor/conveyor_insertion.usda",
+      "problem_name": "tactile_dynamic_manipulation",
+      "bddl_file": "",
+      "obj_of_interest": [],
+      "targets": [],
+      "goals": [],
+      "fixtures": {},
+      "objects": {},
+      "regions": [],
+      "goal_conditioning_options": [],
+      "episode_config": {
+        "task_type": "conveyor_precision_insert",
+        "object_family": "key",
+        "profile": "platform_to_table",
+        "layout_kind": "single_pair",
+        "moving_asset": "source_assembly",
+        "target_payload_index": 0,
+        "target_fixture_index": 0,
+        "target_gear_index": 0,
+        "target_base_index": 0,
+        "platform_x_offset_range_m": [
+          -0.045,
+          -0.015
+        ],
+        "platform_entry_phase_range_m": [
+          0.0,
+          0.025
+        ],
+        "moving_asset_x_offset_m": 0.0,
+        "fixture_position_range_m": {
+          "x": [
+            -0.19,
+            -0.11
+          ],
+          "y": [
+            0.35,
+            0.45
+          ]
+        },
+        "base_position_range_m": {
+          "x": [
+            -0.19,
+            -0.11
+          ],
+          "y": [
+            0.35,
+            0.45
+          ]
+        },
+        "selector_kind": "single_target",
+        "selector_value": "steel",
+        "platform_size_m": [
+          0.15,
+          0.15,
+          0.02
+        ],
+        "belt_speed_range_mps": [
+          0.02,
+          0.032
+        ],
+        "target_motion_policy": "continuous",
+        "carrier_motion_policy": "dynamic_one_way_yielding",
+        "carrier_reverse_velocity_tolerance_mps": 0.001,
+        "carrier_max_speed_factor": 1.25,
+        "carrier_mount": "bolted_source_holder",
+        "fixture_mount_clearance_m": 0.003,
+        "base_mount_clearance_m": 0.0,
+        "press_fit_static_friction": 1.1,
+        "press_fit_dynamic_friction": 0.85,
+        "episode_timeout_s": 36.0,
+        "payload_scale": 1.0,
+        "fixture_scale": 1.0,
+        "source_holder_scale": 1.5,
+        "payload_mass_kg": 0.008,
+        "payload_linear_damping": 0.2,
+        "payload_angular_damping": 0.2,
+        "gear_scale": 1.0,
+        "base_scale": 1.0,
+        "gear_mass_kg": 0.008,
+        "gear_linear_damping": 0.2,
+        "gear_angular_damping": 0.2,
+        "fixture_yaw_deg": 0.0,
+        "base_yaw_deg": 0.0,
+        "goal_offset_in_fixture_m": [
+          -0.00343,
+          0.00015,
+          0.11677
+        ],
+        "goal_offset_in_base_m": [
+          -0.00343,
+          0.00015,
+          0.11677
+        ],
+        "bore_axis_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "expert_release_compensation_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "success_xy_tolerance_m": 0.004,
+        "success_z_tolerance_m": 0.005,
+        "success_axis_alignment": 0.94,
+        "success_stable_steps": 3,
+        "release_after_insert": false,
+        "source_holder_type": "key_slot",
+        "source_payload_offset_m": [
+          -0.00343,
+          0.00015,
+          0.11677
+        ],
+        "grasp_offset_m": 0.0225,
+        "tactile_target_depth_mm": 3.0,
+        "tactile_max_depth_mm": 5.0,
+        "tactile_critical_depth_mm": 4.55,
+        "grasp_lock_command": -0.75,
+        "source_interaction_contract": "physical_contact_v1",
+        "replay_seed_reset_only": true,
+        "exit_policy": "fail_if_moving_source_leaves_before_grasp",
+        "payload_instances": [
+          {
+            "material": "steel",
+            "role": "moving_source"
+          }
+        ],
+        "fixture_instances": [
+          {
+            "material": "steel",
+            "role": "table_target"
+          }
+        ],
+        "gear_instances": [
+          {
+            "material": "steel",
+            "role": "moving_source"
+          }
+        ],
+        "base_instances": [
+          {
+            "material": "steel",
+            "role": "table_target"
+          }
+        ],
+        "source_fixture_instances": [
+          {
+            "material": "steel",
+            "role": "moving_source_fixture"
+          }
+        ],
+        "contact_offset_m": 5e-05,
+        "rest_offset_m": -2e-05,
+        "payload_asset_type": "key_insert",
+        "fixture_asset_type": "key_slot",
+        "payload_density": 2000.0,
+        "expert_insert_steps": 28,
+        "insert_overshoot_m": 0.01,
+        "holder_asset_type": "key_slot",
+        "expert_family": "dynamic_conveyor",
+        "sensor_profile": "gsmini",
+        "moving_asset_xy_jitter_range_m": {
+          "x": [
+            -0.012,
+            0.012
+          ],
+          "y": [
+            -0.012,
+            0.012
+          ]
+        }
+      },
+      "workspace_bounds": {
+        "x_bounds": [
+          -1,
+          1
+        ],
+        "y_bounds": [
+          -1.5,
+          1
+        ],
+        "z_bounds": [
+          -1,
+          1
+        ]
+      },
+      "workspace_name": "floor",
+      "robot_base_pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "robot_base_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tactile_targets": [
+        "/World/TacDynamicKey/payload_0"
+      ],
+      "scene_backend": "custom_usd",
+      "source_task_id": 4,
+      "source_group": "dynamic_motion",
+      "sensor_profile": "gsmini",
+      "sensor_overrides": {
+        "gsmini": {
+          "coalesce_airborne_insertions": true,
+          "source_approach_repeat_factor": 1,
+          "transfer_settle_seconds": 0.2,
+          "transfer_repeat_factor": 1,
+          "episode_timeout_s": 60.0,
+          "grasp_offset_m": 0.0,
+          "grasp_lock_command": -1.0,
+          "grasp_lock_lift_m": 0.07,
+          "minimum_source_lift_m": 0.059,
+          "insert_overshoot_m": 0.0,
+          "insert_segment_length_m": 0.005,
+          "source_holder_static_friction": 0.0,
+          "source_holder_dynamic_friction": 0.0,
+          "replay_seed_reset_only": false
+        }
+      },
+      "migration_status": "experimental_geometry_only"
+    },
+    {
+      "task_id": 7,
+      "task_name": "pick_table_hdmi_and_insert_into_moving_fixture",
+      "language_instruction": "Pick the HDMI connector from the table and insert it into the HDMI slot mounted on the conveyor platform",
+      "scene_layout": "conveyor/conveyor_insertion.usda",
+      "problem_name": "tactile_dynamic_manipulation",
+      "bddl_file": "",
+      "obj_of_interest": [],
+      "targets": [],
+      "goals": [],
+      "fixtures": {},
+      "objects": {},
+      "regions": [],
+      "goal_conditioning_options": [],
+      "episode_config": {
+        "task_type": "conveyor_precision_insert",
+        "object_family": "hdmi",
+        "profile": "table_to_platform",
+        "layout_kind": "single_pair",
+        "moving_asset": "target_fixture",
+        "target_payload_index": 0,
+        "target_fixture_index": 0,
+        "target_gear_index": 0,
+        "target_base_index": 0,
+        "platform_x_offset_range_m": [
+          -0.045,
+          -0.015
+        ],
+        "platform_entry_phase_range_m": [
+          0.0,
+          0.025
+        ],
+        "moving_asset_x_offset_m": 0.0,
+        "payload_position_range_m": {
+          "x": [
+            -0.15,
+            -0.07
+          ],
+          "y": [
+            0.38,
+            0.48
+          ]
+        },
+        "gear_position_range_m": {
+          "x": [
+            -0.15,
+            -0.07
+          ],
+          "y": [
+            0.38,
+            0.48
+          ]
+        },
+        "selector_kind": "single_source",
+        "selector_value": "steel",
+        "platform_size_m": [
+          0.16,
+          0.15,
+          0.02
+        ],
+        "belt_speed_range_mps": [
+          0.006,
+          0.01
+        ],
+        "target_prediction_horizon_s": 0.75,
+        "target_motion_policy": "continuous",
+        "carrier_motion_policy": "dynamic_one_way_yielding",
+        "carrier_reverse_velocity_tolerance_mps": 0.001,
+        "carrier_max_speed_factor": 1.25,
+        "carrier_mount": "bolted_fixture",
+        "fixture_mount_clearance_m": 0.003,
+        "base_mount_clearance_m": 0.003,
+        "press_fit_static_friction": 2.0,
+        "press_fit_dynamic_friction": 1.5,
+        "episode_timeout_s": 36.0,
+        "payload_scale": 1.0,
+        "fixture_scale": 1.0,
+        "source_holder_scale": 1.0,
+        "payload_mass_kg": 0.012,
+        "payload_linear_damping": 0.5,
+        "payload_angular_damping": 0.5,
+        "gear_scale": 1.0,
+        "base_scale": 1.0,
+        "gear_mass_kg": 0.012,
+        "gear_linear_damping": 0.5,
+        "gear_angular_damping": 0.5,
+        "fixture_yaw_deg": 0.0,
+        "base_yaw_deg": 0.0,
+        "goal_offset_in_fixture_m": [
+          0.0,
+          0.0,
+          0.005
+        ],
+        "goal_offset_in_base_m": [
+          0.0,
+          0.0,
+          0.005
+        ],
+        "bore_axis_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "expert_release_compensation_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "success_xy_tolerance_m": 0.004,
+        "success_z_tolerance_m": 0.006,
+        "success_axis_alignment": 0.94,
+        "success_stable_steps": 3,
+        "release_after_insert": false,
+        "source_holder_type": "hdmi_slot",
+        "source_payload_offset_m": [
+          0.0,
+          0.0,
+          0.0028
+        ],
+        "grasp_offset_m": 0.007,
+        "exit_policy": "fail_if_moving_fixture_leaves_before_insert",
+        "payload_instances": [
+          {
+            "material": "steel",
+            "role": "table_source"
+          }
+        ],
+        "fixture_instances": [
+          {
+            "material": "steel",
+            "role": "moving_target"
+          }
+        ],
+        "gear_instances": [
+          {
+            "material": "steel",
+            "role": "table_source"
+          }
+        ],
+        "base_instances": [
+          {
+            "material": "steel",
+            "role": "moving_target"
+          }
+        ],
+        "contact_offset_m": 0.0003,
+        "rest_offset_m": 0.0,
+        "payload_asset_type": "hdmi_connector",
+        "fixture_asset_type": "hdmi_slot",
+        "target_fixture_opening_x_m": 0.022,
+        "target_fixture_opening_y_m": 0.022,
+        "target_fixture_wall_height_m": 0.005,
+        "payload_density": 1000.0,
+        "expert_insert_steps": 28,
+        "insert_xy_correction_limit_m": 0.006,
+        "transport_lift_distance_m": 0.2,
+        "holder_asset_type": "hdmi_slot",
+        "expert_family": "dynamic_conveyor",
+        "sensor_profile": "gsmini",
+        "moving_asset_xy_jitter_range_m": {
+          "x": [
+            -0.012,
+            0.012
+          ],
+          "y": [
+            -0.012,
+            0.012
+          ]
+        }
+      },
+      "workspace_bounds": {
+        "x_bounds": [
+          -1,
+          1
+        ],
+        "y_bounds": [
+          -1.5,
+          1
+        ],
+        "z_bounds": [
+          -1,
+          1
+        ]
+      },
+      "workspace_name": "floor",
+      "robot_base_pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "robot_base_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tactile_targets": [
+        "/World/TacDynamicHdmi/payload_0"
+      ],
+      "scene_backend": "custom_usd",
+      "source_task_id": 3,
+      "source_group": "dynamic_motion",
+      "sensor_profile": "gsmini",
+      "sensor_overrides": {
+        "gsmini": {
+          "grasp_offset_m": 0.0,
+          "fine_align_tolerance_m": 0.004,
+          "grasp_lock_command": -0.95,
+          "source_grasp_height_steps": 16,
+          "source_holder_static_friction": 0.0,
+          "source_holder_dynamic_friction": 0.0,
+          "source_payload_offset_m": [
+            0.0,
+            0.0,
+            0.0028
+          ],
+          "source_grasp_settle_seconds": 0.5,
+          "transport_clearance_m": 0.14,
+          "transport_steps_multiplier": 2,
+          "transport_vertical_clearance_m": 0.14,
+          "transport_vertical_clearance_steps": 8
+        }
+      },
+      "migration_status": "experimental_geometry_only"
+    },
+    {
+      "task_id": 8,
+      "task_name": "pick_hdmi_from_moving_source_and_insert_into_table_fixture",
+      "language_instruction": "Pick the HDMI connector and insert it into the HDMI slot on the table",
+      "scene_layout": "conveyor/conveyor_insertion.usda",
+      "problem_name": "tactile_dynamic_manipulation",
+      "bddl_file": "",
+      "obj_of_interest": [],
+      "targets": [],
+      "goals": [],
+      "fixtures": {},
+      "objects": {},
+      "regions": [],
+      "goal_conditioning_options": [],
+      "episode_config": {
+        "task_type": "conveyor_precision_insert",
+        "object_family": "hdmi",
+        "profile": "platform_to_table",
+        "layout_kind": "single_pair",
+        "moving_asset": "source_assembly",
+        "target_payload_index": 0,
+        "target_fixture_index": 0,
+        "target_gear_index": 0,
+        "target_base_index": 0,
+        "platform_x_offset_range_m": [
+          -0.045,
+          -0.015
+        ],
+        "platform_entry_phase_range_m": [
+          0.0,
+          0.025
+        ],
+        "moving_asset_x_offset_m": 0.0,
+        "fixture_position_range_m": {
+          "x": [
+            -0.15,
+            -0.07
+          ],
+          "y": [
+            0.18,
+            0.28
+          ]
+        },
+        "base_position_range_m": {
+          "x": [
+            -0.15,
+            -0.07
+          ],
+          "y": [
+            0.18,
+            0.28
+          ]
+        },
+        "selector_kind": "single_target",
+        "selector_value": "steel",
+        "platform_size_m": [
+          0.1248,
+          0.1368,
+          0.02
+        ],
+        "belt_speed_range_mps": [
+          0.025,
+          0.04
+        ],
+        "target_motion_policy": "continuous",
+        "carrier_motion_policy": "dynamic_one_way_yielding",
+        "carrier_reverse_velocity_tolerance_mps": 0.001,
+        "carrier_max_speed_factor": 1.25,
+        "carrier_mount": "bolted_source_holder",
+        "fixture_mount_clearance_m": 0.003,
+        "base_mount_clearance_m": 0.0,
+        "press_fit_static_friction": 1.1,
+        "press_fit_dynamic_friction": 0.85,
+        "episode_timeout_s": 36.0,
+        "payload_scale": 1.0,
+        "fixture_scale": 1.0,
+        "source_holder_scale": 1.0,
+        "payload_mass_kg": 0.012,
+        "payload_linear_damping": 0.2,
+        "payload_angular_damping": 0.2,
+        "gear_scale": 1.0,
+        "base_scale": 1.0,
+        "gear_mass_kg": 0.012,
+        "gear_linear_damping": 0.2,
+        "gear_angular_damping": 0.2,
+        "fixture_yaw_deg": 0.0,
+        "base_yaw_deg": 0.0,
+        "goal_offset_in_fixture_m": [
+          0.0,
+          0.0,
+          0.005
+        ],
+        "goal_offset_in_base_m": [
+          0.0,
+          0.0,
+          0.005
+        ],
+        "bore_axis_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "expert_release_compensation_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "success_xy_tolerance_m": 0.004,
+        "success_z_tolerance_m": 0.006,
+        "success_axis_alignment": 0.94,
+        "success_stable_steps": 3,
+        "release_after_insert": false,
+        "source_holder_type": "hdmi_slot",
+        "source_payload_offset_m": [
+          0.0,
+          0.0,
+          0.0028
+        ],
+        "grasp_offset_m": 0.007,
+        "grasp_center_error_tolerance_m": 0.02,
+        "precision_grip_extra_close_m": 0.0,
+        "precision_grip_lock_steps": 1,
+        "precision_grip_lock_at_current_pose": false,
+        "exit_policy": "fail_if_moving_source_leaves_before_grasp",
+        "payload_instances": [
+          {
+            "material": "steel",
+            "role": "moving_source"
+          }
+        ],
+        "fixture_instances": [
+          {
+            "material": "steel",
+            "role": "table_target"
+          }
+        ],
+        "gear_instances": [
+          {
+            "material": "steel",
+            "role": "moving_source"
+          }
+        ],
+        "base_instances": [
+          {
+            "material": "steel",
+            "role": "table_target"
+          }
+        ],
+        "contact_offset_m": 0.0003,
+        "rest_offset_m": 0.0,
+        "payload_asset_type": "hdmi_connector",
+        "fixture_asset_type": "hdmi_slot",
+        "target_fixture_opening_x_m": 0.022,
+        "target_fixture_opening_y_m": 0.022,
+        "target_fixture_wall_height_m": 0.005,
+        "payload_density": 1000.0,
+        "expert_insert_steps": 28,
+        "holder_asset_type": "hdmi_slot",
+        "expert_family": "dynamic_conveyor",
+        "sensor_profile": "gsmini",
+        "moving_asset_xy_jitter_range_m": {
+          "x": [
+            -0.012,
+            0.012
+          ],
+          "y": [
+            -0.012,
+            0.012
+          ]
+        }
+      },
+      "workspace_bounds": {
+        "x_bounds": [
+          -1,
+          1
+        ],
+        "y_bounds": [
+          -1.5,
+          1
+        ],
+        "z_bounds": [
+          -1,
+          1
+        ]
+      },
+      "workspace_name": "floor",
+      "robot_base_pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "robot_base_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tactile_targets": [
+        "/World/TacDynamicHdmi/payload_0"
+      ],
+      "scene_backend": "custom_usd",
+      "source_task_id": 2,
+      "source_group": "dynamic_motion",
+      "sensor_profile": "gsmini",
+      "sensor_overrides": {
+        "gsmini": {
+          "success_axial_range_m": [-0.0005, 0.0005],
+          "coalesce_airborne_insertions": true,
+          "source_approach_repeat_factor": 1,
+          "transfer_settle_seconds": 0.2,
+          "episode_timeout_s": 75.0,
+          "belt_speed_range_mps": [
+            0.012,
+            0.018
+          ],
+          "grasp_offset_m": 0.0,
+          "grasp_lock_command": -1.0,
+          "grasp_lock_lift_m": 0.004,
+          "minimum_source_lift_m": 0.02,
+          "insert_overshoot_m": 0.0035,
+          "insert_segment_length_m": 0.005,
+          "insert_xy_correction_limit_m": 0.0,
+          "source_grasp_prediction_steps": 1.0,
+          "transfer_repeat_factor": 1,
+          "source_holder_static_friction": 0.0,
+          "source_holder_dynamic_friction": 0.0,
+          "source_payload_offset_m": [
+            0.0,
+            0.0,
+            0.0028
+          ]
+        }
+      },
+      "migration_status": "experimental_geometry_only"
+    },
+    {
+      "task_id": 9,
+      "task_name": "pick_table_gear_and_insert_into_moving_fixture",
+      "language_instruction": "Pick the gear from the table and press it into the gear base mounted on the conveyor platform",
+      "scene_layout": "conveyor/conveyor_insertion.usda",
+      "problem_name": "tactile_dynamic_manipulation",
+      "bddl_file": "",
+      "obj_of_interest": [],
+      "targets": [],
+      "goals": [],
+      "fixtures": {},
+      "objects": {},
+      "regions": [],
+      "goal_conditioning_options": [],
+      "episode_config": {
+        "task_type": "conveyor_gear_press_fit",
+        "object_family": "gear",
+        "profile": "table_to_platform",
+        "layout_kind": "single_pair",
+        "moving_asset": "target_fixture",
+        "target_payload_index": 0,
+        "target_fixture_index": 0,
+        "target_gear_index": 0,
+        "target_base_index": 0,
+        "platform_x_offset_range_m": [
+          -0.045,
+          -0.015
+        ],
+        "platform_entry_phase_range_m": [
+          0.0,
+          0.025
+        ],
+        "moving_asset_x_offset_m": 0.038375885,
+        "payload_position_range_m": {
+          "x": [
+            -0.19,
+            -0.11
+          ],
+          "y": [
+            0.35,
+            0.45
+          ]
+        },
+        "gear_position_range_m": {
+          "x": [
+            -0.19,
+            -0.11
+          ],
+          "y": [
+            0.35,
+            0.45
+          ]
+        },
+        "selector_kind": "single_source",
+        "selector_value": "steel",
+        "platform_size_m": [
+          0.23,
+          0.15,
+          0.02
+        ],
+        "belt_speed_range_mps": [
+          0.008,
+          0.012
+        ],
+        "target_motion_policy": "continuous",
+        "carrier_motion_policy": "dynamic_one_way_yielding",
+        "carrier_reverse_velocity_tolerance_mps": 0.001,
+        "carrier_max_speed_factor": 1.25,
+        "carrier_mount": "bolted_fixture",
+        "fixture_mount_clearance_m": 0.003,
+        "base_mount_clearance_m": 0.003,
+        "press_fit_static_friction": 2.0,
+        "press_fit_dynamic_friction": 1.5,
+        "episode_timeout_s": 36.0,
+        "payload_scale": 0.85,
+        "fixture_scale": 0.84575,
+        "source_holder_scale": 1.0,
+        "payload_mass_kg": 0.1,
+        "payload_linear_damping": 2.0,
+        "payload_angular_damping": 2.0,
+        "gear_scale": 0.85,
+        "base_scale": 0.84575,
+        "gear_mass_kg": 0.1,
+        "gear_linear_damping": 2.0,
+        "gear_angular_damping": 2.0,
+        "fixture_yaw_deg": 0.0,
+        "base_yaw_deg": 0.0,
+        "goal_offset_in_fixture_m": [
+          -0.038375885,
+          0.0,
+          0.0064228125
+        ],
+        "goal_offset_in_base_m": [
+          -0.038375885,
+          0.0,
+          0.0064228125
+        ],
+        "bore_axis_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "expert_release_compensation_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "success_xy_tolerance_m": 0.004,
+        "success_z_tolerance_m": 0.006,
+        "success_axis_alignment": 0.97,
+        "success_contract": "conveyor_v1",
+        "success_stable_steps": 3,
+        "insert_xy_correction_limit_m": 0.0015,
+        "insert_realign_trigger_m": 0.0012,
+        "insert_realign_attempts": 2,
+        "insert_realign_correction_limit_m": 0.002,
+        "release_after_insert": true,
+        "source_holder_type": null,
+        "source_payload_offset_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "grasp_offset_m": 0.005,
+        "transport_lift_distance_m": 0.16,
+        "transport_clearance_m": 0.14,
+        "transport_vertical_clearance_m": 0.14,
+        "transport_vertical_clearance_steps": 8,
+        "grasp_yaw_degrees": 0.0,
+        "exit_policy": "fail_if_moving_fixture_leaves_before_insert",
+        "payload_instances": [
+          {
+            "material": "steel",
+            "role": "table_source"
+          }
+        ],
+        "fixture_instances": [
+          {
+            "material": "steel",
+            "role": "moving_target"
+          }
+        ],
+        "gear_instances": [
+          {
+            "material": "steel",
+            "role": "table_source"
+          }
+        ],
+        "base_instances": [
+          {
+            "material": "steel",
+            "role": "moving_target"
+          }
+        ],
+        "require_contact": true,
+        "enable_force_threshold": "True",
+        "force_threshold": 0.25,
+        "contact_sensor_name": "contact_fixture_payload",
+        "contact_offset_m": 0.0002,
+        "rest_offset_m": 0.0,
+        "payload_asset_type": "gear_large",
+        "fixture_asset_type": "gear_base",
+        "expert_family": "dynamic_conveyor",
+        "sensor_profile": "gsmini",
+        "moving_asset_xy_jitter_range_m": {
+          "x": [
+            -0.012,
+            0.012
+          ],
+          "y": [
+            -0.012,
+            0.012
+          ]
+        }
+      },
+      "workspace_bounds": {
+        "x_bounds": [
+          -1,
+          1
+        ],
+        "y_bounds": [
+          -1.5,
+          1
+        ],
+        "z_bounds": [
+          -1,
+          1
+        ]
+      },
+      "workspace_name": "floor",
+      "robot_base_pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "robot_base_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tactile_targets": [
+        "/World/TacDynamicGear/gear_0"
+      ],
+      "scene_backend": "custom_usd",
+      "source_task_id": 1,
+      "source_group": "dynamic_motion",
+      "sensor_profile": "gsmini",
+      "sensor_overrides": {
+        "gsmini": {
+          "coalesce_airborne_insertions": true,
+          "source_approach_repeat_factor": 1,
+          "transfer_settle_seconds": 0.2,
+          "platform_drop_clearance_m": 0.0,
+          "payload_mass_kg": 0.1,
+          "fixture_mass_kg": 0.1,
+          "episode_timeout_s": 60.0,
+          "grasp_lock_lift_m": 0.16,
+          "grasp_offset_m": -0.02,
+          "source_grasp_quaternion_wxyz": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "grasp_lock_command": -1.0,
+          "transfer_repeat_factor": 1,
+          "source_lift_segment_length_m": 0.16
+        }
+      },
+      "migration_status": "experimental_geometry_only"
+    },
+    {
+      "task_id": 10,
+      "task_name": "pick_gear_from_moving_source_and_insert_into_table_fixture",
+      "language_instruction": "Pick the gear and press it into the gear base on the table",
+      "scene_layout": "conveyor/conveyor_insertion.usda",
+      "problem_name": "tactile_dynamic_manipulation",
+      "bddl_file": "",
+      "obj_of_interest": [],
+      "targets": [],
+      "goals": [],
+      "fixtures": {},
+      "objects": {},
+      "regions": [],
+      "goal_conditioning_options": [],
+      "episode_config": {
+        "task_type": "conveyor_gear_press_fit",
+        "object_family": "gear",
+        "profile": "platform_to_table",
+        "layout_kind": "single_pair",
+        "moving_asset": "source_assembly",
+        "target_payload_index": 0,
+        "target_fixture_index": 0,
+        "target_gear_index": 0,
+        "target_base_index": 0,
+        "platform_x_offset_range_m": [
+          -0.045,
+          -0.015
+        ],
+        "platform_entry_phase_range_m": [
+          0.0,
+          0.025
+        ],
+        "moving_asset_x_offset_m": 0.0,
+        "fixture_position_range_m": {
+          "x": [
+            -0.19,
+            -0.11
+          ],
+          "y": [
+            0.35,
+            0.45
+          ]
+        },
+        "base_position_range_m": {
+          "x": [
+            -0.19,
+            -0.11
+          ],
+          "y": [
+            0.35,
+            0.45
+          ]
+        },
+        "selector_kind": "single_target",
+        "selector_value": "steel",
+        "platform_size_m": [
+          0.1248,
+          0.1368,
+          0.02
+        ],
+        "belt_speed_range_mps": [
+          0.045,
+          0.065
+        ],
+        "target_motion_policy": "continuous",
+        "carrier_motion_policy": "dynamic_one_way_yielding",
+        "carrier_reverse_velocity_tolerance_mps": 0.001,
+        "carrier_max_speed_factor": 1.25,
+        "carrier_mount": "contact",
+        "fixture_mount_clearance_m": 0.003,
+        "base_mount_clearance_m": 0.0,
+        "press_fit_static_friction": 1.1,
+        "press_fit_dynamic_friction": 0.85,
+        "episode_timeout_s": 36.0,
+        "payload_scale": 0.85,
+        "fixture_scale": 0.84575,
+        "source_holder_scale": 1.0,
+        "payload_mass_kg": 0.05,
+        "payload_linear_damping": 0.0,
+        "payload_angular_damping": 0.0,
+        "gear_scale": 0.85,
+        "base_scale": 0.84575,
+        "gear_mass_kg": 0.05,
+        "gear_linear_damping": 0.0,
+        "gear_angular_damping": 0.0,
+        "fixture_yaw_deg": 0.0,
+        "base_yaw_deg": 0.0,
+        "goal_offset_in_fixture_m": [
+          -0.038375885,
+          0.0,
+          0.0064228125
+        ],
+        "goal_offset_in_base_m": [
+          -0.038375885,
+          0.0,
+          0.0064228125
+        ],
+        "bore_axis_local": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "expert_release_compensation_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "success_xy_tolerance_m": 0.004,
+        "success_z_tolerance_m": 0.006,
+        "success_axis_alignment": 0.97,
+        "success_contract": "conveyor_v1",
+        "success_stable_steps": 3,
+        "insert_xy_correction_limit_m": 0.004,
+        "insert_realign_trigger_m": 0.0012,
+        "insert_realign_attempts": 2,
+        "insert_realign_correction_limit_m": 0.004,
+        "release_after_insert": true,
+        "source_holder_type": null,
+        "source_payload_offset_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "grasp_offset_m": 0.005,
+        "insert_segments": 20,
+        "insert_settle_steps": 3,
+        "release_steps": 4,
+        "release_follow_target_motion": false,
+        "exit_policy": "fail_if_moving_source_leaves_before_grasp",
+        "payload_instances": [
+          {
+            "material": "steel",
+            "role": "moving_source"
+          }
+        ],
+        "fixture_instances": [
+          {
+            "material": "steel",
+            "role": "table_target"
+          }
+        ],
+        "gear_instances": [
+          {
+            "material": "steel",
+            "role": "moving_source"
+          }
+        ],
+        "base_instances": [
+          {
+            "material": "steel",
+            "role": "table_target"
+          }
+        ],
+        "require_contact": true,
+        "enable_force_threshold": "True",
+        "force_threshold": 0.25,
+        "contact_sensor_name": "contact_fixture_payload",
+        "contact_offset_m": 0.0002,
+        "rest_offset_m": 0.0,
+        "payload_asset_type": "gear_large",
+        "fixture_asset_type": "gear_base",
+        "expert_family": "dynamic_conveyor",
+        "sensor_profile": "gsmini",
+        "moving_asset_xy_jitter_range_m": {
+          "x": [
+            -0.012,
+            0.012
+          ],
+          "y": [
+            -0.012,
+            0.012
+          ]
+        }
+      },
+      "workspace_bounds": {
+        "x_bounds": [
+          -1,
+          1
+        ],
+        "y_bounds": [
+          -1.5,
+          1
+        ],
+        "z_bounds": [
+          -1,
+          1
+        ]
+      },
+      "workspace_name": "floor",
+      "robot_base_pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "robot_base_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "tactile_targets": [
+        "/World/TacDynamicGear/gear_0"
+      ],
+      "scene_backend": "custom_usd",
+      "source_task_id": 0,
+      "source_group": "dynamic_motion",
+      "sensor_profile": "gsmini",
+      "sensor_overrides": {
+        "gsmini": {
+          "payload_mass_kg": 0.05,
+          "episode_timeout_s": 60.0,
+          "belt_speed_range_mps": [
+            0.015,
+            0.02
+          ],
+          "grasp_offset_m": -0.005,
+          "source_lift_segment_length_m": 0.01,
+          "source_grasp_quaternion_wxyz": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "grasp_lock_command": -1.0,
+          "insert_xy_correction_limit_m": 0.0015,
+          "insert_realign_correction_limit_m": 0.002
+        }
+      },
+      "migration_status": "experimental_geometry_only"
+    }
+  ],
+  "sensor_profiles": [
+    "gsmini"
+  ],
+  "validation": {
+    "primary_sensor": "gsmini"
+  }
+}

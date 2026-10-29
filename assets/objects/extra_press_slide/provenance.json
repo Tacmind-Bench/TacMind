@@ -1,0 +1,132 @@
+{
+  "asset": "extra_press_slide",
+  "sources": {
+    "pa12_material_datasheet": {
+      "relative_path": "objects/extra_gear_transmission/pa12_material_source.pdf",
+      "url": "https://www.tth.com/hubfs/Website/PDFs/HP%20Material%20Data%20Sheets/HP%20PA%2012%20Material%20Data%20Sheet.pdf?hsLang=en",
+      "usage": "HP typical solid-part density 1010 kg/m3, ASTM D792; engineering material selection, not hardware calibration."
+    }
+  },
+  "model": "Independent solid PA12 plunger with volume-derived 14.09152 g mass and exact union inertia; unchanged collision boxes, guided carriage, passive bearings, spring and mechanical keeper. Other component masses remain engineering approximations; no hardware calibration.",
+  "research_sources": [
+    "https://torl-vla.github.io/",
+    "https://global.sugatsune.com/-/media/pim/SUGATSUNE/SUGATSUNE_GLOBAL/Manual/1208/1208_2_ak60_akc60_e"
+  ],
+  "evidence_scope": "Tactile latch manipulation and manufacturer push-before-pull operation are precedents; this two-axis fixture is an engineering extension, not either source latch.",
+  "body_mass_properties": {
+    "Base": {
+      "mass_kg": 0.2,
+      "center_of_mass_m": [
+        0.022507475083056477,
+        0.0,
+        0.008918604651162789
+      ],
+      "diagonal_inertia_kg_m2": [
+        0.00011119234689401436,
+        0.0002419698708715505,
+        0.00031067829917133446
+      ],
+      "principal_axes_wxyz": [
+        4.163340139238803e-16,
+        0.9999990880172315,
+        6.50521896756063e-19,
+        0.001350542374520383
+      ]
+    },
+    "Carriage": {
+      "mass_kg": 0.025,
+      "center_of_mass_m": [
+        -1.3552527156068805e-19,
+        0.0,
+        0.005703703703703704
+      ],
+      "diagonal_inertia_kg_m2": [
+        1.685768175582991e-06,
+        1.790740740740741e-06,
+        2.167249657064472e-06
+      ],
+      "principal_axes_wxyz": [
+        0.7071067811865477,
+        -0.7071067811865472,
+        0.0,
+        0.0
+      ]
+    },
+    "Plunger": {
+      "mass_kg": 0.01409152,
+      "center_of_mass_m": [
+        0.0007201834862385325,
+        0.0,
+        -0.01731651376146789
+      ],
+      "diagonal_inertia_kg_m2": [
+        8.784962972332387e-07,
+        9.342446676941892e-06,
+        9.400282326375325e-06
+      ],
+      "principal_axes_wxyz": [
+        7.662355121333445e-17,
+        0.7244659161868431,
+        0.0,
+        -0.6893106239450819
+      ]
+    }
+  },
+  "joints": {
+    "slide": {
+      "axis": "X",
+      "limits_m": [
+        0.0,
+        0.05
+      ],
+      "stiffness_n_m": 0.0,
+      "damping_n_s_m": 0.25,
+      "spring_rest_position_m": 0.0
+    },
+    "press": {
+      "axis": "Z",
+      "limits_m": [
+        -0.008,
+        0.0
+      ],
+      "stiffness_n_m": 25.0,
+      "damping_n_s_m": 0.4,
+      "spring_rest_position_m": 0.006
+    }
+  },
+  "physics_material": {
+    "static_friction": 0.6,
+    "dynamic_friction": 0.5,
+    "restitution": 0.0,
+    "combine": "average"
+  },
+  "contact_offset_m": 0.0003,
+  "rest_offset_m": 0.0,
+  "self_collisions": true,
+  "spring_preload_n": 0.15,
+  "nominal_clearance_depth_m": 0.005,
+  "bounds_m": [
+    [
+      -0.04,
+      -0.032,
+      0.0
+    ],
+    [
+      0.08499999999999999,
+      0.032,
+      0.109
+    ]
+  ],
+  "swept_bounds_m": [
+    [
+      -0.04,
+      -0.032,
+      0.0
+    ],
+    [
+      0.085,
+      0.032,
+      0.109
+    ]
+  ]
+}

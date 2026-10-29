@@ -1,0 +1,14 @@
+# Measured GSmini simulation baseline. Install Isaac Lab first, then these pins.
+# Install torch/torchvision separately from the cu128 index (README.md#installation).
+numpy==1.26.4
+scipy==1.17.1
+h5py==3.16.0
+hdf5plugin==7.1.0
+av==15.1.0
+warp-lang==1.10.1
+trimesh==5.1.0
+Pillow==11.3.0
+opencv-python-headless==4.11.0.86
+PyYAML==6.0.3
+imageio==2.37.4
+packaging==25.0

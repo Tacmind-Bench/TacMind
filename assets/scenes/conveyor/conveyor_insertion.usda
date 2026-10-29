@@ -1,0 +1,104 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    subLayers = [@conveyor_realistic_platform_pick_place.usda@]
+    upAxis = "Z"
+)
+
+# Keep the warehouse frame and build one continuous PhysX conveyor surface.
+# The sample's unpowered, overlapping free rollers are visual-only here.
+over "World"
+{
+    over "motion_commander_target" (
+        active = false
+    )
+    {
+    }
+
+    over "BeltTaskPlatform" (
+        prepend apiSchemas = ["PhysicsMassAPI"]
+    )
+    {
+        bool physics:kinematicEnabled = 0
+        float physics:density = 2700
+        double3 xformOp:scale = (0.1248, 0.1368, 0.02)
+        double3 xformOp:translate = (0.291335, 1.4776, -0.6747157)
+    }
+
+    over "Ur10Table"
+    {
+        over "ur10" (
+            active = false
+        )
+        {
+        }
+        over "ur10_mount" (
+            active = false
+        )
+        {
+        }
+        over "platform" (
+            active = false
+        )
+        {
+        }
+        over "Obstacles" (
+            active = false
+        )
+        {
+        }
+        over "conveyor"
+        {
+            over "Cube" (
+                active = false
+            )
+            {
+            }
+            over "Cylinders" (
+                active = false
+            )
+            {
+            }
+        }
+        over "conveyor_01"
+        {
+            over "Cube" (
+                active = false
+            )
+            {
+            }
+            over "Cylinders" (
+                active = false
+            )
+            {
+            }
+        }
+    }
+
+    def Material "ConveyorVisualMaterial"
+    {
+        token outputs:surface.connect = </World/ConveyorVisualMaterial/Shader.outputs:surface>
+
+        def Shader "Shader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (0.075, 0.085, 0.09)
+            float inputs:metallic = 0.02
+            float inputs:roughness = 0.82
+            token outputs:surface
+        }
+    }
+
+    # Isaac Lab spawns the physical collider from this visual's world bounds at runtime.
+    def Cube "ConveyorBeltSurface" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </World/ConveyorVisualMaterial>
+        double size = 1
+        double3 xformOp:scale = (0.46, 1.8425, 0.006)
+        double3 xformOp:translate = (0.291335, -0.27625, -0.7007157)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+}

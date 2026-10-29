@@ -1,0 +1,18 @@
+{
+  "policy_type": "opendm",
+  "dataset": {
+    "repo_id": "tacmind/gsmini_precision0",
+    "root": "data/lerobot/gsmini_precision0"
+  },
+  "output_dir": "data/runs/precision0_opendm",
+  "runtime_python": "/path/to/envs/opendm/bin/python",
+  "steps": 100000,
+  "batch_size": 4,
+  "chunk_size": 50,
+  "seed": 42,
+  "save_freq": 5000,
+  "num_workers": 4,
+  "learning_rate": 2.5e-05,
+  "model": {},
+  "pretrained_path": "/path/to/checkpoints/opendm"
+}

@@ -1,0 +1,12 @@
+{
+  "runtime_python": "/path/to/envs/lewm/bin/python",
+  "dataset_path": "/path/to/gsmini_lerobot_dataset",
+  "output_dir": "data/runs/taclewm_pretrain",
+  "backbone_dir": "/path/to/local/dinov2-with-registers-small",
+  "vision_backbone_dir": "/path/to/local/dinov3-vitb16",
+  "epochs": 20,
+  "devices": 3,
+  "batch_size": 32,
+  "num_workers": 8,
+  "seed": 3072
+}

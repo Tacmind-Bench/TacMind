@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tacmind"
+version = "0.1.0.dev0"
+description = "GSmini tactile manipulation benchmark: collection, training and evaluation"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "TacMind contributors"}]
+dependencies = []
+
+[project.scripts]
+tacmind = "benchmark.__main__:main"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+include = ["benchmark*", "policy", "policy.act", "policy.diffusion", "policy.adapters", "policy.tacmind0", "policy.act_tactile*"]
+exclude = ["*.__pycache__*", "tmp*", "third_party*", "test*", "examples*", "data*", "build*", "dist*",
+           "assets.objects*", "assets.robots*", "assets.scenes*", "assets.materials*", "assets.backgrounds*"]
+
+[tool.setuptools.package-data]
+benchmark = ["config/*.json", "config/*.txt", "tasks/*/tasks.json", "backends/gsmini/LICENSE.RoboLab"]
+policy = ["*.json", "*.md", "configs/*.json", "act/*.json", "diffusion/*.json"]
+"policy.act_tactile" = ["LICENSE", "LICENSE.UniVTAC", "detr/LICENSE"]
+"benchmark.backends.gsmini.tacex" = ["LICENSE.Tabero", "simulation_approaches/gpu_taxim/sim/LICENSE"]

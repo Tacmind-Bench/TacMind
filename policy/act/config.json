@@ -1,0 +1,38 @@
+{
+  "dataset": {
+    "repo_id": "tacmind/gsmini_precision0",
+    "root": "data/lerobot/gsmini_precision0",
+    "video_backend": "pyav",
+    "use_imagenet_stats": true,
+    "image_transforms": {
+      "enable": true,
+      "max_num_transforms": 3,
+      "tfs": {
+        "brightness": {"type": "ColorJitter", "kwargs": {"brightness": [0.9, 1.1]}},
+        "contrast": {"type": "ColorJitter", "kwargs": {"contrast": [0.9, 1.1]}},
+        "saturation": {"type": "ColorJitter", "kwargs": {"saturation": [0.9, 1.1]}},
+        "sharpness": {"type": "SharpnessJitter", "kwargs": {"sharpness": [0.9, 1.1]}}
+      }
+    }
+  },
+  "policy": {
+    "type": "act",
+    "device": "cuda:0",
+    "push_to_hub": false,
+    "n_obs_steps": 1,
+    "chunk_size": 32,
+    "n_action_steps": 1,
+    "temporal_ensemble_coeff": 0.01,
+    "normalization_mapping": {"VISUAL": "MEAN_STD", "STATE": "MEAN_STD", "ACTION": "MEAN_STD"},
+    "optimizer_lr": 0.00001,
+    "optimizer_lr_backbone": 0.00001
+  },
+  "output_dir": "data/runs/gsmini_precision0_act",
+  "seed": 42,
+  "steps": 100000,
+  "batch_size": 16,
+  "num_workers": 4,
+  "save_freq": 10000,
+  "eval_freq": 0,
+  "wandb": {"enable": false}
+}

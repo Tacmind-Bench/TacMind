@@ -1,0 +1,186 @@
+{
+  "asset": "extra_gear_transmission",
+  "bodies": [
+    "Base",
+    "Small",
+    "Medium",
+    "Large"
+  ],
+  "mass_kg": {
+    "Base": 0.05,
+    "Small": 0.05,
+    "Medium": 0.07160123857910965,
+    "Large": 0.05
+  },
+  "input_knob": {
+    "material": "PA12",
+    "density_kg_m3": 1010.0,
+    "outer_across_flats_m": 0.03,
+    "bore_across_flats_m": 0.01,
+    "bottom_m": 0.03,
+    "height_m": 0.03,
+    "collar_inner_radius_m": 0.015,
+    "collar_outer_radius_m": 0.017,
+    "collar_bottom_m": 0.027,
+    "collar_height_m": 0.003,
+    "original_medium_mass_kg": 0.05
+  },
+  "grasp_point_local_m": [
+    0.02025,
+    0.0,
+    0.0495
+  ],
+  "joints": [
+    "small_turn",
+    "medium_turn",
+    "large_turn"
+  ],
+  "tooth_counts": [
+    20,
+    40,
+    60
+  ],
+  "centers_x_m": [
+    0.05075,
+    0.02025,
+    -0.03025
+  ],
+  "assembly_phase_degrees": [
+    9.0,
+    0.0,
+    3.0
+  ],
+  "bearing_z_m": 0.0175,
+  "bearing_damping_nm_s": 0.001,
+  "output_load_damping_nm_s": 0.002,
+  "bounds_m": [
+    [
+      -0.075,
+      -0.0375,
+      0
+    ],
+    [
+      0.075,
+      0.0375,
+      0.06
+    ]
+  ],
+  "model": "Unscaled NVIDIA Factory gears with their original 50 g masses and passive bearings. Independently engineered hollow PA12 hex input knob and socket collar add volume-derived mass/inertia to Medium; no additional joint, attachment or output drive. The elevated grasp clears output gears during the yaw sweep. Small/Large retain 9/3 degree assembly phases. Tooth contacts alone transmit torque; material density is a manufacturer typical value, not hardware calibration.",
+  "sources": {
+    "base": {
+      "relative_path": "objects/factory_gear_base/factory_gear_base.usd"
+    },
+    "small": {
+      "relative_path": "objects/factory_gear_small/factory_gear_small.usd"
+    },
+    "medium": {
+      "relative_path": "objects/factory_gear_medium/factory_gear_medium.usd"
+    },
+    "large": {
+      "relative_path": "objects/factory_gear_large/factory_gear_large.usd"
+    },
+    "pa12_material_datasheet": {
+      "relative_path": "objects/extra_gear_transmission/pa12_material_source.pdf",
+      "url": "https://www.tth.com/hubfs/Website/PDFs/HP%20Material%20Data%20Sheets/HP%20PA%2012%20Material%20Data%20Sheet.pdf?hsLang=en",
+      "usage": "HP manufacturer publication 4AA6-4895EEP, November 2017; typical solid-part density 1.01 g/cm3, ASTM D792. Mirror hosts the manufacturer PDF; knob geometry is independently engineered."
+    }
+  },
+  "authored_bounds_m": [
+    [
+      -0.07500000298023224,
+      -0.03750000149011612,
+      0.0
+    ],
+    [
+      0.07500000298023224,
+      0.03750000149011612,
+      0.06000000044703484
+    ]
+  ],
+  "body_mass_properties": {
+    "Base": {
+      "mass_kg": 0.05,
+      "center_of_mass_m": [
+        0.0009552041973115364,
+        4.597728004900141e-11,
+        0.0033723066786152988
+      ],
+      "diagonal_inertia_kg_m2": [
+        2.2429698989213063e-05,
+        9.12560570563537e-05,
+        0.00011226269792181335
+      ],
+      "principal_axes_wxyz": [
+        0.9999953008811009,
+        1.1683737535762512e-09,
+        -0.003065650945019888,
+        2.4678535599246425e-10
+      ]
+    },
+    "Small": {
+      "mass_kg": 0.05,
+      "center_of_mass_m": [
+        1.3228879772198458e-10,
+        -3.788131352858487e-13,
+        -0.0010571075915847444
+      ],
+      "diagonal_inertia_kg_m2": [
+        2.8495346207895052e-06,
+        4.059741510883399e-06,
+        4.05974277166903e-06
+      ],
+      "principal_axes_wxyz": [
+        -0.7068762795469615,
+        -0.01805291858287085,
+        0.7068763044115808,
+        -0.018052916825602065
+      ]
+    },
+    "Medium": {
+      "mass_kg": 0.07160123857910965,
+      "center_of_mass_m": [
+        3.0651197421111037e-10,
+        3.1681813873252754e-12,
+        0.006816280003061632
+      ],
+      "diagonal_inertia_kg_m2": [
+        1.1731009995307057e-05,
+        2.2826317735215215e-05,
+        2.2826318843210722e-05
+      ],
+      "principal_axes_wxyz": [
+        -0.5006641006479645,
+        -0.4993349822266648,
+        0.5006641350755069,
+        -0.49933501549175946
+      ]
+    },
+    "Large": {
+      "mass_kg": 0.05,
+      "center_of_mass_m": [
+        5.484691678427139e-10,
+        2.840130252372455e-16,
+        -0.002998193417271353
+      ],
+      "diagonal_inertia_kg_m2": [
+        1.1483368595399239e-05,
+        1.1483369979559864e-05,
+        1.8158570592184102e-05
+      ],
+      "principal_axes_wxyz": [
+        0.999999999999989,
+        2.1628926427652813e-10,
+        7.0171636199664295e-09,
+        1.4828311451617541e-07
+      ]
+    }
+  },
+  "physics_material": {
+    "static_friction": 0.6,
+    "dynamic_friction": 0.5,
+    "restitution": 0,
+    "combine": "average"
+  },
+  "contact_offset_m": 0.0003,
+  "rest_offset_m": 0
+}

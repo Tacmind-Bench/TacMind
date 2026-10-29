@@ -1,0 +1,12 @@
+#usda 1.0
+(
+    defaultPrim = "blind_preview_open_parts_tray"
+    metersPerUnit = 1
+    subLayers = [@blind_preview_open_parts_tray.usd@]
+    upAxis = "Z"
+)
+
+over "blind_preview_open_parts_tray"
+{
+    bool physics:kinematicEnabled = true
+}

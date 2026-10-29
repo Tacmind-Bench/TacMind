@@ -1,0 +1,19 @@
+#usda 1.0
+(
+    defaultPrim = "panda"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "panda" (
+    prepend references = @./tacmind.usda@
+)
+{
+    # Task-specific effective contact spring, in N/m per PhysX contact.
+    # The inherited 10 N/m lets the grip penetrate to the housing. This
+    # approximation is explicitly uncalibrated; geometry and drives are shared.
+    over "PhysicsMaterial"
+    {
+        float physxMaterial:compliantContactStiffness = 2000
+    }
+}

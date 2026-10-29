@@ -1,0 +1,184 @@
+{
+  "asset": "extra_hanging_mug",
+  "bodies": [
+    "Mug"
+  ],
+  "mass_kg": 0.005569826903209591,
+  "body_radius_m": 0.03,
+  "body_center_x_m": -0.017,
+  "height_m": 0.04,
+  "wall_thickness_m": 0.0002,
+  "handle_center_m": [
+    -0.017,
+    0.0,
+    0.0698
+  ],
+  "handle_center_local_m": [
+    -0.017,
+    0.0,
+    0.0698
+  ],
+  "handle_plane_normal_local": [
+    0,
+    1,
+    0
+  ],
+  "handle_ellipse_radii_m": [
+    0.0175,
+    0.026
+  ],
+  "handle_tube_radius_m": 0.0038,
+  "handle_inner_ellipse_radii_xz_m": [
+    0.0137,
+    0.0222
+  ],
+  "handle_grip_center_local_m": [
+    -0.017,
+    0.0,
+    0.1348
+  ],
+  "handle_grip_size_m": [
+    0.018,
+    0.0175,
+    0.018
+  ],
+  "grasp_point_local_m": [
+    -0.017,
+    0.0,
+    0.1348
+  ],
+  "bounds_m": [
+    [
+      -0.047,
+      -0.03,
+      0.0
+    ],
+    [
+      0.013,
+      0.03,
+      0.1438
+    ]
+  ],
+  "collision_regions": {
+    "body": "Mug/Body",
+    "handle": "Mug/Handle",
+    "grip": "Mug/Grip"
+  },
+  "model": "Thin-wall PP cup with raised hollow bail, hollow upper grip and four integral contact rails. Actual material union at 900 kg/m3 determines mass, COM and inertia. Open bowl and handle tunnel remain open; no GSmini changes or calibrated hardware claim.",
+  "grip_shell_size_m": [
+    0.018,
+    0.0135,
+    0.018
+  ],
+  "handle_wall_thickness_m": 0.0004,
+  "grip_wall_thickness_m": 0.0005,
+  "body_top_m": 0.04075,
+  "density_kg_m3": 900.0,
+  "elastic_modulus_pa": 1600000000.0,
+  "material": "Moplen HP640J polypropylene engineering selection",
+  "material_source_url": "https://www.lyondellbasell.com/en/polymers/p/Moplen-HP640J/f2e8cae3-2ee3-4464-bf3b-153fdf2913f5",
+  "sources": {
+    "mug": {
+      "relative_path": "objects/025_mug/025_mug.usd"
+    }
+  },
+  "authored_bounds_m": [
+    [
+      -0.04699999839067459,
+      -0.029999999329447746,
+      0.0
+    ],
+    [
+      0.013000000268220901,
+      0.029999999329447746,
+      0.14380000531673431
+    ]
+  ],
+  "body_mass_properties": {
+    "Mug": {
+      "mass_kg": 0.005569826903209595,
+      "center_of_mass_m": [
+        -0.016999993259539662,
+        -2.125650210541388e-12,
+        0.07062960983730882
+      ],
+      "diagonal_inertia_kg_m2": [
+        2.033347610713879e-06,
+        1.3796881069111812e-05,
+        1.4286199858358363e-05
+      ],
+      "principal_axes_wxyz": [
+        -0.49999996082094894,
+        0.4999999596357267,
+        0.5000000403903306,
+        0.5000000391529875
+      ]
+    }
+  },
+  "physics_material": {
+    "static_friction": 0.6,
+    "dynamic_friction": 0.5,
+    "restitution": 0,
+    "combine": "average"
+  },
+  "contact_offset_m": 0.0003,
+  "rest_offset_m": 0,
+  "gripper_geometry": {
+    "scope": "Authored mesh geometry at zero pose; runtime joint limits and full grasp sweep still unvalidated.",
+    "body_bounds_in_hand_m": {
+      "gelpad_left": [
+        [
+          -0.010994055372700713,
+          0.0033336442149785282,
+          0.10552109943850896
+        ],
+        [
+          0.009840190311002516,
+          0.007333724470736345,
+          0.13077479069005735
+        ]
+      ],
+      "gelpad_right": [
+        [
+          -0.011072841678116138,
+          -0.007792575281143321,
+          0.10558850003370793
+        ],
+        [
+          0.00976140407521837,
+          -0.0037924725096606555,
+          0.13084219033967676
+        ]
+      ],
+      "gelsight_mini_case_left": [
+        [
+          -0.014443172473131176,
+          0.007338917726923612,
+          0.1024113537693764
+        ],
+        [
+          0.014443429201169554,
+          0.03158892376037317,
+          0.13441260545182132
+        ]
+      ],
+      "gelsight_mini_case_right": [
+        [
+          -0.014443249227031765,
+          -0.03175239264224231,
+          0.10240995060091776
+        ],
+        [
+          0.014443352447269183,
+          -0.007502387559855019,
+          0.13441120243356613
+        ]
+      ]
+    },
+    "zero_joint_inner_gel_gap_m": 0.007126116724639184,
+    "nominal_per_finger_travel_m": 0.04,
+    "nominal_max_inner_gel_gap_m": 0.08712611672463919,
+    "mug_body_diameter_m": 0.06,
+    "native_grasp_validated": false
+  }
+}

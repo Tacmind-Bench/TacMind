@@ -1,0 +1,35 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.0"
+    }
+    defaultPrim = "classification_ball"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "classification_ball"
+{
+    def Scope "Materials"
+    {
+        def Material "gray" (
+            prepend references = @./MaterialsLibrary.usdc@</Materials/gray>
+        )
+        {
+        }
+    }
+
+    over "Geometry"
+    {
+        over "ball"
+        {
+            over "ball_task_tabletennis" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </classification_ball/Materials/gray>
+            }
+        }
+    }
+}

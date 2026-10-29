@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-labelledby="title">
+  <title id="title">Installation</title>
+  <rect x=".5" y=".5" width="31" height="31" rx="9" fill="#eef8fb" stroke="#cfe2e8"/>
+  <g transform="translate(4 4)" fill="none" stroke="#216779" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11m-4-4 4 4 4-4M4 15v5a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"/></g>
+</svg>

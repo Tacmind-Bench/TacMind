@@ -1,0 +1,82 @@
+#usda 1.0
+(
+    defaultPrim = "bulb"
+    metersPerUnit = 1
+    subLayers = [
+        @tactile_bulb.usd@
+    ]
+    upAxis = "Z"
+)
+
+over "bulb" (
+    prepend apiSchemas = ["MaterialBindingAPI"]
+)
+{
+    rel material:binding:physics = </bulb/ContactMaterial>
+
+    over "Physics"
+    {
+        over "root_joint" (
+            active = false
+        )
+        {
+        }
+    }
+
+    def Material "ContactMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.5
+        float physics:restitution = 0
+        float physics:staticFriction = 0.5
+    }
+
+    over "Geometry"
+    {
+        over "bulb" (
+            prepend apiSchemas = ["PhysicsMassAPI"]
+        )
+        {
+            float physics:mass = 0.035
+
+            over "tactile_bulb_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexDecomposition"
+                bool physics:collisionEnabled = 0
+                float physxConvexDecompositionCollision:errorPercentage = 0.5
+                int physxConvexDecompositionCollision:maxConvexHulls = 128
+                float physxConvexDecompositionCollision:minThickness = 0.0001
+                bool physxConvexDecompositionCollision:shrinkWrap = 1
+                int physxConvexDecompositionCollision:voxelResolution = 2000000
+                token visibility = "invisible"
+            }
+
+            def Mesh "PrecisionCollision" (
+                prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxSDFMeshCollisionAPI", "PhysxCollisionAPI"]
+                prepend references = @./collision.usdc@
+            )
+            {
+                rel material:binding:physics = </bulb/ContactMaterial>
+                uniform token physics:approximation = "sdf"
+                bool physics:collisionEnabled = 0
+                float physxCollision:contactOffset = 0.0003
+                float physxCollision:restOffset = 0
+                uniform float physxSDFMeshCollision:sdfMargin = 0
+                uniform float physxSDFMeshCollision:sdfNarrowBandThickness = 0.01
+                uniform int physxSDFMeshCollision:sdfResolution = 512
+                token visibility = "invisible"
+            }
+
+            def Xform "DetailedCollision" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                prepend references = @./collision.usda@
+            )
+            {
+                rel material:binding:physics = </bulb/ContactMaterial>
+            }
+        }
+    }
+}

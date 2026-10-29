@@ -1,0 +1,105 @@
+{
+  "asset": "extra_slip_rod",
+  "bodies": [
+    "Rod"
+  ],
+  "mass_kg": 0.006048,
+  "density_kg_m3": 150.0,
+  "material": "balsa wood",
+  "elastic_modulus_pa": 3710000000.0,
+  "material_source_url": "https://ochromagroup.com/wp-content/uploads/2025/01/SpecSheets/Ochroma-balsa-wood-specs-v2.pdf",
+  "axis": "Z",
+  "length_m": 0.12,
+  "core_size_xy_m": [
+    0.02,
+    0.014
+  ],
+  "contact_strip_size_xy_m": [
+    0.004,
+    0.0035
+  ],
+  "contact_strip_centers_xy_m": [
+    [
+      -0.006,
+      -0.00875
+    ],
+    [
+      -0.006,
+      0.00875
+    ],
+    [
+      0.006,
+      -0.00875
+    ],
+    [
+      0.006,
+      0.00875
+    ]
+  ],
+  "grasp_point_local_m": [
+    0.0,
+    0.0,
+    0.02
+  ],
+  "bounds_m": [
+    [
+      -0.01,
+      -0.0105,
+      -0.06
+    ],
+    [
+      0.01,
+      0.0105,
+      0.06
+    ]
+  ],
+  "model": "Solid 120 mm balsa dowel: 20x14 mm core with two 4x3.5 mm longitudinal contact strips on each closing face. Constant axial section without stops. Five disjoint convex material solids preserve the channels; the visible closed union determines mass, COM and inertia at 150 kg/m3. No GSmini changes or hardware calibration.",
+  "sources": {
+    "balsa_material_datasheet": {
+      "relative_path": "objects/extra_push_block/balsa_material_source.pdf",
+      "url": "https://ochromagroup.com/wp-content/uploads/2025/01/SpecSheets/Ochroma-balsa-wood-specs-v2.pdf",
+      "usage": "Average dried density 150 kg/m3 and elastic modulus 3.71 GPa; geometry independently authored."
+    }
+  },
+  "authored_bounds_m": [
+    [
+      -0.009999999776482582,
+      -0.010499999858438969,
+      -0.05999999865889549
+    ],
+    [
+      0.009999999776482582,
+      0.010499999858438969,
+      0.05999999865889549
+    ]
+  ],
+  "body_mass_properties": {
+    "Rod": {
+      "mass_kg": 0.006047999852612606,
+      "center_of_mass_m": [
+        -5.470771380364392e-20,
+        0.0,
+        3.2824628282186347e-19
+      ],
+      "diagonal_inertia_kg_m2": [
+        3.661559892065112e-07,
+        7.418123497060497e-06,
+        7.463231489536286e-06
+      ],
+      "principal_axes_wxyz": [
+        -0.49999999999999994,
+        0.5,
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "physics_material": {
+    "static_friction": 0.6,
+    "dynamic_friction": 0.5,
+    "restitution": 0,
+    "combine": "average"
+  },
+  "contact_offset_m": 0.0003,
+  "rest_offset_m": 0
+}

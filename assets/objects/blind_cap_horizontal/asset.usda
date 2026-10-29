@@ -1,0 +1,19 @@
+#usda 1.0
+(
+    defaultPrim = "blind_cap_horizontal"
+    metersPerUnit = 1
+    subLayers = [@blind_cap_horizontal.usd@]
+    upAxis = "Z"
+)
+
+over "blind_cap_horizontal"
+{
+    over "PhysicsMaterials"
+    {
+        over "DefaultContact"
+        {
+            float physics:staticFriction = 0.8
+            float physics:dynamicFriction = 0.6
+        }
+    }
+}

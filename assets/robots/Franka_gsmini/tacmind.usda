@@ -1,0 +1,23 @@
+#usda 1.0
+(
+    defaultPrim = "panda"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "panda" (
+    prepend references = @./physx_rigid_gelpads.usd@
+)
+{
+    # This empty TCP marker has no physical geometry or authored mass/inertia.
+    # Represent it using the task's FrameTransformer offset, not a PhysX body.
+    over "panda_fingertip_centered" (active = false) {}
+    over "panda_hand" (
+        prepend apiSchemas = ["PhysicsFilteredPairsAPI"]
+    )
+    {
+        # Link 8 separates these overlapping parts of the same fixed wrist assembly.
+        prepend rel physics:filteredPairs = </panda/panda_link7>
+        over "panda_fingertip_centered" (active = false) {}
+    }
+}

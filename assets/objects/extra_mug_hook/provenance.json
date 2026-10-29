@@ -1,0 +1,109 @@
+{
+  "asset": "extra_mug_hook",
+  "bodies": [
+    "Hook"
+  ],
+  "mass_kg": 0.2,
+  "fixed_mount": true,
+  "shaft_radius_m": 0.002,
+  "hook_height_m": 0.12,
+  "tip_local_m": [
+    0,
+    -0.005,
+    0.138
+  ],
+  "seat_local_m": [
+    0,
+    0,
+    0.122
+  ],
+  "bend_local_m": [
+    0,
+    -0.005,
+    0.12
+  ],
+  "insertion_normal_local": [
+    0,
+    1,
+    0
+  ],
+  "post_bounds_m": [
+    [
+      -0.005,
+      0.075,
+      0.008
+    ],
+    [
+      0.005,
+      0.085,
+      0.12
+    ]
+  ],
+  "base_bounds_m": [
+    [
+      -0.03,
+      0.06,
+      0
+    ],
+    [
+      0.03,
+      0.1,
+      0.008
+    ]
+  ],
+  "bounds_m": [
+    [
+      -0.03,
+      -0.007,
+      0
+    ],
+    [
+      0.03,
+      0.1,
+      0.14
+    ]
+  ],
+  "model": "Independent fixed steel-like hook, post and base; compound engineering inertia.",
+  "sources": {},
+  "authored_bounds_m": [
+    [
+      -0.029999999329447746,
+      -0.007000000216066837,
+      0.0
+    ],
+    [
+      0.029999999329447746,
+      0.10000000149011612,
+      0.1379999965429306
+    ]
+  ],
+  "body_mass_properties": {
+    "Hook": {
+      "mass_kg": 0.2,
+      "center_of_mass_m": [
+        -2.808674535486648e-20,
+        0.0778030538901003,
+        0.027116529704749263
+      ],
+      "diagonal_inertia_kg_m2": [
+        7.840815815838398e-05,
+        0.00033899729340511857,
+        0.0003401831533948917
+      ],
+      "principal_axes_wxyz": [
+        -0.5391107713693251,
+        0.4575582762813622,
+        0.4575582762813621,
+        0.5391107713693251
+      ]
+    }
+  },
+  "physics_material": {
+    "static_friction": 0.6,
+    "dynamic_friction": 0.5,
+    "restitution": 0,
+    "combine": "average"
+  },
+  "contact_offset_m": 0.0003,
+  "rest_offset_m": 0
+}

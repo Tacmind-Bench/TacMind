@@ -1,0 +1,54 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.0"
+    }
+    defaultPrim = "golf_ball"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "golf_ball"
+{
+    def Scope "Physics"
+    {
+        def PhysicsFixedJoint "root_joint"
+        {
+            rel physics:body0 = </golf_ball>
+            rel physics:body1 = </golf_ball/Geometry/golf_ball>
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+    }
+
+    over "Geometry"
+    {
+        over "golf_ball" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+        )
+        {
+            def Sphere "tactile_grasp_proxy" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI"]
+            )
+            {
+                bool physics:collisionEnabled = 1
+                float physxCollision:contactOffset = 0.0005
+                float physxCollision:restOffset = 0
+                float[] primvars:displayOpacity = [0]
+                double radius = 0.0185
+                double3 xformOp:translate = (0, 0.052, 0.020)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+
+            over "ball_task_golf_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+}
