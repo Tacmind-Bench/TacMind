@@ -1,0 +1,19 @@
+#usda 1.0
+(
+    defaultPrim = "blind_fuse_target_circumferential_ridges"
+    metersPerUnit = 1
+    subLayers = [@blind_fuse_target_circumferential_ridges.usd@]
+    upAxis = "Z"
+)
+
+over "blind_fuse_target_circumferential_ridges"
+{
+    over "PhysicsMaterials"
+    {
+        over "DefaultContact"
+        {
+            float physics:staticFriction = 0.8
+            float physics:dynamicFriction = 0.6
+        }
+    }
+}

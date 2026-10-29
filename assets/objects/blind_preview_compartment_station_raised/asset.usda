@@ -1,0 +1,12 @@
+#usda 1.0
+(
+    defaultPrim = "blind_preview_compartment_station_raised"
+    metersPerUnit = 1
+    subLayers = [@blind_preview_compartment_station_raised.usd@]
+    upAxis = "Z"
+)
+
+over "blind_preview_compartment_station_raised"
+{
+    bool physics:kinematicEnabled = true
+}

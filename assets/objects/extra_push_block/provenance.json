@@ -1,0 +1,85 @@
+{
+  "asset": "extra_push_block",
+  "bodies": [
+    "Block"
+  ],
+  "mass_kg": 0.014720302298225406,
+  "density_kg_m3": 150.0,
+  "material": "balsa wood",
+  "elastic_modulus_pa": 3710000000.0,
+  "density_basis": "Manufacturer average dried density; fixed representative engineering specimen, not measured hardware.",
+  "material_source_url": "https://ochromagroup.com/wp-content/uploads/2025/01/SpecSheets/Ochroma-balsa-wood-specs-v2.pdf",
+  "size_m": [
+    0.05,
+    0.05,
+    0.05
+  ],
+  "radius_m": 0.025,
+  "radial_segments": 128,
+  "grasp_point_local_m": [
+    -0.025,
+    0,
+    0.025
+  ],
+  "bounds_m": [
+    [
+      -0.025,
+      -0.025,
+      0
+    ],
+    [
+      0.025,
+      0.025,
+      0.05
+    ]
+  ],
+  "model": "Independent 50 mm diameter, 50 mm tall balsa push block with 128 radial facets; the round pushing face allows the gel normal to follow the S curve. Actual closed mesh volume at manufacturer average dried density 150 kg/m3 determines mass and uniform-density inertia. Rigid approximation for low contact loads; no hardware calibration.",
+  "sources": {
+    "balsa_material_datasheet": {
+      "relative_path": "objects/extra_push_block/balsa_material_source.pdf",
+      "url": "https://ochromagroup.com/wp-content/uploads/2025/01/SpecSheets/Ochroma-balsa-wood-specs-v2.pdf",
+      "usage": "Average dried density 150 kg/m3 and elastic modulus 3.71 GPa; geometry independently authored."
+    }
+  },
+  "authored_bounds_m": [
+    [
+      -0.02500000037252903,
+      -0.02500000037252903,
+      0.0
+    ],
+    [
+      0.02500000037252903,
+      0.02500000037252903,
+      0.05000000074505806
+    ]
+  ],
+  "body_mass_properties": {
+    "Block": {
+      "mass_kg": 0.014720302298225406,
+      "center_of_mass_m": [
+        0.0,
+        0.0,
+        0.025000000000000005
+      ],
+      "diagonal_inertia_kg_m2": [
+        4.598247463113011e-06,
+        5.365853377020129e-06,
+        5.365853377020129e-06
+      ],
+      "principal_axes_wxyz": [
+        0.5,
+        0.5,
+        0.5,
+        -0.5
+      ]
+    }
+  },
+  "physics_material": {
+    "static_friction": 0.6,
+    "dynamic_friction": 0.5,
+    "restitution": 0,
+    "combine": "average"
+  },
+  "contact_offset_m": 0.0003,
+  "rest_offset_m": 0
+}

@@ -1,0 +1,44 @@
+{
+  "asset": "extra_standing_cradle",
+  "model": "Connected 30 degree V fixture with 45 mm support spacing and narrow 16 mm posts. True material union excludes overlapping base/post volume; EN AW-6060 aluminium engineering specimen, not calibrated hardware.",
+  "density_kg_m3": 2700.0,
+  "sources": {
+    "material_datasheet": {
+      "url": "https://www.hydro.com/globalassets/08-about-hydro/hydro-worldwide/austria/nenzing/alloy-data-sheets/hydro-en-aw-6060.pdf",
+      "usage": "Hydro 6060 revision 2, January 2019; typical density 2.70 g/cm3 at 20 C."
+    }
+  },
+  "body_mass_properties": {
+    "Fixture": {
+      "mass_kg": 0.03301100042385178,
+      "center_of_mass_m": [
+        -1.2967373345246967e-19,
+        1.1275976821953882e-20,
+        0.004210214376481094
+      ],
+      "diagonal_inertia_kg_m2": [
+        5.453459803134415e-06,
+        1.5965035946445226e-05,
+        1.9121031729296798e-05
+      ],
+      "principal_axes_wxyz": [
+        -3.885780586188048e-16,
+        1.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "bounds_m": [
+    [
+      -0.035999998450279236,
+      -0.02199999988079071,
+      0.0
+    ],
+    [
+      0.035999998450279236,
+      0.02199999988079071,
+      0.026000000536441803
+    ]
+  ]
+}

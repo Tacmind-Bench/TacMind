@@ -1,0 +1,46 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.0"
+    }
+    defaultPrim = "box_search"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "box_search"
+{
+    def Scope "Geometry"
+    {
+        def Xform "box"
+        {
+            def Mesh "box1_update2" (
+                prepend references = @./GeometryLibrary.usdc@</Geometry/box1_update2>
+            )
+            {
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1.2, 1.8, 1.2)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Mesh "box1_update2_1" (
+                displayName = "box1_update2"
+                prepend references = @./GeometryLibrary.usdc@</Geometry/box1_update2>
+            )
+            {
+                uniform token purpose = "guide"
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1.2, 1.8, 1.2)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Scope "sdf"
+                {
+                    custom string urdf:resolution = "128"
+                }
+            }
+        }
+    }
+}

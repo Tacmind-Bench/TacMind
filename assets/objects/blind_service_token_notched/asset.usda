@@ -1,0 +1,19 @@
+#usda 1.0
+(
+    defaultPrim = "blind_service_token_notched"
+    metersPerUnit = 1
+    subLayers = [@blind_service_token_notched.usd@]
+    upAxis = "Z"
+)
+
+over "blind_service_token_notched"
+{
+    over "PhysicsMaterials"
+    {
+        over "DefaultContact"
+        {
+            float physics:staticFriction = 0.8
+            float physics:dynamicFriction = 0.6
+        }
+    }
+}

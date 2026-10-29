@@ -1,0 +1,40 @@
+defaults:
+  - _self_
+  - launcher: local
+  - data: lerobot_libero
+
+output_name: lewm_decoder_libero
+seed: 3072
+img_size: 224
+train_split: 0.9
+num_workers: 6
+latent_dim: 384
+wm_ckpt: lewm/weights.pt
+vis_every_n_steps: 100
+target_mode: predicted_future
+
+wm:
+  history_size: 3
+  num_preds: 1
+
+trainer:
+  max_epochs: 30
+  devices: auto
+  accelerator: gpu
+  precision: bf16
+
+loader:
+  batch_size: 128
+  num_workers: ${num_workers}
+  persistent_workers: True
+  prefetch_factor: 3
+  pin_memory: True
+
+optimizer:
+  lr: 1e-4
+
+wandb:
+  enabled: false
+  config:
+    project: LeWorldModel
+    name: ${output_name}

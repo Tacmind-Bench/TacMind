@@ -1,0 +1,28 @@
+{
+  "repository": "https://github.com/EmbodiedSWE/EmbodiedSWE",
+  "commit": "046f7bf48865f3d3b48e64614350777fb5d5d163",
+  "asset_revision": "62fab5b70ccb0103c60c4ca39236abae2cc8e900",
+  "files": {
+    "objects/extra_banana/basecolor.jpg": {},
+    "objects/extra_banana/piece_0.usd": {},
+    "objects/extra_banana/piece_1.usd": {},
+    "objects/extra_banana/piece_2.usd": {},
+    "objects/extra_banana/piece_3.usd": {},
+    "objects/extra_banana/piece_4.usd": {},
+    "objects/extra_banana/piece_5.usd": {},
+    "objects/extra_banana/piece_6.usd": {},
+    "objects/extra_banana/piece_7.usd": {},
+    "objects/extra_cucumber_2/basecolor.png": {},
+    "objects/extra_cucumber_2/piece_0.usd": {},
+    "objects/extra_cucumber_2/piece_1.usd": {},
+    "objects/extra_cucumber_2/piece_2.usd": {},
+    "objects/extra_cucumber_2/piece_3.usd": {},
+    "objects/extra_cucumber_2/piece_4.usd": {},
+    "objects/extra_cucumber_2/piece_5.usd": {},
+    "objects/extra_cucumber_2/piece_6.usd": {},
+    "objects/extra_cucumber_2/piece_7.usd": {},
+    "objects/extra_knife22r/basecolor.png": {},
+    "objects/extra_knife22r/piece_0.usd": {}
+  },
+  "cutting_model": "presegmented rigid bodies with gated weld release; not continuum fracture"
+}

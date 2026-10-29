@@ -1,0 +1,12 @@
+#usda 1.0
+(
+    defaultPrim = "blind_ver2_ball_bin_station"
+    metersPerUnit = 1
+    subLayers = [@blind_ver2_ball_bin_station.usd@]
+    upAxis = "Z"
+)
+
+over "blind_ver2_ball_bin_station"
+{
+    bool physics:kinematicEnabled = true
+}

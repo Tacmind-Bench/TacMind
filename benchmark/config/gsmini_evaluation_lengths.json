@@ -1,0 +1,915 @@
+{
+  "format": "tacmind.gsmini-evaluation-lengths.v1",
+  "control_hz": 20,
+  "margin_steps": 100,
+  "sources": {
+    "core": "bench100_20261027T001852Z collection summaries, 100 successful episodes per task; remapped to catalog v2",
+    "extra": "extra100_final_20261028 selection, one accepted successful episode per task; catalog v3"
+  },
+  "tasks": {
+    "tac_precision": [
+      {
+        "task_name": "tube_target_material_select_3",
+        "episodes": 100,
+        "min_recorded_steps": 196,
+        "max_recorded_steps": 289,
+        "max_seed": 119
+      },
+      {
+        "task_name": "key_target_material_select_3",
+        "episodes": 100,
+        "min_recorded_steps": 225,
+        "max_recorded_steps": 264,
+        "max_seed": 82
+      },
+      {
+        "task_name": "hdmi_target_material_select_3",
+        "episodes": 100,
+        "min_recorded_steps": 151,
+        "max_recorded_steps": 172,
+        "max_seed": 34
+      },
+      {
+        "task_name": "gear_target_material_select_3",
+        "episodes": 100,
+        "min_recorded_steps": 147,
+        "max_recorded_steps": 150,
+        "max_seed": 12
+      },
+      {
+        "task_name": "tactile_power_insertion",
+        "episodes": 100,
+        "min_recorded_steps": 165,
+        "max_recorded_steps": 187,
+        "max_seed": 7
+      },
+      {
+        "task_name": "tactile_bulb_insertion",
+        "episodes": 100,
+        "min_recorded_steps": 404,
+        "max_recorded_steps": 421,
+        "max_seed": 72
+      }
+    ],
+    "tac_recog": [
+      {
+        "task_name": "select_m16_nut_from_covered_tray",
+        "episodes": 100,
+        "min_recorded_steps": 256,
+        "max_recorded_steps": 288,
+        "max_seed": 130
+      },
+      {
+        "task_name": "select_golf_ball_by_touch_in_bin",
+        "episodes": 100,
+        "min_recorded_steps": 192,
+        "max_recorded_steps": 364,
+        "max_seed": 60
+      },
+      {
+        "task_name": "retrieve_toothed_service_token_from_toolbox",
+        "episodes": 100,
+        "min_recorded_steps": 155,
+        "max_recorded_steps": 421,
+        "max_seed": 24
+      },
+      {
+        "task_name": "select_horizontal_ribbed_cap_by_touch",
+        "episodes": 100,
+        "min_recorded_steps": 153,
+        "max_recorded_steps": 544,
+        "max_seed": 7
+      },
+      {
+        "task_name": "select_golf_ball_by_touch",
+        "episodes": 100,
+        "min_recorded_steps": 189,
+        "max_recorded_steps": 312,
+        "max_seed": 6
+      },
+      {
+        "task_name": "select_cylinder_with_most_circumferential_threads",
+        "episodes": 100,
+        "min_recorded_steps": 331,
+        "max_recorded_steps": 354,
+        "max_seed": 27
+      },
+      {
+        "task_name": "select_wave_service_token",
+        "episodes": 100,
+        "min_recorded_steps": 162,
+        "max_recorded_steps": 338,
+        "max_seed": 67
+      },
+      {
+        "task_name": "select_horizontal_ribbed_cap_into_bowl",
+        "episodes": 100,
+        "min_recorded_steps": 149,
+        "max_recorded_steps": 452,
+        "max_seed": 39
+      },
+      {
+        "task_name": "tactile_peg_reorientation",
+        "episodes": 100,
+        "min_recorded_steps": 281,
+        "max_recorded_steps": 395,
+        "max_seed": 69
+      },
+      {
+        "task_name": "tactile_object_search",
+        "episodes": 100,
+        "min_recorded_steps": 91,
+        "max_recorded_steps": 93,
+        "max_seed": 12
+      },
+      {
+        "task_name": "tactile_ball_sorting",
+        "episodes": 100,
+        "min_recorded_steps": 147,
+        "max_recorded_steps": 303,
+        "max_seed": 117
+      }
+    ],
+    "tac_dynamic": [
+      {
+        "task_name": "insert_the_held_power_plug_into_the_moving_socket",
+        "episodes": 100,
+        "min_recorded_steps": 156,
+        "max_recorded_steps": 176,
+        "max_seed": 5
+      },
+      {
+        "task_name": "insert_the_held_bulb_into_the_moving_socket",
+        "episodes": 100,
+        "min_recorded_steps": 464,
+        "max_recorded_steps": 1229,
+        "max_seed": 96
+      },
+      {
+        "task_name": "insert_the_held_usb_plug_into_the_moving_socket",
+        "episodes": 100,
+        "min_recorded_steps": 220,
+        "max_recorded_steps": 243,
+        "max_seed": 87
+      },
+      {
+        "task_name": "pick_table_tube_and_insert_into_moving_fixture",
+        "episodes": 100,
+        "min_recorded_steps": 228,
+        "max_recorded_steps": 270,
+        "max_seed": 71
+      },
+      {
+        "task_name": "pick_tube_from_moving_source_and_insert_into_table_fixture",
+        "episodes": 100,
+        "min_recorded_steps": 240,
+        "max_recorded_steps": 349,
+        "max_seed": 14
+      },
+      {
+        "task_name": "pick_table_key_and_insert_into_moving_fixture",
+        "episodes": 100,
+        "min_recorded_steps": 291,
+        "max_recorded_steps": 316,
+        "max_seed": 58
+      },
+      {
+        "task_name": "pick_key_from_moving_source_and_insert_into_table_fixture",
+        "episodes": 100,
+        "min_recorded_steps": 313,
+        "max_recorded_steps": 576,
+        "max_seed": 172
+      },
+      {
+        "task_name": "pick_table_hdmi_and_insert_into_moving_fixture",
+        "episodes": 100,
+        "min_recorded_steps": 271,
+        "max_recorded_steps": 308,
+        "max_seed": 49
+      },
+      {
+        "task_name": "pick_hdmi_from_moving_source_and_insert_into_table_fixture",
+        "episodes": 100,
+        "min_recorded_steps": 287,
+        "max_recorded_steps": 323,
+        "max_seed": 103
+      },
+      {
+        "task_name": "pick_table_gear_and_insert_into_moving_fixture",
+        "episodes": 100,
+        "min_recorded_steps": 256,
+        "max_recorded_steps": 280,
+        "max_seed": 8
+      },
+      {
+        "task_name": "pick_gear_from_moving_source_and_insert_into_table_fixture",
+        "episodes": 100,
+        "min_recorded_steps": 257,
+        "max_recorded_steps": 307,
+        "max_seed": 3
+      }
+    ],
+    "tac_extra": [
+      {
+        "task_name": "pull_drawer",
+        "episodes": 1,
+        "min_recorded_steps": 153,
+        "max_recorded_steps": 153,
+        "max_seed": 0
+      },
+      {
+        "task_name": "open_hinged_door",
+        "episodes": 1,
+        "min_recorded_steps": 192,
+        "max_recorded_steps": 192,
+        "max_seed": 0
+      },
+      {
+        "task_name": "turn_valve",
+        "episodes": 1,
+        "min_recorded_steps": 192,
+        "max_recorded_steps": 192,
+        "max_seed": 0
+      },
+      {
+        "task_name": "press_spring_button",
+        "episodes": 1,
+        "min_recorded_steps": 140,
+        "max_recorded_steps": 140,
+        "max_seed": 0
+      },
+      {
+        "task_name": "toggle_bistable_switch",
+        "episodes": 1,
+        "min_recorded_steps": 259,
+        "max_recorded_steps": 259,
+        "max_seed": 0
+      },
+      {
+        "task_name": "remove_friction_cap",
+        "episodes": 1,
+        "min_recorded_steps": 137,
+        "max_recorded_steps": 137,
+        "max_seed": 0
+      },
+      {
+        "task_name": "follow_rigid_contour",
+        "episodes": 1,
+        "min_recorded_steps": 284,
+        "max_recorded_steps": 284,
+        "max_seed": 0
+      },
+      {
+        "task_name": "table_supported_pivot",
+        "episodes": 1,
+        "min_recorded_steps": 377,
+        "max_recorded_steps": 377,
+        "max_seed": 0
+      },
+      {
+        "task_name": "slice_banana",
+        "episodes": 1,
+        "min_recorded_steps": 248,
+        "max_recorded_steps": 248,
+        "max_seed": 0
+      },
+      {
+        "task_name": "slice_cucumber",
+        "episodes": 1,
+        "min_recorded_steps": 282,
+        "max_recorded_steps": 282,
+        "max_seed": 0
+      },
+      {
+        "task_name": "push_block_along_s_curve",
+        "episodes": 1,
+        "min_recorded_steps": 237,
+        "max_recorded_steps": 237,
+        "max_seed": 0
+      },
+      {
+        "task_name": "roll_can_half_turn",
+        "episodes": 1,
+        "min_recorded_steps": 330,
+        "max_recorded_steps": 330,
+        "max_seed": 0
+      },
+      {
+        "task_name": "drive_passive_gear_transmission",
+        "episodes": 1,
+        "min_recorded_steps": 849,
+        "max_recorded_steps": 849,
+        "max_seed": 0
+      },
+      {
+        "task_name": "hang_mug_by_handle",
+        "episodes": 1,
+        "min_recorded_steps": 588,
+        "max_recorded_steps": 588,
+        "max_seed": 0
+      },
+      {
+        "task_name": "arrest_gravity_driven_axial_slip",
+        "episodes": 1,
+        "min_recorded_steps": 563,
+        "max_recorded_steps": 563,
+        "max_seed": 0
+      },
+      {
+        "task_name": "stand_rod_on_table",
+        "episodes": 1,
+        "min_recorded_steps": 556,
+        "max_recorded_steps": 556,
+        "max_seed": 0
+      },
+      {
+        "task_name": "press_then_slide_latch",
+        "episodes": 1,
+        "min_recorded_steps": 492,
+        "max_recorded_steps": 492,
+        "max_seed": 0
+      },
+      {
+        "task_name": "inspect_and_localize_raised_defect",
+        "episodes": 1,
+        "min_recorded_steps": 365,
+        "max_recorded_steps": 365,
+        "max_seed": 0
+      },
+      {
+        "task_name": "reseat_keyed_ram_module",
+        "episodes": 1,
+        "min_recorded_steps": 425,
+        "max_recorded_steps": 425,
+        "max_seed": 0
+      },
+      {
+        "task_name": "wipe_bottle",
+        "episodes": 1,
+        "min_recorded_steps": 534,
+        "max_recorded_steps": 534,
+        "max_seed": 0
+      },
+      {
+        "task_name": "wipe_whiteboard",
+        "episodes": 1,
+        "min_recorded_steps": 557,
+        "max_recorded_steps": 557,
+        "max_seed": 0
+      },
+      {
+        "task_name": "assembly_bulb",
+        "episodes": 1,
+        "min_recorded_steps": 567,
+        "max_recorded_steps": 567,
+        "max_seed": 0
+      },
+      {
+        "task_name": "assembly_nut_thread",
+        "episodes": 1,
+        "min_recorded_steps": 842,
+        "max_recorded_steps": 842,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_dice",
+        "episodes": 1,
+        "min_recorded_steps": 449,
+        "max_recorded_steps": 449,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_dice_potato",
+        "episodes": 1,
+        "min_recorded_steps": 588,
+        "max_recorded_steps": 588,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice",
+        "episodes": 1,
+        "min_recorded_steps": 588,
+        "max_recorded_steps": 588,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_baguette_1",
+        "episodes": 1,
+        "min_recorded_steps": 552,
+        "max_recorded_steps": 552,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_baguette_2",
+        "episodes": 1,
+        "min_recorded_steps": 523,
+        "max_recorded_steps": 523,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_banana",
+        "episodes": 1,
+        "min_recorded_steps": 587,
+        "max_recorded_steps": 587,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_banana_2",
+        "episodes": 1,
+        "min_recorded_steps": 598,
+        "max_recorded_steps": 598,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_banana_5",
+        "episodes": 1,
+        "min_recorded_steps": 502,
+        "max_recorded_steps": 502,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_bread_loaf",
+        "episodes": 1,
+        "min_recorded_steps": 516,
+        "max_recorded_steps": 516,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_carrot_1",
+        "episodes": 1,
+        "min_recorded_steps": 463,
+        "max_recorded_steps": 463,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_carrot_purple",
+        "episodes": 1,
+        "min_recorded_steps": 486,
+        "max_recorded_steps": 486,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_chili",
+        "episodes": 1,
+        "min_recorded_steps": 187,
+        "max_recorded_steps": 187,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_corn",
+        "episodes": 1,
+        "min_recorded_steps": 330,
+        "max_recorded_steps": 330,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_cucumber_2",
+        "episodes": 1,
+        "min_recorded_steps": 595,
+        "max_recorded_steps": 595,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_cucumber_3",
+        "episodes": 1,
+        "min_recorded_steps": 532,
+        "max_recorded_steps": 532,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_cucumber_5",
+        "episodes": 1,
+        "min_recorded_steps": 539,
+        "max_recorded_steps": 539,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_cucumber_6",
+        "episodes": 1,
+        "min_recorded_steps": 555,
+        "max_recorded_steps": 555,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_cucumber_7",
+        "episodes": 1,
+        "min_recorded_steps": 581,
+        "max_recorded_steps": 581,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_cucumber_pickling",
+        "episodes": 1,
+        "min_recorded_steps": 189,
+        "max_recorded_steps": 189,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_eggplant_1",
+        "episodes": 1,
+        "min_recorded_steps": 575,
+        "max_recorded_steps": 575,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_garlic_bread",
+        "episodes": 1,
+        "min_recorded_steps": 547,
+        "max_recorded_steps": 547,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_lotus_root",
+        "episodes": 1,
+        "min_recorded_steps": 334,
+        "max_recorded_steps": 334,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_okra",
+        "episodes": 1,
+        "min_recorded_steps": 187,
+        "max_recorded_steps": 187,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_parsnip",
+        "episodes": 1,
+        "min_recorded_steps": 539,
+        "max_recorded_steps": 539,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_sweet_potato",
+        "episodes": 1,
+        "min_recorded_steps": 532,
+        "max_recorded_steps": 532,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_zucchini_1",
+        "episodes": 1,
+        "min_recorded_steps": 585,
+        "max_recorded_steps": 585,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_zucchini_2",
+        "episodes": 1,
+        "min_recorded_steps": 546,
+        "max_recorded_steps": 546,
+        "max_seed": 0
+      },
+      {
+        "task_name": "cutting_slice_zucchini_yellow",
+        "episodes": 1,
+        "min_recorded_steps": 484,
+        "max_recorded_steps": 484,
+        "max_seed": 0
+      },
+      {
+        "task_name": "puzzle_classify_objects",
+        "episodes": 1,
+        "min_recorded_steps": 563,
+        "max_recorded_steps": 563,
+        "max_seed": 0
+      },
+      {
+        "task_name": "puzzle_coffee",
+        "episodes": 1,
+        "min_recorded_steps": 586,
+        "max_recorded_steps": 586,
+        "max_seed": 0
+      },
+      {
+        "task_name": "puzzle_push_shapes",
+        "episodes": 1,
+        "min_recorded_steps": 594,
+        "max_recorded_steps": 594,
+        "max_seed": 0
+      },
+      {
+        "task_name": "puzzle_stack_blocks",
+        "episodes": 1,
+        "min_recorded_steps": 577,
+        "max_recorded_steps": 577,
+        "max_seed": 0
+      },
+      {
+        "task_name": "tube_target_material_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 325,
+        "max_recorded_steps": 325,
+        "max_seed": 0
+      },
+      {
+        "task_name": "tube_target_material_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 322,
+        "max_recorded_steps": 322,
+        "max_seed": 7
+      },
+      {
+        "task_name": "tube_target_position_select_3",
+        "episodes": 1,
+        "min_recorded_steps": 324,
+        "max_recorded_steps": 324,
+        "max_seed": 0
+      },
+      {
+        "task_name": "tube_target_position_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 344,
+        "max_recorded_steps": 344,
+        "max_seed": 0
+      },
+      {
+        "task_name": "tube_target_position_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 347,
+        "max_recorded_steps": 347,
+        "max_seed": 0
+      },
+      {
+        "task_name": "tube_material_select_3",
+        "episodes": 1,
+        "min_recorded_steps": 342,
+        "max_recorded_steps": 342,
+        "max_seed": 0
+      },
+      {
+        "task_name": "tube_material_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 364,
+        "max_recorded_steps": 364,
+        "max_seed": 0
+      },
+      {
+        "task_name": "tube_material_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 342,
+        "max_recorded_steps": 342,
+        "max_seed": 0
+      },
+      {
+        "task_name": "tube_position_select_3",
+        "episodes": 1,
+        "min_recorded_steps": 324,
+        "max_recorded_steps": 324,
+        "max_seed": 7
+      },
+      {
+        "task_name": "tube_position_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 342,
+        "max_recorded_steps": 342,
+        "max_seed": 1
+      },
+      {
+        "task_name": "tube_position_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 324,
+        "max_recorded_steps": 324,
+        "max_seed": 0
+      },
+      {
+        "task_name": "key_target_material_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 246,
+        "max_recorded_steps": 246,
+        "max_seed": 0
+      },
+      {
+        "task_name": "key_target_material_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 265,
+        "max_recorded_steps": 265,
+        "max_seed": 0
+      },
+      {
+        "task_name": "key_target_position_select_3",
+        "episodes": 1,
+        "min_recorded_steps": 287,
+        "max_recorded_steps": 287,
+        "max_seed": 0
+      },
+      {
+        "task_name": "key_target_position_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 269,
+        "max_recorded_steps": 269,
+        "max_seed": 0
+      },
+      {
+        "task_name": "key_target_position_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 246,
+        "max_recorded_steps": 246,
+        "max_seed": 0
+      },
+      {
+        "task_name": "key_material_select_3",
+        "episodes": 1,
+        "min_recorded_steps": 267,
+        "max_recorded_steps": 267,
+        "max_seed": 0
+      },
+      {
+        "task_name": "key_material_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 269,
+        "max_recorded_steps": 269,
+        "max_seed": 0
+      },
+      {
+        "task_name": "key_material_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 251,
+        "max_recorded_steps": 251,
+        "max_seed": 0
+      },
+      {
+        "task_name": "key_position_select_3",
+        "episodes": 1,
+        "min_recorded_steps": 248,
+        "max_recorded_steps": 248,
+        "max_seed": 0
+      },
+      {
+        "task_name": "key_position_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 267,
+        "max_recorded_steps": 267,
+        "max_seed": 0
+      },
+      {
+        "task_name": "key_position_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 269,
+        "max_recorded_steps": 269,
+        "max_seed": 0
+      },
+      {
+        "task_name": "hdmi_target_material_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 155,
+        "max_recorded_steps": 155,
+        "max_seed": 0
+      },
+      {
+        "task_name": "hdmi_target_material_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 155,
+        "max_recorded_steps": 155,
+        "max_seed": 0
+      },
+      {
+        "task_name": "hdmi_target_position_select_3",
+        "episodes": 1,
+        "min_recorded_steps": 155,
+        "max_recorded_steps": 155,
+        "max_seed": 0
+      },
+      {
+        "task_name": "hdmi_target_position_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 155,
+        "max_recorded_steps": 155,
+        "max_seed": 0
+      },
+      {
+        "task_name": "hdmi_target_position_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 155,
+        "max_recorded_steps": 155,
+        "max_seed": 0
+      },
+      {
+        "task_name": "hdmi_material_select_3",
+        "episodes": 1,
+        "min_recorded_steps": 155,
+        "max_recorded_steps": 155,
+        "max_seed": 0
+      },
+      {
+        "task_name": "hdmi_material_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 155,
+        "max_recorded_steps": 155,
+        "max_seed": 0
+      },
+      {
+        "task_name": "hdmi_material_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 174,
+        "max_recorded_steps": 174,
+        "max_seed": 0
+      },
+      {
+        "task_name": "hdmi_position_select_3",
+        "episodes": 1,
+        "min_recorded_steps": 155,
+        "max_recorded_steps": 155,
+        "max_seed": 0
+      },
+      {
+        "task_name": "hdmi_position_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 155,
+        "max_recorded_steps": 155,
+        "max_seed": 0
+      },
+      {
+        "task_name": "hdmi_position_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 155,
+        "max_recorded_steps": 155,
+        "max_seed": 0
+      },
+      {
+        "task_name": "gear_target_material_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 149,
+        "max_recorded_steps": 149,
+        "max_seed": 7
+      },
+      {
+        "task_name": "gear_target_material_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 150,
+        "max_recorded_steps": 150,
+        "max_seed": 0
+      },
+      {
+        "task_name": "gear_target_position_select_3",
+        "episodes": 1,
+        "min_recorded_steps": 149,
+        "max_recorded_steps": 149,
+        "max_seed": 0
+      },
+      {
+        "task_name": "gear_target_position_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 150,
+        "max_recorded_steps": 150,
+        "max_seed": 0
+      },
+      {
+        "task_name": "gear_target_position_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 148,
+        "max_recorded_steps": 148,
+        "max_seed": 1
+      },
+      {
+        "task_name": "gear_material_select_3",
+        "episodes": 1,
+        "min_recorded_steps": 150,
+        "max_recorded_steps": 150,
+        "max_seed": 1
+      },
+      {
+        "task_name": "gear_material_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 150,
+        "max_recorded_steps": 150,
+        "max_seed": 1
+      },
+      {
+        "task_name": "gear_material_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 149,
+        "max_recorded_steps": 149,
+        "max_seed": 0
+      },
+      {
+        "task_name": "gear_position_select_3",
+        "episodes": 1,
+        "min_recorded_steps": 150,
+        "max_recorded_steps": 150,
+        "max_seed": 0
+      },
+      {
+        "task_name": "gear_position_select_2",
+        "episodes": 1,
+        "min_recorded_steps": 149,
+        "max_recorded_steps": 149,
+        "max_seed": 0
+      },
+      {
+        "task_name": "gear_position_select_1",
+        "episodes": 1,
+        "min_recorded_steps": 150,
+        "max_recorded_steps": 150,
+        "max_seed": 0
+      },
+      {
+        "task_name": "tactile_medium_gear_insertion",
+        "episodes": 1,
+        "min_recorded_steps": 149,
+        "max_recorded_steps": 149,
+        "max_seed": 7
+      }
+    ]
+  }
+}

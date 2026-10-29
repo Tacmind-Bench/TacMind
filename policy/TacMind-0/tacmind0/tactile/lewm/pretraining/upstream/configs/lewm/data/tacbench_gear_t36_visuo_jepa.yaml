@@ -1,0 +1,12 @@
+dataset:
+  num_steps: ${eval:'${num_preds} + ${history_size}'}
+  frameskip: 1
+  name: ${oc.env:STABLEWM_HOME}/datasets/gear_t36_visuo_tactile.h5
+  keys_to_load:
+    - pixels
+    - vision
+    - action
+    - proprio
+  keys_to_cache:
+    - action
+    - proprio

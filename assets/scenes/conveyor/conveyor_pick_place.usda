@@ -1,0 +1,904 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (5, 0, 0)
+                double radius = 5
+            }
+            dictionary Perspective = {
+                double3 position = (2.7808501941490773, -0.1371258480869168, 0.0697994691354076)
+                double3 target = (-17.160062231242463, 0.8706365237329912, -2.353429225741906)
+            }
+            dictionary Right = {
+                double3 position = (0, -5, 0)
+                double radius = 5
+            }
+            dictionary Top = {
+                double3 position = (0, 0, 5)
+                double radius = 5
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "./conveyor_pick_place.usda"
+            dictionary locked = {
+            }
+            dictionary muteness = {
+            }
+        }
+        dictionary physicsSettings = {
+            int "/persistent/simulation/minFrameRate" = 60
+        }
+        dictionary renderSettings = {
+        }
+    }
+    defaultPrim = "World"
+    endTimeCode = 1000000
+    metersPerUnit = 1
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+def "Render" (
+    hide_in_stage_window = true
+    no_delete = true
+)
+{
+    def "OmniverseKit"
+    {
+        def "HydraTextures" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            def RenderProduct "omni_kit_widget_viewport_ViewportTexture_0" (
+                prepend apiSchemas = ["OmniRtxSettingsCommonAdvancedAPI_1", "OmniRtxSettingsRtAdvancedAPI_1", "OmniRtxSettingsPtAdvancedAPI_1", "OmniRtxPostColorGradingAPI_1", "OmniRtxPostChromaticAberrationAPI_1", "OmniRtxPostBloomPhysicalAPI_1", "OmniRtxPostMatteObjectAPI_1", "OmniRtxPostCompositingAPI_1", "OmniRtxPostDofAPI_1", "OmniRtxPostMotionBlurAPI_1", "OmniRtxPostTvNoiseAPI_1", "OmniRtxPostTonemapIrayReinhardAPI_1", "OmniRtxPostDebugSettingsAPI_1", "OmniRtxDebugSettingsAPI_1"]
+                hide_in_stage_window = true
+                no_delete = true
+            )
+            {
+                rel camera = </OmniverseKit_Persp>
+                token omni:rtx:background:source:texture:textureMode = "repeatMirrored"
+                token omni:rtx:background:source:type = "domeLight"
+                bool omni:rtx:dlss:frameGeneration = 0
+                bool omni:rtx:material:db:nonVisualMaterialCSV:enabled = 0
+                string omni:rtx:material:db:rtSensorNameToIdMap = "DefaultMaterial:0;AsphaltStandardMaterial:1;AsphaltWeatheredMaterial:2;VegetationGrassMaterial:3;WaterStandardMaterial:4;GlassStandardMaterial:5;FiberGlassMaterial:6;MetalAlloyMaterial:7;MetalAluminumMaterial:8;MetalAluminumOxidizedMaterial:9;PlasticStandardMaterial:10;RetroMarkingsMaterial:11;RetroSignMaterial:12;RubberStandardMaterial:13;SoilClayMaterial:14;ConcreteRoughMaterial:15;ConcreteSmoothMaterial:16;OakTreeBarkMaterial:17;FabricStandardMaterial:18;PlexiGlassStandardMaterial:19;MetalSilverMaterial:20"
+                bool omni:rtx:material:db:syncLoads = 1
+                token omni:rtx:post:dlss:execMode = "performance"
+                bool omni:rtx:post:registeredCompositing:invertColorCorrection = 1
+                bool omni:rtx:post:registeredCompositing:invertToneMap = 1
+                int omni:rtx:pt:clampSpp = 64
+                bool omni:rtx:pt:lightcache:cached:dontResolveConflicts = 1
+                int omni:rtx:pt:maxSamplesPerLaunch = 2073600
+                int omni:rtx:pt:maxVolumeBounces = 4
+                int omni:rtx:pt:mgpu:maxPixelsPerRegionExponent = 12
+                int omni:rtx:pt:samplesPerIteration = 64
+                int omni:rtx:pt:samplesPerPixel = 64
+                color3f omni:rtx:rt:ambientLight:color = (0.1, 0.1, 0.1)
+                float omni:rtx:rt:ambientLight:intensity = 1
+                bool omni:rtx:rt:ambientocclusion:enabled = 0
+                bool omni:rtx:rt:cached:enabled = 0
+                bool omni:rtx:rt:demoire = 0
+                uint omni:rtx:rt:directLighting:samples = 1
+                bool omni:rtx:rt:ecoMode:enabled
+                bool omni:rtx:rt:indirectdiffuse:enabled = 0
+                bool omni:rtx:rt:lightcache:spatialCache:dontResolveConflicts = 1
+                bool omni:rtx:rt:reflections:enabled = 0
+                bool omni:rtx:rt:refractions:enabled = 0
+                bool omni:rtx:scene:hydra:materialSyncLoads = 1
+                bool omni:rtx:scene:hydra:mdlMaterialWarmup = 1
+                uint omni:rtx:viewTile:limit = 4294967295
+                rel orderedVars = </Render/Vars/LdrColor>
+                custom bool overrideClipRange = 0
+                uniform int2 resolution = (1280, 720)
+            }
+        }
+    }
+
+    def RenderSettings "OmniverseGlobalRenderSettings" (
+        prepend apiSchemas = ["OmniRtxSettingsGlobalRtAdvancedAPI_1", "OmniRtxSettingsGlobalPtAdvancedAPI_1"]
+        no_delete = true
+    )
+    {
+        rel products = </Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0>
+    }
+
+    def "Vars"
+    {
+        def RenderVar "LdrColor" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            uniform string sourceName = "LdrColor"
+        }
+    }
+}
+
+def PhysicsScene "physicsScene" (
+    prepend apiSchemas = ["PhysxSceneAPI"]
+)
+{
+    vector3f physics:gravityDirection = (0, 0, -1)
+    float physics:gravityMagnitude = 9.81
+    uniform token physxScene:broadphaseType = "MBP"
+    bool physxScene:enableCCD = 1
+    bool physxScene:enableGPUDynamics = 0
+    bool physxScene:enableStabilization = 1
+    uniform token physxScene:solverType = "TGS"
+    uint physxScene:timeStepsPerSecond = 120
+}
+
+def "World"
+{
+    def Xform "BigTable" (
+        prepend references = @../../objects/bigtable/model__3bigtable01.usd@
+    )
+    {
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0.036170049557930156, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "E_body_1"
+        {
+            over "P_b7dd469517f349cc"
+            {
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-0.3680080803705275, 0.00016868680792173074, -1.3165448210654955)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+        }
+    }
+
+    def Xform "Ur10Table" (
+        prepend references = @../bin_stacking/ur10_bin_stacking_short_suction_no_robot.usda@
+    )
+    {
+        double3 xformOp:translate = (-0.364, 0, 0.532)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        over "ur10" (
+            active = false
+        )
+        {
+            token visibility = "invisible"
+        }
+
+        def "Obstacles"
+        {
+            def Sphere "FlipStationSphere" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.2, -0.2, -0.2), (0.2, 0.2, 0.2)]
+                rel material:binding = </World/Looks/visual_material> (
+                    bindMaterialAs = "strongerThanDescendants"
+                )
+                double radius = 0.2
+                token visibility = "invisible"
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0.7300000190734863, 0.7599999904632568, -0.12999999523162842)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Sphere "NavigationDome" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-1.1, -1.1, -1.1), (1.1, 1.1, 1.1)]
+                rel material:binding = </World/Looks/visual_material> (
+                    bindMaterialAs = "strongerThanDescendants"
+                )
+                double radius = 1.1
+                token visibility = "invisible"
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-0.03099999949336052, -0.017999999225139618, -1.0859999656677246)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Capsule "NavigationBarrier" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.5, -0.5, -0.45), (0.5, 0.5, 0.45)]
+                double height = 0.9
+                rel material:binding = </World/Looks/visual_material> (
+                    bindMaterialAs = "strongerThanDescendants"
+                )
+                double radius = 0.5
+                token visibility = "invisible"
+                quatd xformOp:orient = (0.431130588054657, 0.5604698061943054, 0.5604698061943054, 0.431130588054657)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0.47099998593330383, 0.2759999930858612, -0.5630000233650208)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Capsule "NavigationFlipStation" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.5, -0.5, -0.25), (0.5, 0.5, 0.25)]
+                double height = 0.5
+                rel material:binding = </World/Looks/visual_material> (
+                    bindMaterialAs = "strongerThanDescendants"
+                )
+                double radius = 0.5
+                token visibility = "invisible"
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0.765999972820282, 0.7549999952316284, -0.5)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+        }
+
+        over "conveyor"
+        {
+            float3 xformOp:rotateZYX = (0, 0, 0)
+            float3 xformOp:scale = (0.5116806, 1.0000002, 1.0000002)
+            double3 xformOp:translate = (0.6553350049095902, -0.6249872121632988, -1.3372156899688372)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZYX", "xformOp:scale"]
+
+            over "Cylinders" (
+                prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+            )
+            {
+                over "_18" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_19" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_20" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_21" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_22" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_23" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_24" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_25" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_26" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_27" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_28" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_29" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_30" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_31" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_32" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_33" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_34" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_35" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_36" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_37" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_38" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_39" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_40" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_41" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+            }
+
+            over "Cube" (
+                active = false
+            )
+            {
+            }
+        }
+
+        over "sortbot_housing" (
+            active = false
+        )
+        {
+            token visibility = "invisible"
+            float3 xformOp:rotateZYX = (0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (-0.017999999597668626, -0.2819999936968088, -0.7435315288163613)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZYX", "xformOp:scale"]
+        }
+
+        over "pallet" (
+            active = false
+        )
+        {
+            token visibility = "invisible"
+            float3 xformOp:rotateZYX = (0, 0, 90)
+            float3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0.8826279802717268, -3.3215736832071046, -0.809778981900029)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZYX", "xformOp:scale"]
+
+            over "Xform"
+            {
+                over "Mesh_015" (
+                    active = false
+                )
+                {
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.01, 0.01, 0.01)
+                    float3 xformOp:translate = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                }
+            }
+        }
+
+        over "dolly" (
+            active = false
+        )
+        {
+            token visibility = "invisible"
+            float3 xformOp:rotateZYX = (0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0.887508980162628, -3.3263616831000844, -1.1810699736010284)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZYX", "xformOp:scale"]
+
+            over "Visual"
+            {
+                over "FOF_Mesh_Shelf_Cart_B_LOD0"
+                {
+                    matrix4d xformOp:transform = ( (0.009999999776482582, 0, 0, 0), (0, 2.0281591429751073e-9, 0.009999999091911724, 0), (0, -0.009999999091911724, 2.0281591429751073e-9, 0), (0, -2.9778501386307608e-25, 0, 1) )
+                }
+            }
+        }
+
+        over "pallet_holder" (
+            active = false
+        )
+        {
+            token visibility = "inherited"
+            float3 xformOp:rotateZYX = (0, 0, -90)
+            float3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0.9087183896885608, -1.6017563510511903, -0.9452558688718844)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZYX", "xformOp:scale"]
+
+            over "Beams"
+            {
+                over "Body_145"
+                {
+                    matrix4d xformOp:transform = ( (-0.9999999776482588, -8.742277533190894e-8, 8.952758872775438e-17, 0), (-1.4153450254711e-14, 1.62920674418005e-7, 0.9999999776482583, 0), (-8.742277533190893e-8, 0.9999999776482587, -1.6292067486209488e-7, 0), (0.2800000318884841, 0.015829059723860173, 0.12032000272750842, 1) )
+                }
+            }
+        }
+
+        def "conveyor_01" (
+            prepend references = @../../objects/conveyor/conveyor.usd@
+        )
+        {
+            float3 xformOp:rotateZYX = (0, 0, 0)
+            float3 xformOp:scale = (0.5116806, 1.0000002, 1.0000002)
+            double3 xformOp:translate = (0.6553350049095902, 0.0225052311978009, -1.3372156899688372)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZYX", "xformOp:scale"]
+
+            over "left_wall" (
+                prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+            )
+            {
+            }
+
+            over "right_wall" (
+                prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+            )
+            {
+            }
+
+            over "Looks" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+            }
+
+            over "Cylinders" (
+                prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+            )
+            {
+                over "_18" (
+                    active = false
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_19" (
+                    active = false
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_20" (
+                    active = false
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_21" (
+                    active = false
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_22" (
+                    active = false
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_23" (
+                    active = false
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_24" (
+                    active = false
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_25" (
+                    active = false
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_26" (
+                    active = false
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_27" (
+                    active = false
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_28" (
+                    active = false
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_29" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_30" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_31" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_32" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_33" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_34" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_35" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_36" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_37" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_38" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_39" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_40" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+
+                over "_41" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                }
+            }
+
+            over "Cube" (
+                active = false
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3 xformOp:rotateZYX = (0, 0, 0)
+                float3 xformOp:scale = (0.9, 0.05, 0.25)
+                double3 xformOp:translate = (2.220446049250313e-16, -0.5999999865889549, 0.2285233231771996)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZYX", "xformOp:scale"]
+            }
+        }
+
+        over "ur10_mount" (
+            active = false
+        )
+        {
+            token visibility = "inherited"
+        }
+
+        over "staticPlaneActor" (
+            active = false
+        )
+        {
+        }
+
+        over "platform"
+        {
+            token visibility = "inherited"
+            float3 xformOp:rotateZYX = (0, 0, 0)
+            float3 xformOp:scale = (0.55918664, 1.4192444, 1)
+            double3 xformOp:translate = (0.6582453685083455, 0.0005229938457988731, -1.9621585037108373)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZYX", "xformOp:scale"]
+        }
+    }
+
+    def Xform "FrankaArm" (
+        prepend payload = @../../robots/Franka_gsmini/tacmind.usda@
+    )
+    {
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (-0.2234960444884337, 0.036, -0.8225096760921542)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "panda_link0"
+        {
+            over "panda_joint1"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+        }
+
+        over "panda_link1"
+        {
+            over "panda_joint2"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+        }
+
+        over "panda_link2"
+        {
+            over "panda_joint3"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+        }
+
+        over "panda_link3"
+        {
+            over "panda_joint4"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+        }
+
+        over "panda_link4"
+        {
+            over "panda_joint5"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+        }
+
+        over "panda_link5"
+        {
+            over "panda_joint6"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+        }
+
+        over "panda_link6"
+        {
+            over "panda_joint7"
+            {
+                float state:angular:physics:position = 0
+                float state:angular:physics:velocity = 0
+            }
+        }
+
+        over "panda_link7"
+        {
+        }
+
+        over "panda_link8"
+        {
+        }
+
+        over "panda_hand"
+        {
+            over "panda_finger_joint1"
+            {
+                float state:linear:physics:position = 0
+                float state:linear:physics:velocity = 0
+            }
+
+            over "panda_finger_joint2"
+            {
+                float state:linear:physics:position = 0
+                float state:linear:physics:velocity = 0
+            }
+        }
+
+        over "panda_leftfinger"
+        {
+        }
+
+        over "gelsight_mini_case_left"
+        {
+        }
+
+        over "gelpad_left"
+        {
+        }
+
+        over "panda_rightfinger"
+        {
+        }
+
+        over "gelsight_mini_case_right"
+        {
+        }
+
+        over "gelpad_right"
+        {
+        }
+
+        over "panda_fingertip_centered"
+        {
+        }
+    }
+
+    def Xform "Background" (
+        prepend references = @../simple_warehouse/warehouse.usd@
+    )
+    {
+        token visibility = "inherited"
+        quatd xformOp:orient = (0.7071067690849304, 0, 0, 0.7071067690849304)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (10, 2, -1.1818000078201294)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "SM_WallA_6M18"
+        {
+            over "SM_WallA_6M"
+            {
+                over "Section0"
+                {
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.01, 0.01, 0.01)
+                    double3 xformOp:translate = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                }
+            }
+        }
+
+        over "SM_floor60"
+        {
+            over "SM_floor02"
+            {
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.01, 0.01, 0.01)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+        }
+
+        over "SM_BeamA_9M25"
+        {
+            token visibility = "inherited"
+        }
+
+        over "SM_BeamA_9M26"
+        {
+            token visibility = "inherited"
+        }
+
+        over "SM_BeamA_9M29"
+        {
+            token visibility = "inherited"
+        }
+    }
+
+    def Cube "motion_commander_target" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        float3[] extent = [(-0.005, -0.005, -0.005), (0.005, 0.005, 0.005)]
+        rel material:binding = </World/Looks/visual_material> (
+            bindMaterialAs = "strongerThanDescendants"
+        )
+        double size = 0.01
+        token visibility = "inherited"
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Looks"
+    {
+        def Material "visual_material"
+        {
+            token outputs:surface.connect = </World/Looks/visual_material/shader.outputs:surface>
+
+            def Shader "shader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float3 inputs:diffuseColor = (0.15, 0.15, 0.15)
+                token outputs:surface
+            }
+        }
+    }
+}
+

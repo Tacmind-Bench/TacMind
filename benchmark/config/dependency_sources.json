@@ -1,0 +1,107 @@
+{
+  "EmbodiedSWE": {
+    "commit": "046f7bf48865f3d3b48e64614350777fb5d5d163",
+    "manifest": "third_party/robobench/source_manifest.json",
+    "repository": "https://github.com/EmbodiedSWE/EmbodiedSWE.git"
+  },
+  "RoboLab": {
+    "commit": "baf17578969f3b92c025df2cb11d10ae3796fd02",
+    "files": {
+      "assets/materials/Plastic/Plastic.mdl": {
+        "source": "assets/materials/2023_1/Base/Plastics/Plastic.mdl"
+      },
+      "assets/materials/Plastic_Clear/Plastic_Clear.mdl": {
+        "source": "assets/materials/2023_1/Base/Plastics/Plastic_Clear.mdl"
+      },
+      "assets/materials/Carpaint_Solid/Carpaint_Solid.mdl": {
+        "source": "assets/materials/2023_1/vMaterials_2/Paint/Carpaint/Carpaint_Solid.mdl"
+      },
+      "assets/materials/Carpaint_Solid/textures/smudges_scratches_A_rough.jpg": {
+        "source": "assets/materials/2023_1/vMaterials_2/Paint/Carpaint/textures/smudges_scratches_A_rough.jpg"
+      },
+      "assets/materials/Plastic_Thick_Translucent/Plastic_Thick_Translucent.mdl": {
+        "source": "assets/materials/2023_1/vMaterials_2/Plastic/Plastic_Thick_Translucent.mdl"
+      },
+      "assets/materials/Plastic_Thick_Translucent_Flakes/Plastic_Thick_Translucent_Flakes.mdl": {
+        "source": "assets/materials/2023_1/vMaterials_2/Plastic/Plastic_Thick_Translucent_Flakes.mdl"
+      },
+      "assets/materials/RustedMetal/RustedMetal.mdl": {
+        "source": "assets/materials/Base/Metals/RustedMetal.mdl"
+      },
+      "assets/materials/RustedMetal/textures/RustedMetal_BaseColor.png": {
+        "source": "assets/materials/Base/Metals/RustedMetal/RustedMetal_BaseColor.png"
+      },
+      "assets/materials/RustedMetal/textures/RustedMetal_N.png": {
+        "source": "assets/materials/Base/Metals/RustedMetal/RustedMetal_N.png"
+      },
+      "assets/materials/RustedMetal/textures/RustedMetal_ORM.png": {
+        "source": "assets/materials/Base/Metals/RustedMetal/RustedMetal_ORM.png"
+      },
+      "assets/materials/Plastic_ABS/Plastic_ABS.mdl": {
+        "source": "assets/materials/Base/Plastics/Plastic_ABS.mdl"
+      },
+      "assets/materials/Bamboo/Bamboo.mdl": {
+        "source": "assets/materials/Base/Wood/Bamboo.mdl"
+      },
+      "assets/materials/Bamboo/textures/Bamboo_BaseColor.png": {
+        "source": "assets/materials/Base/Wood/Bamboo/Bamboo_BaseColor.png"
+      },
+      "assets/materials/Bamboo/textures/Bamboo_N.png": {
+        "source": "assets/materials/Base/Wood/Bamboo/Bamboo_N.png"
+      },
+      "assets/materials/Bamboo/textures/Bamboo_ORM.png": {
+        "source": "assets/materials/Base/Wood/Bamboo/Bamboo_ORM.png"
+      },
+      "assets/materials/Oak/Oak.mdl": {
+        "source": "assets/materials/Base/Wood/Oak.mdl"
+      },
+      "assets/materials/Oak/textures/Oak_BaseColor.png": {
+        "source": "assets/materials/Base/Wood/Oak/Oak_BaseColor.png"
+      },
+      "assets/materials/Oak/textures/Oak_N.png": {
+        "source": "assets/materials/Base/Wood/Oak/Oak_N.png"
+      },
+      "assets/materials/Oak/textures/Oak_ORM.png": {
+        "source": "assets/materials/Base/Wood/Oak/Oak_ORM.png"
+      },
+      "assets/materials/Walnut_Planks/Walnut_Planks.mdl": {
+        "source": "assets/materials/Base/Wood/Walnut_Planks.mdl"
+      },
+      "assets/materials/Walnut_Planks/textures/Walnut_Planks_BaseColor.png": {
+        "source": "assets/materials/Base/Wood/Walnut_Planks/Walnut_Planks_BaseColor.png"
+      },
+      "assets/materials/Walnut_Planks/textures/Walnut_Planks_N.png": {
+        "source": "assets/materials/Base/Wood/Walnut_Planks/Walnut_Planks_N.png"
+      },
+      "assets/materials/Walnut_Planks/textures/Walnut_Planks_ORM.png": {
+        "source": "assets/materials/Base/Wood/Walnut_Planks/Walnut_Planks_ORM.png"
+      },
+      "assets/objects/table_maple/table_maple.usda": {
+        "source": "assets/fixtures/table_maple.usda"
+      },
+      "benchmark/backends/gsmini/LICENSE.RoboLab": {
+        "source": "LICENSE"
+      },
+      "benchmark/backends/gsmini/streaming_hdf5_handler.py": {
+        "source": "robolab/core/logging/streaming_hdf5_handler.py"
+      }
+    },
+    "repository": "https://github.com/NVlabs/RoboLab.git"
+  },
+  "curobo": {
+    "distribution": "nvidia-curobo",
+    "editable": false,
+    "environment": "tacmind",
+    "installed_version": "0.8.0.post1.dev43",
+    "repository": "https://github.com/NVlabs/curobo.git",
+    "source_checkout_commit": "78fd485fa82d9b9a063fb4985e371814587e666a"
+  },
+  "lerobot": {
+    "distribution": "lerobot",
+    "editable": false,
+    "environment": "tacmind",
+    "installed_version": "0.4.4",
+    "repository": "https://github.com/huggingface/lerobot.git",
+    "source_checkout_commit": "e595b7902714ba51f91e47523f66f89c5181b649"
+  }
+}

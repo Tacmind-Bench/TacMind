@@ -1,0 +1,1739 @@
+{
+  "version": 1,
+  "scope": "Task presentation and bounded reachable resets. Collision geometry, mass, inertia, passive joint parameters, control and physics timesteps are preserved.",
+  "view_contract": {
+    "camera": "standard cam",
+    "border_fraction": 0.02,
+    "minimum_visible_fraction": 1.0,
+    "scope": "Full object bounds inside frame. Every sampled ray that intersects the operation affordance must be unobstructed; require the center ray and at least three target samples. Rays through background outside a narrow feature are not counted as occluded. Native body poses drive both projection and triangle-ray tests.",
+    "camera_family": "Base/Blind shared front AgentView",
+    "allow_rear_view": false
+  },
+  "materials": {
+    "steel": {
+      "path": "assets/materials/Steel_Machined/Steel_Machined.mdl",
+      "normal_maps": [
+        "materials/Steel_Machined/textures/stainless_milled_norm.jpg"
+      ],
+      "surface_family": "metal",
+      "texture_scale": [
+        8,
+        8
+      ],
+      "appearance_note": "NVIDIA 4K milled steel normal plus original stainless albedo/ORM; gentle normal strength 0.18. Visual microstructure only, no geometric displacement."
+    },
+    "enamel": {
+      "path": "assets/materials/MetalPainted_White_Glossy_A/MetalPainted_White_Glossy_A.mdl",
+      "normal_maps": [
+        "materials/MetalPainted_White_Glossy_A/textures/T_MetalPainted_White_Glossy_A_Normal.png"
+      ],
+      "surface_family": "coated metal"
+    },
+    "black": {
+      "path": "assets/materials/Plastic_Rough_Black_A/Plastic_Rough_Black_A.mdl",
+      "normal_maps": [
+        "materials/Plastic_Rough_Black_A/textures/T_Plastic_Rough_Black_A_Normal.png"
+      ],
+      "surface_family": "polymer"
+    },
+    "red": {
+      "path": "assets/materials/Plastic_Red_A/Plastic_Red_A.mdl",
+      "normal_maps": [
+        "materials/Plastic_Red_A/textures/T_Plastic_Red_A_Normal.png"
+      ],
+      "surface_family": "polymer"
+    },
+    "yellow": {
+      "path": "assets/materials/Plastic_Yellow_A/Plastic_Yellow_A.mdl",
+      "normal_maps": [
+        "materials/Plastic_Blue_A/textures/T_Plastic_Yellow_A_Normal.png"
+      ],
+      "surface_family": "polymer"
+    },
+    "rubber": {
+      "path": "assets/materials/Rubber_Black_Rough_A/Rubber_Black_Rough_A.mdl",
+      "normal_maps": [
+        "materials/Rubber_Black_Rough_A/textures/T_Rubber_Black_Rough_A_Normal.png"
+      ],
+      "surface_family": "rubber"
+    },
+    "green": {
+      "path": "assets/materials/Metal_Painted_Green_A/Metal_Painted_Green_A.mdl",
+      "normal_maps": [
+        "materials/Metal_Painted_Green_A/textures/T_Metal_Painted_Green_A_Normal.png"
+      ],
+      "surface_family": "coated metal"
+    },
+    "bamboo": {
+      "path": "assets/materials/Bamboo/Bamboo.mdl",
+      "normal_maps": [
+        "materials/Bamboo/textures/Bamboo_N.png"
+      ],
+      "texture_scale": [
+        2,
+        2
+      ],
+      "surface_family": "wood"
+    },
+    "light_wood": {
+      "path": "assets/materials/Birch/Birch.mdl",
+      "normal_maps": [
+        "materials/Birch/textures/Birch_N.png"
+      ],
+      "surface_family": "wood",
+      "texture_scale": [
+        2,
+        2
+      ],
+      "appearance_note": "Pale fine-grain appearance proxy using NVIDIA Birch. The block remains balsa at 150 kg/m3 and 22.5 g; neither species identity nor mechanical properties are inferred from this visual texture."
+    },
+    "ceramic": {
+      "path": "assets/materials/White_Glaze/White_Glaze.mdl",
+      "normal_maps": [
+        "materials/MetalPainted_White_Glossy_A/textures/T_MetalPainted_White_Glossy_A_Normal.png"
+      ],
+      "surface_family": "glazed ceramic",
+      "texture_scale": [
+        8,
+        8
+      ],
+      "appearance_note": "Engineering dielectric white glaze with subtle 4K coating normal, not a measured ceramic BRDF or a source-mug scan."
+    }
+  },
+  "asset_bounds": {
+    "extra_drawer": {
+      "bounds_m": [
+        [
+          -0.1219998493790655,
+          -0.1527540385723114,
+          -0.1536412388086319
+        ],
+        [
+          0.19151175215840338,
+          0.1527540236711502,
+          0.16079998463392187
+        ]
+      ]
+    },
+    "extra_door": {
+      "bounds_m": [
+        [
+          -0.1219998493790655,
+          -0.1527540385723114,
+          -0.1536412388086319
+        ],
+        [
+          0.1899179770424962,
+          0.1527540236711502,
+          0.16079998463392187
+        ]
+      ]
+    },
+    "extra_valve": {
+      "bounds_m": [
+        [
+          -0.05999999865889549,
+          -0.05999999865889549,
+          1.1175870905794083e-10
+        ],
+        [
+          0.05999999865889549,
+          0.05999999865889549,
+          0.08700000021606684
+        ]
+      ]
+    },
+    "extra_button": {
+      "bounds_m": [
+        [
+          -0.05999999865889549,
+          -0.05999999865889549,
+          1.1175870905794083e-10
+        ],
+        [
+          0.05999999865889549,
+          0.05999999865889549,
+          0.08100000005215406
+        ]
+      ]
+    },
+    "extra_switch": {
+      "bounds_m": [
+        [
+          -0.05999999865889549,
+          -0.05999999865889549,
+          1.1175870905794083e-10
+        ],
+        [
+          0.05999999865889549,
+          0.05999999865889549,
+          0.08899999961256981
+        ]
+      ]
+    },
+    "extra_cap": {
+      "bounds_m": [
+        [
+          -0.017000000923871994,
+          -0.014999999664723873,
+          0.01500000044703484
+        ],
+        [
+          0.017000000923871994,
+          0.014999999664723873,
+          0.06900000021606684
+        ]
+      ]
+    },
+    "extra_cap_holder": {
+      "bounds_m": [
+        [
+          -0.05999999865889549,
+          -0.05999999865889549,
+          1.1175870905794083e-10
+        ],
+        [
+          0.05999999865889549,
+          0.05999999865889549,
+          0.042999999940395356
+        ]
+      ]
+    },
+    "extra_contour": {
+      "bounds_m": [
+        [
+          -0.14000000059604645,
+          -0.05000000074505806,
+          1.1175870905794083e-10
+        ],
+        [
+          0.14000000059604645,
+          0.05000000074505806,
+          0.0430000014603138
+        ]
+      ]
+    },
+    "extra_pivot_block": {
+      "bounds_m": [
+        [
+          -0.05000000074505806,
+          -0.012500000186264515,
+          2.2351741811588166e-10
+        ],
+        [
+          0.05000000074505806,
+          0.012500000186264515,
+          0.019999999776482584
+        ]
+      ]
+    },
+    "extra_pivot_support": {
+      "bounds_m": [
+        [
+          -0.07000000029802322,
+          -0.007000000216066837,
+          3.3527612630646075e-10
+        ],
+        [
+          0.07000000029802322,
+          0.007000000216066837,
+          0.029999999664723873
+        ]
+      ]
+    },
+    "extra_slice_banana_0": {
+      "bounds_m": [
+        [
+          -0.014751140959560871,
+          -0.01531737670302391,
+          -0.06396438181400299
+        ],
+        [
+          0.017219236120581627,
+          0.01631001941859722,
+          0.03506891056895256
+        ]
+      ]
+    },
+    "extra_slice_banana_1": {
+      "bounds_m": [
+        [
+          -0.01414396520704031,
+          -0.023197606205940247,
+          -0.038109779357910156
+        ],
+        [
+          0.017826411873102188,
+          0.019382433965802193,
+          0.02881607972085476
+        ]
+      ]
+    },
+    "extra_slice_banana_2": {
+      "bounds_m": [
+        [
+          -0.01595432125031948,
+          -0.025371816009283066,
+          -0.02858050912618637
+        ],
+        [
+          0.016016056761145592,
+          0.021192079409956932,
+          0.025159351527690887
+        ]
+      ]
+    },
+    "extra_slice_banana_3": {
+      "bounds_m": [
+        [
+          -0.015665166079998016,
+          -0.025547819212079048,
+          -0.028382323682308197
+        ],
+        [
+          0.016305211931467056,
+          0.023065954446792603,
+          0.029803331941366196
+        ]
+      ]
+    },
+    "extra_slice_banana_4": {
+      "bounds_m": [
+        [
+          -0.016258666291832924,
+          -0.02531493455171585,
+          -0.03334116190671921
+        ],
+        [
+          0.01571171171963215,
+          0.02283680997788906,
+          0.031577542424201965
+        ]
+      ]
+    },
+    "extra_slice_banana_5": {
+      "bounds_m": [
+        [
+          -0.016806837171316147,
+          -0.025201544165611267,
+          -0.036939751356840134
+        ],
+        [
+          0.015163539908826351,
+          0.02195344865322113,
+          0.034618575125932693
+        ]
+      ]
+    },
+    "extra_slice_banana_6": {
+      "bounds_m": [
+        [
+          -0.016294561326503754,
+          -0.025336528196930885,
+          -0.03890889137983322
+        ],
+        [
+          0.01567581668496132,
+          0.020868416875600815,
+          0.033514123409986496
+        ]
+      ]
+    },
+    "extra_slice_banana_7": {
+      "bounds_m": [
+        [
+          -0.019163763150572777,
+          -0.022985437884926796,
+          -0.04236660152673721
+        ],
+        [
+          0.012806613929569721,
+          0.01828012615442276,
+          0.01549585722386837
+        ]
+      ]
+    },
+    "extra_slice_knife22r_0": {
+      "bounds_m": [
+        [
+          -0.07907207310199738,
+          -0.1337103694677353,
+          -0.014000000432133675
+        ],
+        [
+          0.22492793202400208,
+          0.04994862154126167,
+          0.014000000432133675
+        ]
+      ]
+    },
+    "extra_cut_board": {
+      "bounds_m": [
+        [
+          -0.23000000417232513,
+          -0.17000000178813934,
+          -0.012000000104308128
+        ],
+        [
+          0.23000000417232513,
+          0.17000000178813934,
+          0.012000000104308128
+        ]
+      ]
+    },
+    "extra_slice_cucumber_2_0": {
+      "bounds_m": [
+        [
+          -0.025556150823831558,
+          -0.020120088011026382,
+          -0.02152016945183277
+        ],
+        [
+          0.018978148698806763,
+          0.023054078221321106,
+          0.022086938843131065
+        ]
+      ]
+    },
+    "extra_slice_cucumber_2_1": {
+      "bounds_m": [
+        [
+          -0.015837114304304123,
+          -0.02716406062245369,
+          -0.025585265830159187
+        ],
+        [
+          0.01893788017332554,
+          0.025071676820516586,
+          0.02485308237373829
+        ]
+      ]
+    },
+    "extra_slice_cucumber_2_2": {
+      "bounds_m": [
+        [
+          -0.017200982198119164,
+          -0.027519648894667625,
+          -0.025927646085619926
+        ],
+        [
+          0.017574012279510498,
+          0.02599257417023182,
+          0.024479618296027184
+        ]
+      ]
+    },
+    "extra_slice_cucumber_2_3": {
+      "bounds_m": [
+        [
+          -0.017805712297558784,
+          -0.026230093091726303,
+          -0.027301734313368797
+        ],
+        [
+          0.016969284042716026,
+          0.026275642216205597,
+          0.02363339252769947
+        ]
+      ]
+    },
+    "extra_slice_cucumber_2_4": {
+      "bounds_m": [
+        [
+          -0.017166905105113983,
+          -0.024880772456526756,
+          -0.027212977409362793
+        ],
+        [
+          0.017608091235160828,
+          0.026699017733335495,
+          0.023185452446341515
+        ]
+      ]
+    },
+    "extra_slice_cucumber_2_5": {
+      "bounds_m": [
+        [
+          -0.01715056225657463,
+          -0.02676534838974476,
+          -0.026935331523418427
+        ],
+        [
+          0.01762443408370018,
+          0.02567151002585888,
+          0.024232693016529083
+        ]
+      ]
+    },
+    "extra_slice_cucumber_2_6": {
+      "bounds_m": [
+        [
+          -0.018226383253932,
+          -0.03376614674925804,
+          -0.025742879137396812
+        ],
+        [
+          0.01654861308634281,
+          0.025815051048994064,
+          0.024851173162460327
+        ]
+      ]
+    },
+    "extra_slice_cucumber_2_7": {
+      "bounds_m": [
+        [
+          -0.020161207765340805,
+          -0.02764507383108139,
+          -0.0259832963347435
+        ],
+        [
+          0.026654519140720367,
+          0.02772797830402851,
+          0.022745901718735695
+        ]
+      ]
+    },
+    "extra_push_block": {
+      "bounds_m": [
+        [
+          -0.02500000037252903,
+          -0.02500000037252903,
+          0.0
+        ],
+        [
+          0.02500000037252903,
+          0.02500000037252903,
+          0.05000000074505806
+        ]
+      ]
+    },
+    "extra_roll_can": {
+      "bounds_m": [
+        [
+          -0.03384,
+          -0.0509275,
+          -0.03385759993215798
+        ],
+        [
+          0.03384,
+          0.050928000265479056,
+          0.03385665817879158
+        ]
+      ]
+    },
+    "extra_gear_transmission": {
+      "bounds_m": [
+        [
+          -0.07500000298023224,
+          -0.03750000149011612,
+          0.0
+        ],
+        [
+          0.07500000298023224,
+          0.03750000149011612,
+          0.06000000044703484
+        ]
+      ]
+    },
+    "extra_hanging_mug": {
+      "bounds_m": [
+        [
+          -0.04699999839067459,
+          -0.029999999329447746,
+          0.0
+        ],
+        [
+          0.013000000268220901,
+          0.029999999329447746,
+          0.14380000531673431
+        ]
+      ]
+    },
+    "extra_mug_hook": {
+      "bounds_m": [
+        [
+          -0.029999999329447746,
+          -0.007000000216066837,
+          0.0
+        ],
+        [
+          0.029999999329447746,
+          0.10000000149011612,
+          0.1379999965429306
+        ]
+      ]
+    },
+    "extra_slip_rod": {
+      "bounds_m": [
+        [
+          -0.01,
+          -0.0105,
+          -0.06
+        ],
+        [
+          0.01,
+          0.0105,
+          0.06
+        ]
+      ]
+    },
+    "extra_standing_cradle": {
+      "bounds_m": [
+        [
+          -0.035999998450279236,
+          -0.02199999988079071,
+          0.0
+        ],
+        [
+          0.035999998450279236,
+          0.02199999988079071,
+          0.026000000536441803
+        ]
+      ]
+    },
+    "extra_press_slide": {
+      "bounds_m": [
+        [
+          -0.04,
+          -0.032,
+          0.0
+        ],
+        [
+          0.085,
+          0.032,
+          0.109
+        ]
+      ]
+    },
+    "extra_inspection_bump": {
+      "bounds_m": [
+        [
+          -0.008,
+          -0.02,
+          0.0
+        ],
+        [
+          0.032,
+          0.02,
+          0.105
+        ]
+      ]
+    },
+    "extra_inspection_flat": {
+      "bounds_m": [
+        [
+          -0.008,
+          -0.02,
+          0.0
+        ],
+        [
+          0.032,
+          0.02,
+          0.105
+        ]
+      ]
+    },
+    "pc_ram_module": {
+      "bounds_m": [
+        [
+          -0.066675,
+          -0.007000000000000001,
+          -0.015000000000000001
+        ],
+        [
+          0.066675,
+          0.007000000000000001,
+          0.044
+        ]
+      ]
+    },
+    "pc_ram_socket": {
+      "bounds_m": [
+        [
+          -0.070925,
+          -0.012,
+          -0.035
+        ],
+        [
+          0.070925,
+          0.012,
+          0.008
+        ]
+      ]
+    },
+    "extra_wipe_bottle": {
+      "bounds_m": [
+        [
+          -0.07,
+          -0.12,
+          0.0
+        ],
+        [
+          0.07,
+          0.12,
+          0.13755748664140702
+        ]
+      ]
+    },
+    "extra_wipe_board": {
+      "bounds_m": [
+        [
+          -0.08800000000000001,
+          -0.148,
+          0.0
+        ],
+        [
+          0.08800000000000001,
+          0.148,
+          0.014
+        ]
+      ]
+    },
+    "extra_wipe_eraser": {
+      "bounds_m": [
+        [
+          -0.035,
+          -0.019,
+          0.0
+        ],
+        [
+          0.035,
+          0.019,
+          0.028
+        ]
+      ]
+    },
+    "extra_wipe_sponge": {
+      "bounds_m": [
+        [
+          -0.025,
+          -0.017550000000000003,
+          1.734723475976807e-18
+        ],
+        [
+          0.025,
+          0.017550000000000003,
+          0.025999999999999995
+        ]
+      ]
+    }
+  },
+  "tasks": {
+    "0": {
+      "background": "extra_reading_room_2k/extra_reading_room_2k.hdr",
+      "background_reason": "Domestic storage in a furnished reading/work room",
+      "object_poses": {
+        "mechanism": {
+          "initial_position": [
+            -0.23,
+            -0.0813,
+            0.574
+          ],
+          "initial_yaw_rad": 1.0471975511965976
+        }
+      },
+      "materials": {
+        "mechanism": {
+          "default": "enamel",
+          "overrides": {
+            "*handle*": "steel",
+            "*nob*": "steel",
+            "*AccessoryGrip*": "steel",
+            "*AccessoryBridge*": "steel"
+          }
+        }
+      },
+      "placement_reason": "Place the drawer at [-0.23,-0.0813,0.574] m, yaw60, so its complete 160 mm stroke and full common reset box fit the shared front camera. Source geometry interval bounds and native seed-0 LOS/IK passed; no physical joint or collision parameter changed."
+    },
+    "1": {
+      "background": "hotel_room_4k/hotel_room_4k.hdr",
+      "background_reason": "Interior cabinet door in a furnished room",
+      "object_poses": {
+        "mechanism": {
+          "initial_position": [
+            -0.18,
+            -0.06,
+            0.574
+          ],
+          "initial_yaw_rad": 1.0471975511965976
+        }
+      },
+      "materials": {
+        "mechanism": {
+          "default": "enamel",
+          "overrides": {
+            "*handle*": "steel",
+            "*nob*": "steel",
+            "*AccessoryGrip*": "steel",
+            "*AccessoryBridge*": "steel"
+          }
+        }
+      },
+      "placement_reason": "60-degree oblique side placement at [-0.18, -0.075, 0.574] m: keep the full interaction in the shared front AgentView. Reset checks moving parts and fixed handle descendants over the full 160 mm rail stroke or 66-degree door task arc."
+    },
+    "2": {
+      "background": "industrial_pipe_and_valve_01_2k/industrial_pipe_and_valve_01_2k.hdr",
+      "background_reason": "Industrial valve maintenance",
+      "object_poses": {},
+      "materials": {
+        "mechanism": {
+          "default": "enamel",
+          "overrides": {
+            "Handle/*": "steel",
+            "Handle/part_0": "red"
+          }
+        }
+      }
+    },
+    "3": {
+      "background": "machine_shop_01_4k/machine_shop_01_4k.hdr",
+      "background_reason": "Machine-control pushbutton test station",
+      "object_poses": {},
+      "materials": {
+        "mechanism": {
+          "default": "enamel",
+          "overrides": {
+            "Base/sleeve_*": "steel",
+            "Button/*": "steel",
+            "Button/part_0": "red"
+          }
+        }
+      }
+    },
+    "4": {
+      "background": "extra_aircraft_workshop_01_2k/extra_aircraft_workshop_01_2k.hdr",
+      "background_reason": "Workshop mechanical switch station",
+      "object_poses": {},
+      "materials": {
+        "mechanism": {
+          "default": "enamel",
+          "overrides": {
+            "Lever/*": "steel",
+            "Lever/part_1": "red"
+          }
+        }
+      }
+    },
+    "5": {
+      "background": "garage_2k/garage_2k.hdr",
+      "background_reason": "Friction-fit service cap at a maintenance bench",
+      "object_poses": {},
+      "materials": {
+        "mechanism": {
+          "default": "enamel",
+          "overrides": {
+            "Cap/part_1": "yellow"
+          }
+        },
+        "holder": {
+          "default": "enamel",
+          "overrides": {
+            "Left/*": "rubber",
+            "Right/*": "rubber"
+          }
+        }
+      }
+    },
+    "6": {
+      "background": "art_studio_2k/art_studio_2k.hdr",
+      "background_reason": "Contour tracing at an instrument workbench",
+      "object_poses": {
+        "mechanism": {
+          "initial_position": [
+            0.015,
+            0,
+            0.4202
+          ]
+        }
+      },
+      "materials": {
+        "mechanism": {
+          "default": "steel",
+          "overrides": {
+            "Rail/part_0": "green"
+          }
+        }
+      }
+    },
+    "7": {
+      "background": "photo_studio_broadway_hall_2k/photo_studio_broadway_hall_2k.hdr",
+      "background_reason": "Supported pivot measurement on a controlled studio tabletop",
+      "object_poses": {},
+      "materials": {
+        "mechanism": {
+          "default": "green",
+          "overrides": {}
+        },
+        "support": {
+          "default": "black",
+          "overrides": {}
+        }
+      }
+    },
+    "8": {
+      "background": "boma_2k/boma_2k.hdr",
+      "background_reason": "Food preparation in a naturally lit cafe interior",
+      "object_poses": {
+        "piece_0": {
+          "initial_position": [
+            -0.17440984042665703,
+            -0.01137815239499597,
+            0.47407538199452226
+          ]
+        },
+        "piece_1": {
+          "initial_position": [
+            -0.14304663823160604,
+            0.03333288237420178,
+            0.47481511659709436
+          ]
+        },
+        "piece_2": {
+          "initial_position": [
+            -0.10926590563762649,
+            0.04743336198723252,
+            0.4733671455919854
+          ]
+        },
+        "piece_3": {
+          "initial_position": [
+            -0.07758468324755202,
+            0.047618358600871845,
+            0.47139864089494765
+          ]
+        },
+        "mechanism": {
+          "initial_position": [
+            -0.04502080514219904,
+            0.03868704495582267,
+            0.47071493519026003
+          ]
+        },
+        "piece_5": {
+          "initial_position": [
+            -0.012502255558367162,
+            0.02534819248413501,
+            0.4708097700309725
+          ]
+        },
+        "piece_6": {
+          "initial_position": [
+            0.01895584577734101,
+            0.00747705917588055,
+            0.4723168711189706
+          ]
+        },
+        "piece_7": {
+          "initial_position": [
+            0.05379542542116422,
+            -0.01859828718511169,
+            0.4742063381125252
+          ]
+        },
+        "board": {
+          "initial_position": [
+            -0.09,
+            0,
+            0.4324
+          ]
+        }
+      },
+      "materials": {
+        "knife": {
+          "default": "steel",
+          "overrides": {
+            "*Grip*": "black"
+          }
+        },
+        "board": {
+          "default": "bamboo"
+        }
+      },
+      "reset_overrides": {
+        "arm_joint_positions": [
+          -0.174002,
+          0.008592,
+          0.0240063,
+          -2.3618934,
+          -0.0002959,
+          2.3704853,
+          0.7856088
+        ]
+      }
+    },
+    "9": {
+      "background": "blinds_2k/blinds_2k.hdr",
+      "background_reason": "Vegetable preparation in a domestic kitchen with morning window light; a different lighting environment from the banana cafe task.",
+      "object_poses": {
+        "piece_0": {
+          "initial_position": [
+            -0.21128801359579097,
+            -0.004421794688873106,
+            0.475600125214229
+          ]
+        },
+        "piece_1": {
+          "initial_position": [
+            -0.17647274949584074,
+            0.0012056791153245514,
+            0.47474758726778654
+          ]
+        },
+        "piece_2": {
+          "initial_position": [
+            -0.14033388650245793,
+            0.0022271604767654034,
+            0.47431221726898354
+          ]
+        },
+        "piece_3": {
+          "initial_position": [
+            -0.10495416150081821,
+            0.003156129214206768,
+            0.4738041964665224
+          ]
+        },
+        "mechanism": {
+          "initial_position": [
+            -0.07081797337664854,
+            0.003076929389964731,
+            0.47261297687426457
+          ]
+        },
+        "piece_5": {
+          "initial_position": [
+            -0.0360593212410764,
+            0.004017296269904661,
+            0.4727252153596982
+          ]
+        },
+        "piece_6": {
+          "initial_position": [
+            -0.00020850401076556724,
+            0.002776654067152958,
+            0.47399188382021074
+          ]
+        },
+        "piece_7": {
+          "initial_position": [
+            0.03650131690207331,
+            -0.005222590763201222,
+            0.4761945962915292
+          ]
+        },
+        "board": {
+          "initial_position": [
+            -0.09,
+            0,
+            0.4324
+          ]
+        }
+      },
+      "materials": {
+        "knife": {
+          "default": "steel",
+          "overrides": {
+            "*Grip*": "black"
+          }
+        },
+        "board": {
+          "default": "bamboo"
+        }
+      },
+      "reset_overrides": {
+        "arm_joint_positions": [
+          -0.174002,
+          0.008592,
+          0.0240063,
+          -2.3618934,
+          -0.0002959,
+          2.3704853,
+          0.7856088
+        ]
+      }
+    },
+    "10": {
+      "background": "small_hangar_01_4k/small_hangar_01_4k.hdr",
+      "background_reason": "Low-contrast natural workshop light for a pale balsa handling specimen; large-window reflections retain fine grain.",
+      "object_poses": {},
+      "materials": {
+        "mechanism": {
+          "default": "light_wood",
+          "overrides": {}
+        }
+      }
+    },
+    "11": {
+      "background": "bush_restaurant_2k/bush_restaurant_2k.hdr",
+      "background_reason": "Natural restaurant-table light for rolling a labeled food can; retain the original label and readable highlights.",
+      "object_poses": {
+        "mechanism": {
+          "initial_yaw_rad": 0.7853981633974483
+        }
+      },
+      "materials": {
+        "mechanism": {
+          "default": null,
+          "overrides": {},
+          "source_normal_map": "materials/Plastic_Rough_Black_A/textures/T_Plastic_Rough_Black_A_Normal.png",
+          "source_normal_strength": 0.12,
+          "appearance_note": "Preserve original YCB tomato-soup-can diffuse label and authored UVs; add only a subtle 4K coating normal to its original OmniPBR shader. This is a coating-detail proxy, not a measured can normal."
+        }
+      },
+      "placement_reason": "45-degree tabletop rolling direction keeps an upright GSmini side gel accessible from the shared Base/Blind front camera; the open opposite jaw stays above the table. Full XY/yaw reset interval and rolling object sweep are framed."
+    },
+    "12": {
+      "background": "machine_shop_01_4k/machine_shop_01_4k.hdr",
+      "background_reason": "Industrial machine-shop environment for machined steel gears and a coated fixture base.",
+      "object_poses": {
+        "mechanism": {
+          "initial_yaw_rad": 0.7853981633974483
+        }
+      },
+      "materials": {
+        "mechanism": {
+          "default": "steel",
+          "overrides": {
+            "Base/*": "green",
+            "Medium/InputKnob": "black",
+            "Medium/KnobCollar": "black"
+          }
+        }
+      },
+      "placement_reason": "Factory teeth and bearings remain unchanged; elevated input-knob grasp clears the output wheels during wrist yaw. Shared Base/Blind front AgentView and industrial HDR retained. Full reset, robot interaction and convergence require current native qualification."
+    },
+    "13": {
+      "background": "comfy_cafe_4k/comfy_cafe_4k.hdr",
+      "background_reason": "Soft cafe lighting for lightweight polypropylene cup storage on a steel hook.",
+      "object_poses": {
+        "mechanism": {
+          "initial_yaw_rad": 1.2217304763960306
+        },
+        "hook": {
+          "initial_yaw_rad": 1.2217304763960306
+        }
+      },
+      "materials": {
+        "mechanism": {
+          "default": "yellow",
+          "overrides": {}
+        },
+        "hook": {
+          "default": "steel",
+          "overrides": {}
+        }
+      },
+      "placement_reason": "Start the cup left of the hook and rotate both to 70 degrees so the raised grip leaves the handle aperture visible across seeded XY/yaw perturbations. Current native reachability and manipulation validation is required."
+    },
+    "14": {
+      "background": "tv_studio_4k/tv_studio_4k.hdr",
+      "background_reason": "Controlled artificial studio light shows the balsa contact strips during measured axial slip.",
+      "object_poses": {},
+      "materials": {
+        "mechanism": {
+          "default": "yellow",
+          "overrides": {}
+        }
+      }
+    },
+    "15": {
+      "background": "extra_aircraft_workshop_01_2k/extra_aircraft_workshop_01_2k.hdr",
+      "background_reason": "Assembly inspection workspace for controlled polymer-rod placement, distinct from the slip task studio.",
+      "object_poses": {},
+      "materials": {
+        "mechanism": {
+          "default": "black",
+          "overrides": {}
+        },
+        "cradle": {
+          "default": "steel",
+          "overrides": {}
+        }
+      }
+    },
+    "16": {
+      "background": "garage_2k/garage_2k.hdr",
+      "background_reason": "Garage service bench for a mechanical access latch, rather than the rod-placement workshop.",
+      "object_poses": {},
+      "materials": {
+        "mechanism": {
+          "default": "steel",
+          "overrides": {
+            "Plunger/*": "red",
+            "Carriage/Guide*": "black"
+          }
+        }
+      }
+    },
+    "17": {
+      "background": "photo_studio_broadway_hall_2k/photo_studio_broadway_hall_2k.hdr",
+      "background_reason": "Broad diffuse inspection lighting for machined metal; distinct from the latch garage.",
+      "object_poses": {},
+      "materials": {
+        "mechanism": {
+          "default": "steel",
+          "overrides": {
+            "Coupon/Post": "black",
+            "Coupon/Base": "black"
+          }
+        },
+        "reference_a": {
+          "default": "steel",
+          "overrides": {
+            "Coupon/Post": "black",
+            "Coupon/Base": "black"
+          }
+        },
+        "reference_b": {
+          "default": "steel",
+          "overrides": {
+            "Coupon/Post": "black",
+            "Coupon/Base": "black"
+          }
+        }
+      }
+    },
+    "18": {
+      "background": "extra_aircraft_workshop_01_2k/extra_aircraft_workshop_01_2k.hdr",
+      "background_reason": "Assembly bench lighting for RAM insertion. Authored board, package and aluminium appearance retained.",
+      "object_poses": {},
+      "materials": {}
+    },
+    "19": {
+      "background": "extra_reading_room_2k/extra_reading_room_2k.hdr",
+      "background_reason": "CC0 indoor illumination makes glaze, blue floral decoration, and dirt visible.",
+      "object_poses": {},
+      "materials": {}
+    },
+    "20": {
+      "background": "extra_reading_room_2k/extra_reading_room_2k.hdr",
+      "background_reason": "CC0 indoor work surface illumination; readable marks and specular bottle surface.",
+      "object_poses": {},
+      "materials": {}
+    }
+  },
+  "resources": {
+    "materials/Steel_A/Steel_A.mdl": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Metal/Steel/Steel_A.mdl"
+    },
+    "materials/Steel_A/textures/T_Steel_A1_Albedo.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Metal/Textures/T_Steel_A1_Albedo.png",
+      "resolution": [
+        2048,
+        2048
+      ]
+    },
+    "materials/Steel_A/textures/T_Steel_A1_Normal.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Metal/Textures/T_Steel_A1_Normal.png",
+      "resolution": [
+        2048,
+        2048
+      ],
+      "normal_channel_std": [
+        0.4988973496986779,
+        0.4999401475335617,
+        0.0
+      ]
+    },
+    "materials/Steel_A/textures/T_Steel_A1_ORM.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Metal/Textures/T_Steel_A1_ORM.png",
+      "resolution": [
+        2048,
+        2048
+      ]
+    },
+    "materials/MetalPainted_White_Glossy_A/MetalPainted_White_Glossy_A.mdl": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Metal/Painted/MetalPainted_White_Glossy_A.mdl"
+    },
+    "materials/MetalPainted_White_Glossy_A/textures/T_MetalPainted_White_Glossy_A_Albedo.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Metal/Painted/T_MetalPainted_White_Glossy_A_Albedo.png",
+      "resolution": [
+        4096,
+        4096
+      ]
+    },
+    "materials/MetalPainted_White_Glossy_A/textures/T_MetalPainted_White_Glossy_A_Normal.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Metal/Painted/T_MetalPainted_White_Glossy_A_Normal.png",
+      "resolution": [
+        4096,
+        4096
+      ],
+      "normal_channel_std": [
+        0.09977188014381033,
+        0.3896021504743,
+        0.0039062201975639246
+      ]
+    },
+    "materials/MetalPainted_White_Glossy_A/textures/T_MetalPainted_White_Glossy_A_ORM.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Metal/Painted/T_MetalPainted_White_Glossy_A_ORM.png",
+      "resolution": [
+        4096,
+        4096
+      ]
+    },
+    "materials/Plastic_Rough_Black_A/Plastic_Rough_Black_A.mdl": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Plastic/Misc/Plastic_Rough_Black_A.mdl"
+    },
+    "materials/Plastic_Rough_Black_A/textures/T_Plastic_Rough_Black_A_Albedo.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Plastic/Textures/T_Plastic_Rough_Black_A_Albedo.png",
+      "resolution": [
+        4096,
+        4096
+      ]
+    },
+    "materials/Plastic_Rough_Black_A/textures/T_Plastic_Rough_Black_A_ORM.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Plastic/Textures/T_Plastic_Rough_Black_A_ORM.png",
+      "resolution": [
+        4096,
+        4096
+      ]
+    },
+    "materials/Plastic_Rough_Black_A/textures/T_Plastic_Rough_Black_A_Normal.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Plastic/Textures/T_Plastic_Rough_Black_A_Normal.png",
+      "resolution": [
+        4096,
+        4096
+      ],
+      "normal_channel_std": [
+        1.5931229946729535,
+        1.6594065140122163,
+        0.2625474331885937
+      ]
+    },
+    "materials/Plastic_Red_A/Plastic_Red_A.mdl": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Plastic/Misc/Plastic_Red_A.mdl"
+    },
+    "materials/Plastic_Red_A/textures/T_Plastic_Red_A_Albedo.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Plastic/Textures/T_Plastic_Red_A_Albedo.png",
+      "resolution": [
+        4096,
+        4096
+      ]
+    },
+    "materials/Plastic_Red_A/textures/T_Plastic_Red_A_Normal.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Plastic/Textures/T_Plastic_Red_A_Normal.png",
+      "resolution": [
+        4096,
+        4096
+      ],
+      "normal_channel_std": [
+        0.10315873030626363,
+        0.3646596039383768,
+        0.016570539097942955
+      ]
+    },
+    "materials/Plastic_Red_A/textures/T_Plastic_Red_A_ORM.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Plastic/Textures/T_Plastic_Red_A_ORM.png",
+      "resolution": [
+        4096,
+        4096
+      ]
+    },
+    "materials/Plastic_Yellow_A/Plastic_Yellow_A.mdl": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Plastic/Misc/Plastic_Yellow_A.mdl"
+    },
+    "materials/Plastic_Yellow_A/textures/T_Plastic_Yellow_A_Albedo.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Plastic/Textures/T_Plastic_Yellow_A_Albedo.png",
+      "resolution": [
+        4096,
+        4096
+      ]
+    },
+    "materials/Plastic_Yellow_A/textures/T_Plastic_Yellow_A_ORM.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Plastic/Textures/T_Plastic_Yellow_A_ORM.png",
+      "resolution": [
+        4096,
+        4096
+      ]
+    },
+    "materials/Plastic_Blue_A/textures/T_Plastic_Yellow_A_Normal.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Plastic/Textures/T_Plastic_Yellow_A_Normal.png",
+      "resolution": [
+        4096,
+        4096
+      ],
+      "normal_channel_std": [
+        0.1498528190589146,
+        0.3615540584227457,
+        0.014614287942587002
+      ]
+    },
+    "materials/Rubber_Black_Rough_A/Rubber_Black_Rough_A.mdl": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Rubber/Generic/Rubber_Black_Rough_A.mdl"
+    },
+    "materials/Rubber_Black_Rough_A/textures/T_Rubber_Black_Rough_A_Albedo.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Rubber/Textures/T_Rubber_Black_Rough_A_Albedo.png",
+      "resolution": [
+        4096,
+        4096
+      ]
+    },
+    "materials/Rubber_Black_Rough_A/textures/T_Rubber_Black_Rough_A_Normal.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Rubber/Textures/T_Rubber_Black_Rough_A_Normal.png",
+      "resolution": [
+        4096,
+        4096
+      ],
+      "normal_channel_std": [
+        3.7505679904603406,
+        3.7385103963348083,
+        1.1519209001075537
+      ]
+    },
+    "materials/Rubber_Black_Rough_A/textures/T_Rubber_Black_Rough_A_ORM.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Rubber/Textures/T_Rubber_Black_Rough_A_ORM.png",
+      "resolution": [
+        4096,
+        4096
+      ]
+    },
+    "materials/Metal_Painted_Green_A/Metal_Painted_Green_A.mdl": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Metal/Misc/Metal_Painted_Green_A.mdl"
+    },
+    "materials/Metal_Painted_Green_A/textures/T_Metal_Painted_Green_A_Albedo.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Metal/Textures/T_Metal_Painted_Green_A_Albedo.png",
+      "resolution": [
+        4096,
+        4096
+      ]
+    },
+    "materials/Metal_Painted_Green_A/textures/T_Metal_Painted_Green_A_ORM.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Metal/Textures/T_Metal_Painted_Green_A_ORM.png",
+      "resolution": [
+        4096,
+        4096
+      ]
+    },
+    "materials/Metal_Painted_Green_A/textures/T_Metal_Painted_Green_A_Normal.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Conveyors/Material%20Library/Metal/Textures/T_Metal_Painted_Green_A_Normal.png",
+      "resolution": [
+        4096,
+        4096
+      ],
+      "normal_channel_std": [
+        0.49992514190546805,
+        0.49889633441250536,
+        0.0
+      ]
+    },
+    "materials/Bamboo/Bamboo.mdl": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/Base/Wood/Bamboo.mdl",
+      "license": "NVIDIA Omniverse Content License",
+      "source": "NVIDIA Base Materials Pack"
+    },
+    "materials/Bamboo/textures/Bamboo_BaseColor.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/Base/Wood/Bamboo/Bamboo_BaseColor.png",
+      "license": "NVIDIA Omniverse Content License",
+      "source": "NVIDIA Base Materials Pack",
+      "resolution": [
+        2048,
+        2048
+      ]
+    },
+    "materials/Bamboo/textures/Bamboo_N.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/Base/Wood/Bamboo/Bamboo_N.png",
+      "license": "NVIDIA Omniverse Content License",
+      "source": "NVIDIA Base Materials Pack",
+      "resolution": [
+        2048,
+        2048
+      ]
+    },
+    "materials/Bamboo/textures/Bamboo_ORM.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/Base/Wood/Bamboo/Bamboo_ORM.png",
+      "license": "NVIDIA Omniverse Content License",
+      "source": "NVIDIA Base Materials Pack",
+      "resolution": [
+        2048,
+        2048
+      ]
+    },
+    "materials/Steel_Machined/Steel_Machined.mdl": {
+      "inline_mdl": "mdl 1.4;\n\n// OmniPBR adapter: NVIDIA Base steel albedo/ORM and vMaterials 4K milling normal.\n// Texture sources and NVIDIA notices are pinned in benchmark/extra_visuals.json.\nusing ::OmniPBR import OmniPBR;\nimport ::tex::gamma_mode;\n\nexport material Steel_Machined(*) = OmniPBR(\n    diffuse_texture: texture_2d(\"./textures/Steel_Stainless_BaseColor.png\", ::tex::gamma_srgb),\n    enable_ORM_texture: true,\n    ORM_texture: texture_2d(\"./textures/Steel_Stainless_ORM.png\", ::tex::gamma_linear),\n    metallic_texture_influence: 1.0,\n    reflection_roughness_texture_influence: 1.0,\n    normalmap_texture: texture_2d(\"textures/stainless_milled_norm.jpg\", ::tex::gamma_linear),\n    bump_factor: 0.18);\n",
+      "source": "TacMind OmniPBR appearance adapter; source textures remain unmodified",
+      "license": "Project-authored adapter; texture licenses apply separately"
+    },
+    "materials/White_Glaze/White_Glaze.mdl": {
+      "inline_mdl": "mdl 1.4;\n\n// Engineering white ceramic glaze, not a measured or scanned hardware material.\n// Reuses NVIDIA's 4K subtle glossy-coating normal without changing contact geometry.\nusing ::OmniPBR import OmniPBR;\nimport ::tex::gamma_mode;\n\nexport material White_Glaze(*) = OmniPBR(\n    diffuse_color_constant: color(0.86, 0.84, 0.79),\n    metallic_constant: 0.0,\n    metallic_texture_influence: 0.0,\n    reflection_roughness_constant: 0.18,\n    specular_level: 0.5,\n    normalmap_texture: texture_2d(\"../MetalPainted_White_Glossy_A/textures/T_MetalPainted_White_Glossy_A_Normal.png\", ::tex::gamma_linear),\n    bump_factor: 0.35);\n",
+      "source": "TacMind OmniPBR appearance adapter; source textures remain unmodified",
+      "license": "Project-authored adapter; texture licenses apply separately"
+    },
+    "materials/Birch/Birch.mdl": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/Base/Wood/Birch.mdl",
+      "source": "NVIDIA Omniverse Base Materials Pack",
+      "license": "NVIDIA Omniverse Content License",
+      "license_url": "https://docs.omniverse.nvidia.com/usd/latest/usd_content_samples/downloadable_packs.html"
+    },
+    "materials/Birch/textures/Birch_BaseColor.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/Base/Wood/Birch/Birch_BaseColor.png",
+      "source": "NVIDIA Omniverse Base Materials Pack",
+      "license": "NVIDIA Omniverse Content License",
+      "license_url": "https://docs.omniverse.nvidia.com/usd/latest/usd_content_samples/downloadable_packs.html",
+      "resolution": [
+        2048,
+        2048
+      ]
+    },
+    "materials/Birch/textures/Birch_N.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/Base/Wood/Birch/Birch_N.png",
+      "source": "NVIDIA Omniverse Base Materials Pack",
+      "license": "NVIDIA Omniverse Content License",
+      "license_url": "https://docs.omniverse.nvidia.com/usd/latest/usd_content_samples/downloadable_packs.html",
+      "resolution": [
+        2048,
+        2048
+      ]
+    },
+    "materials/Birch/textures/Birch_ORM.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/Base/Wood/Birch/Birch_ORM.png",
+      "source": "NVIDIA Omniverse Base Materials Pack",
+      "license": "NVIDIA Omniverse Content License",
+      "license_url": "https://docs.omniverse.nvidia.com/usd/latest/usd_content_samples/downloadable_packs.html",
+      "resolution": [
+        2048,
+        2048
+      ]
+    },
+    "materials/Steel_Stainless/Steel_Stainless.mdl": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/Base/Metals/Steel_Stainless.mdl",
+      "source": "NVIDIA Omniverse Base Materials Pack",
+      "license": "NVIDIA Omniverse Content License",
+      "license_url": "https://docs.omniverse.nvidia.com/usd/latest/usd_content_samples/downloadable_packs.html"
+    },
+    "materials/Steel_Machined/textures/Steel_Stainless_BaseColor.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/Base/Metals/Steel_Stainless/Steel_Stainless_BaseColor.png",
+      "source": "NVIDIA Omniverse Base Materials Pack",
+      "license": "NVIDIA Omniverse Content License",
+      "license_url": "https://docs.omniverse.nvidia.com/usd/latest/usd_content_samples/downloadable_packs.html",
+      "resolution": [
+        2048,
+        2048
+      ]
+    },
+    "materials/Steel_Stainless/textures/Steel_Stainless_N.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/Base/Metals/Steel_Stainless/Steel_Stainless_N.png",
+      "source": "NVIDIA Omniverse Base Materials Pack",
+      "license": "NVIDIA Omniverse Content License",
+      "license_url": "https://docs.omniverse.nvidia.com/usd/latest/usd_content_samples/downloadable_packs.html",
+      "resolution": [
+        2048,
+        2048
+      ]
+    },
+    "materials/Steel_Machined/textures/Steel_Stainless_ORM.png": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/Base/Metals/Steel_Stainless/Steel_Stainless_ORM.png",
+      "source": "NVIDIA Omniverse Base Materials Pack",
+      "license": "NVIDIA Omniverse Content License",
+      "license_url": "https://docs.omniverse.nvidia.com/usd/latest/usd_content_samples/downloadable_packs.html",
+      "resolution": [
+        2048,
+        2048
+      ]
+    },
+    "materials/Stainless_Steel_Milled/Stainless_Steel_Milled.mdl": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/vMaterials_2/Metal/Stainless_Steel_Milled.mdl",
+      "source": "NVIDIA vMaterials 2; original source MDL retains copyright and license notice",
+      "license": "NVIDIA vMaterials MDL Materials license (retained in source MDL)",
+      "license_notice_resource": "materials/Stainless_Steel_Milled/Stainless_Steel_Milled.mdl"
+    },
+    "materials/Steel_Machined/textures/stainless_milled_norm.jpg": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/vMaterials_2/Metal/textures/stainless_milled_norm.jpg",
+      "source": "NVIDIA vMaterials 2; original source MDL retains copyright and license notice",
+      "license": "NVIDIA vMaterials MDL Materials license (retained in source MDL)",
+      "license_notice_resource": "materials/Stainless_Steel_Milled/Stainless_Steel_Milled.mdl",
+      "resolution": [
+        4096,
+        4096
+      ]
+    },
+    "materials/Stainless_Steel_Milled/textures/stainless_milled_multi_R_diff_G_rough_B_dents.jpg": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/vMaterials_2/Metal/textures/stainless_milled_multi_R_diff_G_rough_B_dents.jpg",
+      "source": "NVIDIA vMaterials 2; original source MDL retains copyright and license notice",
+      "license": "NVIDIA vMaterials MDL Materials license (retained in source MDL)",
+      "license_notice_resource": "materials/Stainless_Steel_Milled/Stainless_Steel_Milled.mdl",
+      "resolution": [
+        4096,
+        4096
+      ]
+    },
+    "materials/Stainless_Steel_Milled/textures/stainless_multi_R_diff_G_rough_B_dents.jpg": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/vMaterials_2/Metal/textures/stainless_multi_R_diff_G_rough_B_dents.jpg",
+      "source": "NVIDIA vMaterials 2; original source MDL retains copyright and license notice",
+      "license": "NVIDIA vMaterials MDL Materials license (retained in source MDL)",
+      "license_notice_resource": "materials/Stainless_Steel_Milled/Stainless_Steel_Milled.mdl",
+      "resolution": [
+        4096,
+        4096
+      ]
+    },
+    "materials/Stainless_Steel_Milled/textures/stainless_damages_norm.jpg": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/vMaterials_2/Metal/textures/stainless_damages_norm.jpg",
+      "source": "NVIDIA vMaterials 2; original source MDL retains copyright and license notice",
+      "license": "NVIDIA vMaterials MDL Materials license (retained in source MDL)",
+      "license_notice_resource": "materials/Stainless_Steel_Milled/Stainless_Steel_Milled.mdl",
+      "resolution": [
+        4096,
+        4096
+      ]
+    }
+  },
+  "nvidia_source_terms": "https://www.nvidia.com/en-us/agreements/enterprise-software/isaac-sim-additional-software-and-materials-license/",
+  "background_sources": {
+    "extra_aircraft_workshop_01_2k/extra_aircraft_workshop_01_2k.hdr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/aircraft_workshop_01_2k.hdr",
+      "asset_page": "https://polyhaven.com/a/aircraft_workshop_01",
+      "license": "CC0-1.0",
+      "legacy_bytes_identical": false,
+      "resolution": [
+        2048,
+        1024
+      ],
+      "license_url": "https://polyhaven.com/license"
+    },
+    "art_studio_2k/art_studio_2k.hdr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/art_studio_2k.hdr",
+      "asset_page": "https://polyhaven.com/a/art_studio",
+      "license": "CC0-1.0",
+      "legacy_bytes_identical": true,
+      "resolution": [
+        2048,
+        1024
+      ],
+      "license_url": "https://polyhaven.com/license"
+    },
+    "boma_2k/boma_2k.hdr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/boma_2k.hdr",
+      "asset_page": "https://polyhaven.com/a/boma",
+      "license": "CC0-1.0",
+      "legacy_bytes_identical": true,
+      "resolution": [
+        2048,
+        1024
+      ],
+      "license_url": "https://polyhaven.com/license"
+    },
+    "garage_2k/garage_2k.hdr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/garage_2k.hdr",
+      "asset_page": "https://polyhaven.com/a/garage",
+      "license": "CC0-1.0",
+      "legacy_bytes_identical": true,
+      "resolution": [
+        2048,
+        1024
+      ],
+      "license_url": "https://polyhaven.com/license"
+    },
+    "hotel_room_4k/hotel_room_4k.hdr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/4k/hotel_room_4k.hdr",
+      "asset_page": "https://polyhaven.com/a/hotel_room",
+      "license": "CC0-1.0",
+      "legacy_bytes_identical": true,
+      "resolution": [
+        4096,
+        2048
+      ],
+      "license_url": "https://polyhaven.com/license"
+    },
+    "industrial_pipe_and_valve_01_2k/industrial_pipe_and_valve_01_2k.hdr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/industrial_pipe_and_valve_01_2k.hdr",
+      "asset_page": "https://polyhaven.com/a/industrial_pipe_and_valve_01",
+      "license": "CC0-1.0",
+      "legacy_bytes_identical": true,
+      "resolution": [
+        2048,
+        1024
+      ],
+      "license_url": "https://polyhaven.com/license"
+    },
+    "machine_shop_01_4k/machine_shop_01_4k.hdr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/4k/machine_shop_01_4k.hdr",
+      "asset_page": "https://polyhaven.com/a/machine_shop_01",
+      "license": "CC0-1.0",
+      "legacy_bytes_identical": true,
+      "resolution": [
+        4096,
+        2048
+      ],
+      "license_url": "https://polyhaven.com/license"
+    },
+    "extra_reading_room_2k/extra_reading_room_2k.hdr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/reading_room_2k.hdr",
+      "asset_page": "https://polyhaven.com/a/reading_room",
+      "license": "CC0-1.0",
+      "legacy_bytes_identical": false,
+      "resolution": [
+        2048,
+        1024
+      ],
+      "license_url": "https://polyhaven.com/license"
+    },
+    "blinds_2k/blinds_2k.hdr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/blinds_2k.hdr",
+      "asset_page": "https://polyhaven.com/a/blinds",
+      "license": "CC0-1.0",
+      "resolution": [
+        2048,
+        1024
+      ],
+      "license_url": "https://polyhaven.com/license"
+    },
+    "photo_studio_broadway_hall_2k/photo_studio_broadway_hall_2k.hdr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/photo_studio_broadway_hall_2k.hdr",
+      "asset_page": "https://polyhaven.com/a/photo_studio_broadway_hall",
+      "license": "CC0-1.0",
+      "resolution": [
+        2048,
+        1024
+      ],
+      "license_url": "https://polyhaven.com/license"
+    },
+    "small_hangar_01_4k/small_hangar_01_4k.hdr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/4k/small_hangar_01_4k.hdr",
+      "asset_page": "https://polyhaven.com/a/small_hangar_01",
+      "license": "CC0-1.0",
+      "license_url": "https://polyhaven.com/license",
+      "local_reuse": true,
+      "primary_bytes_verified": true,
+      "resolution": [
+        4096,
+        2048
+      ]
+    },
+    "bush_restaurant_2k/bush_restaurant_2k.hdr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/bush_restaurant_2k.hdr",
+      "asset_page": "https://polyhaven.com/a/bush_restaurant",
+      "license": "CC0-1.0",
+      "license_url": "https://polyhaven.com/license",
+      "local_reuse": true,
+      "primary_bytes_verified": true,
+      "resolution": [
+        2048,
+        1024
+      ]
+    },
+    "comfy_cafe_4k/comfy_cafe_4k.hdr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/4k/comfy_cafe_4k.hdr",
+      "asset_page": "https://polyhaven.com/a/comfy_cafe",
+      "license": "CC0-1.0",
+      "license_url": "https://polyhaven.com/license",
+      "local_reuse": false,
+      "primary_bytes_verified": true,
+      "resolution": [
+        4096,
+        2048
+      ]
+    },
+    "tv_studio_4k/tv_studio_4k.hdr": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/4k/tv_studio_4k.hdr",
+      "asset_page": "https://polyhaven.com/a/tv_studio",
+      "license": "CC0-1.0",
+      "license_url": "https://polyhaven.com/license",
+      "local_reuse": true,
+      "primary_bytes_verified": true,
+      "resolution": [
+        4096,
+        2048
+      ]
+    }
+  }
+}

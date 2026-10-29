@@ -1,0 +1,8 @@
+{
+  "source_layout": "robobench/suites/assets/Kitchen",
+  "entry": "KitchenRoom.usd",
+  "built_in_materials": [
+    "OmniGlass.mdl",
+    "OmniPBR.mdl"
+  ]
+}

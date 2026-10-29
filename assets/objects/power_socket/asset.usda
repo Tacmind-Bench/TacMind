@@ -1,0 +1,61 @@
+#usda 1.0
+(
+    defaultPrim = "power_socekt_medium"
+    metersPerUnit = 1
+    subLayers = [
+        @power_socket.usd@
+    ]
+    upAxis = "Z"
+)
+
+over "power_socekt_medium" (
+    prepend apiSchemas = ["MaterialBindingAPI"]
+)
+{
+    rel material:binding:physics = </power_socekt_medium/ContactMaterial>
+
+    over "Physics"
+    {
+        over "root_joint" (
+            active = false
+        )
+        {
+        }
+    }
+
+    def Material "ContactMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.5
+        float physics:restitution = 0
+        float physics:staticFriction = 0.5
+    }
+
+    over "Geometry"
+    {
+        over "power_socekt_medium"
+        {
+            bool physics:kinematicEnabled = 1
+
+            over "power_socekt_medium_1" (
+                delete apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI", "PhysxSDFMeshCollisionAPI"]
+            )
+            {
+                token visibility = "invisible"
+            }
+
+            def Xform "SocketCollision"
+            {
+            }
+
+            def Xform "DetailedCollision" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                prepend references = @./collision.usda@
+            )
+            {
+                rel material:binding:physics = </power_socekt_medium/ContactMaterial>
+            }
+        }
+    }
+}

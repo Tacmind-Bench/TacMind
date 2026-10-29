@@ -1,0 +1,46 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.0"
+    }
+    defaultPrim = "power_plug_medium"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "power_plug_medium"
+{
+    def Scope "Geometry"
+    {
+        def Xform "power_plug_medium"
+        {
+            def Mesh "power_plug_mediun_reori" (
+                prepend references = @./GeometryLibrary.usdc@</Geometry/power_plug_mediun_reori>
+            )
+            {
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Mesh "power_plug_mediun_reori_1" (
+                displayName = "power_plug_mediun_reori"
+                prepend references = @./GeometryLibrary.usdc@</Geometry/power_plug_mediun_reori>
+            )
+            {
+                uniform token purpose = "guide"
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Scope "sdf"
+                {
+                    custom string urdf:resolution = "128"
+                }
+            }
+        }
+    }
+}

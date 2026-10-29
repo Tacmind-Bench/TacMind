@@ -1,0 +1,22 @@
+{
+  "policy_type": "tacmind0",
+  "dataset": {
+    "repo_id": "tacmind/gsmini_precision0",
+    "root": "data/lerobot/gsmini_precision0"
+  },
+  "output_dir": "data/runs/precision0_tacmind0",
+  "runtime_python": "policy/TacMind-0/.venv/bin/python",
+  "pretrained_path": "data/weights/DM05",
+  "steps": 10000,
+  "batch_size": 1,
+  "chunk_size": 32,
+  "n_action_steps": 8,
+  "seed": 19,
+  "save_freq": 500,
+  "num_workers": 4,
+  "learning_rate": 2.5e-05,
+  "model": {
+    "resources": "data/runs/taclewm_pretrain/resources",
+    "world_weights": "data/runs/taclewm_pretrain/checkpoints/weights_epoch_20.pt"
+  }
+}

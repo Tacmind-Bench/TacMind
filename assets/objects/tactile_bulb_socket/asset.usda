@@ -1,0 +1,55 @@
+#usda 1.0
+(
+    metersPerUnit = 1
+    upAxis = "Z"
+    defaultPrim = "bulb_socket"
+    subLayers = [@tactile_bulb_socket.usd@]
+)
+
+# Separate closed source components preserve the thread, contacts and upper cup.
+# Merging their shared edges creates a non-manifold mesh that cannot cook reliably.
+over "bulb_socket" (
+    prepend apiSchemas = ["MaterialBindingAPI"]
+)
+{
+    over "Physics"
+    {
+        over "root_joint" (
+            active = false
+        )
+        {
+        }
+    }
+
+    rel material:binding:physics = </bulb_socket/ContactMaterial>
+
+    def Material "ContactMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:staticFriction = 0.5
+        float physics:dynamicFriction = 0.5
+        float physics:restitution = 0
+    }
+
+    over "Geometry"
+    {
+        over "bulb_socket"
+        {
+            bool physics:kinematicEnabled = true
+
+            over "tactile_bulb_socket_1" (
+                delete apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                token visibility = "invisible"
+            }
+
+            def Xform "SocketCollision" (
+                prepend references = @./collision.usda@
+            )
+            {
+            }
+        }
+    }
+}

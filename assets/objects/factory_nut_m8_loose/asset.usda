@@ -1,0 +1,66 @@
+#usda 1.0
+(
+    defaultPrim = "factory_nut_m8_loose"
+    metersPerUnit = 1
+    subLayers = [
+        @factory_nut_m8_loose.usd@
+    ]
+    upAxis = "Z"
+)
+
+over "factory_nut_m8_loose" (
+    prepend apiSchemas = ["MaterialBindingAPI"]
+)
+{
+    rel material:binding:physics = </factory_nut_m8_loose/ContactMaterial>
+    float physics:density = 8000
+    float physics:mass = 0
+
+    def Material "ContactMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.48
+        float physics:restitution = 0
+        float physics:staticFriction = 0.6
+    }
+
+    over "factory_nut" (
+        delete apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        over "visuals" (
+            instanceable = false
+        )
+        {
+            over "mesh_0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+            }
+        }
+
+        over "collisions" (
+            instanceable = false
+        )
+        {
+            over "mesh_0" (
+                delete apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "NutCollision"
+    {
+    }
+
+    def Xform "DetailedCollision" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        prepend references = @./collision.usda@
+    )
+    {
+        rel material:binding:physics = </factory_nut_m8_loose/ContactMaterial>
+    }
+}

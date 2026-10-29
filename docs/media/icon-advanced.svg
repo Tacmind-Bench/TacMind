@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-labelledby="title">
+  <title id="title">Advanced usage</title>
+  <rect x=".5" y=".5" width="31" height="31" rx="9" fill="#eef8fb" stroke="#cfe2e8"/>
+  <g transform="translate(4 4)" fill="none" stroke="#216779" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h6m5 0h7M3 12h11m5 0h2M3 18h3m5 0h10"/><circle cx="11.5" cy="6" r="2.5"/><circle cx="16.5" cy="12" r="2.5"/><circle cx="8.5" cy="18" r="2.5"/></g>
+</svg>

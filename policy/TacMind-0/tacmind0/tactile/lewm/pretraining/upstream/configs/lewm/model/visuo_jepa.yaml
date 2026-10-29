@@ -1,0 +1,158 @@
+# Inherit vendor model/lewm.yaml (scratch ViT-tiny/14 encoder + predictor).
+# `_self_` last so DualEncoderJEPA `_target_` wins over jepa.JEPA.
+# Default values are the fair mix baseline. Do not change them to WM-28.
+# Best tested combination (Hydra overrides, see docs/lewm_wm_experiments.md):
+#   mosaic_posemb=finger_slot mosaic_readout=last_slot_lr
+#   vision_views=agentview_wrist vision_fuse=concat mosaic_rest_sub=log
+#   vision_context=residual vision_center=false vision_history=all
+#   force_context=off proprio_context=off drop_vision_p=0 drop_action_p=0
+#   mosaic_layout=full history_size=3 pred_mask=none
+defaults:
+  - lewm
+  - _self_
+
+_target_: tacbenchhub.models.lewm.visuo_jepa.DualEncoderJEPA
+dinov3_path: ${oc.env:DINOV3_PATH,facebook/dinov3-vitb16-pretrain-lvd1689m}
+embed_dim: ${embed_dim}
+img_size: ${img_size}
+allow_hf_download: true
+# false | finger_slot (WM-01) | cell (WM-08, one 4x4 table).
+# Fair baseline stays false; WM-28 uses finger_slot.
+mosaic_posemb: false
+# Randomly drop complete 4x4 Mosaic cells after PatchEmbed. 0 keeps the
+# baseline unchanged; the new OL-0 speed/randomness arm uses 0.5 (8/16 cells).
+mosaic_cell_mask_ratio: 0.0
+mosaic_cell_mask_eval: false
+# OL-0 causal streaming arm: slot-causal tactile attention with bidirectional
+# left/right patches within each time slot. The causal wrapper owns the
+# selected local-coordinate RoPE, including canonical_spiral_rope; it cannot
+# be combined with additive finger_slot/cell embeddings.
+mosaic_causal_attention: false
+mosaic_causal_streaming: false
+# Sequence tactile path: split the eight history slots into independent
+# frames instead of feeding a 4x4 raster Mosaic.  The final run uses one
+# BGR frame per finger and slot, resized to 42x42, which yields 3x3=9 patches
+# at patch_size=14 (CLS + 8*2*9 = 145 tokens).  The source TacBench Mosaic
+# already contains the stride-five history; the transform only de-interleaves
+# its cells and does not sample the raw stream a second time.
+tactile_layout: mosaic
+tactile_history_size: 8
+tactile_history_stride: 5
+tactile_frame_size: 42
+tactile_patch_size: 14
+# spiral | canonical_spiral.  Canonical mirrors the right sensor's local X
+# coordinate only in the position coordinates, not in the RGB+marker pixels.
+tactile_rope: canonical_spiral
+tactile_causal_attention: false
+tactile_streaming: false
+# Compile the fixed-shape inference-only stream step with Inductor.  This is
+# ignored during training and falls back to eager when the CUDA runtime cannot
+# compile the cache path.
+tactile_stream_compile: true
+tactile_stream_compile_mode: default
+# Frozen DINO CLS. ``vision_residual`` is the bool alias of
+# ``vision_context=residual``. Fair baseline and WM-28 stay residual.
+# action (WM-31) concatenates the 192-d CLS onto the action encoder /
+# AdaLN and does not add it to tactile CLS. On WM-28: AdaLN is a
+# window-only nick / last tie; do not change the combo default.
+vision_residual: true
+vision_context: residual
+# Subtract the batch (train) or EMA (eval) mean of the 192-d vision CLS
+# before residual/action use. Fair baseline stays false. WM-31: no-op
+# alone, harmful with action concat.
+vision_center: false
+# all (default: DINO every camera in the loaded window) |
+# current (WM-30: last context step only; zeros on older slots).
+# Fair baseline stays all. Does not change history_size.
+vision_history: all
+# bf16 on supported CUDA devices; fp32 is the compatibility fallback.
+vision_precision: bf16
+# Optional torch.compile for the frozen camera DINO. Disabled by default:
+# first use pays compilation overhead and the training output must be A/B tested.
+vision_compile: false
+vision_compile_mode: reduce-overhead
+# Trainable tactile mosaic ViT. The external DINO camera encoder remains
+# frozen independently. Set false only for an explicit ablation.
+tactile_encoder_trainable: true
+# Last-context index for vision_history=current. Interpolated from the
+# train yaml so history_size=1 still names the observed last frame.
+history_size: ${history_size}
+# Camera residual: agentview, wrist, or agentview_wrist. WM-28 uses
+# two-view concat; baseline remains agentview.
+vision_views: agentview
+# Two-view mix: mean of projected CLS, or concat then Linear back to 192-d.
+vision_fuse: mean
+# Stored 4x4 mosaic. Do not crop: the image is not the WM-01 failure.
+mosaic_layout: full
+# off | subtract | divide | log | smooth_div | highpass (WM-10..13).
+# WM-28 uses log; keep the default off for the fair baseline.
+# Default off. Does not drop RGB; camera residual stays on.
+mosaic_rest_sub: "off"
+# off | residual (WM-15) | action (WM-16). Default off: fair baseline
+# does not use force. Residual adds a zero-init Linear(6, 192) in
+# predict, like the camera residual. Action concatenates 6-D wrench
+# onto the action encoder. Force never enters the tactile CLS target.
+# WM-29 stacks action concat on the WM-28 combination; default stays off.
+force_context: "off"
+# raw (6-D wrench) | magdir (WM-21: per-finger log1p(||F||) + unit, 8-D).
+# Only packing; still force_context=action for the fair magdir arm.
+force_repr: raw
+# WM-22: multiply the camera residual by exp(-||F||). Default off.
+vision_force_gate: false
+# off | action (WM-23). Default off: DualEncoderJEPA ignores the HDF5
+# proprio column. Action concatenates 8-D joint/gripper state onto the
+# action encoder, same site as WM-16 force. Proprio never enters the
+# tactile CLS target or SIGReg.
+proprio_context: "off"
+# WM-32/33 missing-modality protocol. Default drop_*=0: no synthetic drop.
+# Train drops a whole window with probability drop_*_p; validate stays
+# complete unless drop_eval. missing_vision skip won on WM-28 (nick, not
+# a new combo); null rejected. missing_action skip_pred is least-bad;
+# do not enable drop_action_p on this complete mix.
+drop_vision_p: 0.0
+drop_action_p: 0.0
+missing_vision: skip
+missing_action: skip_pred
+drop_eval: false
+# cls | last_slot_pool | last_slot_lr (WM-05). Default cls is the ViT
+# CLS over the whole 4x4. WM-28 uses last_slot_lr. last-slot modes keep
+# the full mosaic image and replace only the JEPA CLS with current L7|R7
+# patch tokens.
+mosaic_readout: cls
+# WM-19/20: decode next 6-D wrench from predicted latent. Auxiliary only;
+# does not replace the JEPA CLS target. Default off. λ=0.05 because
+# z-scored force MSE starts near 1.
+force_pred: false
+force_pred_weight: 0.05
+# WM-18: decode current L7|R7 from tactile CLS through a sigmoid onto
+# [0, 1]. Auxiliary only; SIGReg and the logged unmasked pred_loss stay
+# unchanged. Default off.
+current_recon: false
+current_recon_weight: 0.1
+# WM-24: detach the JEPA target so pred_loss does not train the encoder
+# as a copy of itself. SIGReg still sees the live encoder latents.
+pred_stopgrad: false
+# WM-25: in-batch InfoNCE of pred vs stop-grad target. Does not replace
+# MSE. Weight is on log(N)-scaled NCE so a random match is near 1.
+pred_nce: false
+pred_nce_weight: 0.05
+pred_nce_temp: 0.1
+# Train-time action-contrast hinge (delta_shuffle). Penalizes a predictor
+# that bypasses the action input: shuffled-action predictions must be at
+# least (1 + margin) times worse than true-action predictions or the hinge
+# fires. The full_agentview baseline reaches ~18.5x, margin 8 (=> 9x) asks
+# for the same order. Weight 1.0; the log-ratio loss is scale-free.
+pred_action_hinge: false
+pred_action_hinge_weight: 1.0
+# Angular margin (cosine units): shuffled-action predictions must align
+# with the target at least this much worse than true-action ones.
+pred_action_hinge_margin: 0.1
+# Steps the hinge weight ramps over (0 = always on). A from-scratch
+# predictor has zero action sensitivity at step 0 (adaLN-zero), so the
+# hinge must not push before plain MSE builds the ctx->future mapping.
+pred_action_hinge_warmup: 200
+# WM-26: decode next L7|R7 from pred_emb (world-model output in gel
+# pixels). Not WM-18 (current cells from encoder CLS). λ=0.1.
+next_recon: false
+next_recon_weight: 0.1
+patch_size: 14

@@ -1,0 +1,62 @@
+#usda 1.0
+(
+    metersPerUnit = 1
+    upAxis = "Z"
+    defaultPrim = "pingpong_ball"
+    subLayers = [
+        @ball_class_tabletennis.usd@
+    ]
+)
+
+over "pingpong_ball"
+{
+    over "Physics"
+    {
+        over "root_joint" (
+            active = false
+        )
+        {
+        }
+    }
+
+    over "Geometry"
+    {
+        over "pingpong_ball" (
+            prepend apiSchemas = ["PhysicsMassAPI", "PhysicsRigidBodyAPI"]
+        )
+        {
+            bool physics:kinematicEnabled = 0
+            float physics:mass = 0.0027
+            bool physics:rigidBodyEnabled = 1
+
+            over "sphere_1" (
+                delete apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+            )
+            {
+                token visibility = "invisible"
+            }
+
+            def Sphere "collision_sphere" (
+                apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+            )
+            {
+                token visibility = "invisible"
+                double radius = 0.02
+                rel material:binding:physics = </pingpong_ball/BlindContactMaterial> (
+                    bindMaterialAs = "strongerThanDescendants"
+                )
+                custom float physxCollision:contactOffset = 0.0005
+                custom float physxCollision:restOffset = 0
+            }
+        }
+    }
+
+    def Material "BlindContactMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.48
+        float physics:restitution = 0
+        float physics:staticFriction = 0.6
+    }
+}

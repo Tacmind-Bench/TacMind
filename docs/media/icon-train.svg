@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-labelledby="title">
+  <title id="title">Training</title>
+  <rect x=".5" y=".5" width="31" height="31" rx="9" fill="#eef8fb" stroke="#cfe2e8"/>
+  <g transform="translate(4 4)" fill="none" stroke="#216779" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M6 16l5-6 4 2 6-7"/><circle cx="6" cy="16" r="1.5" fill="#eef8fb"/><circle cx="11" cy="10" r="1.5" fill="#eef8fb"/><circle cx="15" cy="12" r="1.5" fill="#eef8fb"/><circle cx="21" cy="5" r="1.5" fill="#eef8fb"/></g>
+</svg>

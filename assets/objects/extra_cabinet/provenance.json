@@ -1,0 +1,24 @@
+{
+  "sources": {
+    "configurations/cabinet_default_physics.usd": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Sektion_Cabinet/configurations/cabinet_default_physics.usd"
+    },
+    "configurations/cabinet_lab.usd": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Sektion_Cabinet/configurations/cabinet_lab.usd"
+    },
+    "sektion_cabinet_collisions.usd": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Sektion_Cabinet/sektion_cabinet_collisions.usd"
+    },
+    "sektion_cabinet_instanceable.usd": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Sektion_Cabinet/sektion_cabinet_instanceable.usd"
+    },
+    "sektion_cabinet_visuals.usd": {
+      "url": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/5.1/Isaac/Props/Sektion_Cabinet/sektion_cabinet_visuals.usd"
+    }
+  },
+  "source_terms": "NVIDIA Isaac Sim Additional Software and Materials License; retain NVIDIA source layers and notices",
+  "source_terms_url": "https://www.nvidia.com/en-us/agreements/enterprise-software/isaac-sim-additional-software-and-materials-license/",
+  "independent_geometry": "TacMind analytical rigid mechanisms; SI units; engineering parameters, not real-hardware calibration",
+  "generator": "benchmark.extra_assets",
+  "excluded_source": "OpenViTac"
+}

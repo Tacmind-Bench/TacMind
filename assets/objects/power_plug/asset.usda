@@ -1,0 +1,74 @@
+#usda 1.0
+(
+    defaultPrim = "power_plug_medium"
+    metersPerUnit = 1
+    subLayers = [
+        @power_plug.usd@
+    ]
+    upAxis = "Z"
+)
+
+over "power_plug_medium"
+{
+    over "Physics"
+    {
+        over "root_joint" (
+            active = false
+        )
+        {
+        }
+    }
+
+    over "Geometry"
+    {
+        over "power_plug_medium" (
+            prepend apiSchemas = ["PhysicsMassAPI", "PhysicsRigidBodyAPI"]
+        )
+        {
+            bool physics:kinematicEnabled = 0
+            float physics:mass = 0.055
+            bool physics:rigidBodyEnabled = 1
+
+            over "power_plug_mediun_reori_1" (
+                prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxConvexDecompositionCollisionAPI"]
+            )
+            {
+                rel material:binding:physics = </power_plug_medium/BlindContactMaterial>
+                uniform token physics:approximation = "convexDecomposition"
+                bool physics:collisionEnabled = 0
+                float physxConvexDecompositionCollision:errorPercentage = 0.5
+                int physxConvexDecompositionCollision:maxConvexHulls = 128
+                float physxConvexDecompositionCollision:minThickness = 0.0001
+                bool physxConvexDecompositionCollision:shrinkWrap = 1
+                int physxConvexDecompositionCollision:voxelResolution = 2000000
+                token visibility = "invisible"
+            }
+
+            def Mesh "PrecisionCollision" (
+                prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxSDFMeshCollisionAPI", "PhysxCollisionAPI"]
+                prepend references = @./collision.usdc@
+            )
+            {
+                rel material:binding:physics = </power_plug_medium/BlindContactMaterial>
+                uniform token physics:approximation = "sdf"
+                bool physics:collisionEnabled = 1
+                float physxCollision:contactOffset = 0.0003
+                float physxCollision:restOffset = 0
+                uniform float physxSDFMeshCollision:sdfMargin = 0
+                uniform float physxSDFMeshCollision:sdfNarrowBandThickness = 0.01
+                uniform int physxSDFMeshCollision:sdfResolution = 512
+                token visibility = "invisible"
+            }
+        }
+    }
+
+    def Material "BlindContactMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.48
+        float physics:restitution = 0
+        float physics:staticFriction = 0.6
+    }
+}
+

@@ -1,0 +1,459 @@
+{
+  "source": "https://github.com/mdrayyanhussain2006/pc-components-manual",
+  "source_commit": "9c0dd07e9d253334a1e9ee042d4f5004e71ca648",
+  "units": "meters",
+  "source_up_axis": "Y",
+  "export_up_axis": "Z",
+  "source_to_export_coordinates": {
+    "x": "x",
+    "y": "-z",
+    "z": "y"
+  },
+  "objects": [
+    {
+      "name": "case",
+      "obj": "../../objects/pc_case/case.obj",
+      "mtl": "../../objects/pc_case/case.mtl",
+      "source_nodes": [
+        "CASE_97e939",
+        "CASE_457025",
+        "CASE_3d0685",
+        "CASE_41c4f8",
+        "CASE_f15006"
+      ],
+      "source_root_translation_y_up_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "assembly_translation_z_up_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_bounds_z_up_m": [
+        [
+          -0.1065,
+          -0.2216,
+          -0.008
+        ],
+        [
+          0.1075,
+          0.22,
+          0.463
+        ]
+      ],
+      "mesh_parts": 5
+    },
+    {
+      "name": "case_side_panel",
+      "obj": "../../objects/pc_case_side_panel/case_side_panel.obj",
+      "mtl": "../../objects/pc_case_side_panel/case_side_panel.mtl",
+      "source_nodes": [
+        "CASE_SIDE_PANEL"
+      ],
+      "source_root_translation_y_up_m": [
+        -0.1095,
+        0.23,
+        0.21799999
+      ],
+      "assembly_translation_z_up_m": [
+        -0.1095,
+        -0.21799999,
+        0.23
+      ],
+      "local_bounds_z_up_m": [
+        [
+          -0.002,
+          0.0,
+          -0.228
+        ],
+        [
+          0.002,
+          0.43599999,
+          0.228
+        ]
+      ],
+      "mesh_parts": 1
+    },
+    {
+      "name": "motherboard",
+      "obj": "../../objects/pc_motherboard/motherboard.obj",
+      "mtl": "../../objects/pc_motherboard/motherboard.mtl",
+      "source_nodes": [
+        "MOTHERBOARD_b49166",
+        "MOTHERBOARD_fd2f30",
+        "MOTHERBOARD_6270ad",
+        "MOTHERBOARD_04590a",
+        "MOTHERBOARD_aa3597"
+      ],
+      "source_root_translation_y_up_m": [
+        0.0885,
+        0.237,
+        -0.0275
+      ],
+      "assembly_translation_z_up_m": [
+        0.0885,
+        0.0275,
+        0.237
+      ],
+      "local_bounds_z_up_m": [
+        [
+          -0.0128,
+          -0.19050001,
+          -0.1392
+        ],
+        [
+          0.0037,
+          0.15550001,
+          0.122
+        ]
+      ],
+      "mesh_parts": 5
+    },
+    {
+      "name": "ram_01",
+      "obj": "../../objects/pc_ram_01/ram_01.obj",
+      "mtl": "../../objects/pc_ram_01/ram_01.mtl",
+      "source_nodes": [
+        "RAM_01_8b9c07",
+        "RAM_01_4919ef",
+        "RAM_01_058ecd",
+        "RAM_01_3a7e81",
+        "RAM_01_286a53"
+      ],
+      "source_root_translation_y_up_m": [
+        0.0877,
+        0.27000001,
+        0.002
+      ],
+      "assembly_translation_z_up_m": [
+        0.0877,
+        -0.002,
+        0.27000001
+      ],
+      "local_bounds_z_up_m": [
+        [
+          -0.044,
+          -0.0044,
+          -0.0665
+        ],
+        [
+          0.0,
+          0.0044,
+          0.0665
+        ]
+      ],
+      "mesh_parts": 5
+    },
+    {
+      "name": "ram_02",
+      "obj": "../../objects/pc_ram_02/ram_02.obj",
+      "mtl": "../../objects/pc_ram_02/ram_02.mtl",
+      "source_nodes": [
+        "RAM_02_384feb",
+        "RAM_02_b34cc4",
+        "RAM_02_c0b336",
+        "RAM_02_148bfa",
+        "RAM_02_99e2ec"
+      ],
+      "source_root_translation_y_up_m": [
+        0.0877,
+        0.27000001,
+        0.012
+      ],
+      "assembly_translation_z_up_m": [
+        0.0877,
+        -0.012,
+        0.27000001
+      ],
+      "local_bounds_z_up_m": [
+        [
+          -0.044,
+          -0.0044,
+          -0.0665
+        ],
+        [
+          0.0,
+          0.0044,
+          0.0665
+        ]
+      ],
+      "mesh_parts": 5
+    },
+    {
+      "name": "ram_03",
+      "obj": "../../objects/pc_ram_03/ram_03.obj",
+      "mtl": "../../objects/pc_ram_03/ram_03.mtl",
+      "source_nodes": [
+        "RAM_03_414b71",
+        "RAM_03_fc9b98",
+        "RAM_03_845bc5",
+        "RAM_03_da1b6b",
+        "RAM_03_2c4075"
+      ],
+      "source_root_translation_y_up_m": [
+        0.0877,
+        0.27000001,
+        0.022
+      ],
+      "assembly_translation_z_up_m": [
+        0.0877,
+        -0.022,
+        0.27000001
+      ],
+      "local_bounds_z_up_m": [
+        [
+          -0.044,
+          -0.0044,
+          -0.0665
+        ],
+        [
+          0.0,
+          0.0044,
+          0.0665
+        ]
+      ],
+      "mesh_parts": 5
+    },
+    {
+      "name": "ram_04",
+      "obj": "../../objects/pc_ram_04/ram_04.obj",
+      "mtl": "../../objects/pc_ram_04/ram_04.mtl",
+      "source_nodes": [
+        "RAM_04_982c3c",
+        "RAM_04_5d1229",
+        "RAM_04_3743dd",
+        "RAM_04_ee6cef",
+        "RAM_04_9a694b"
+      ],
+      "source_root_translation_y_up_m": [
+        0.0877,
+        0.27000001,
+        0.032
+      ],
+      "assembly_translation_z_up_m": [
+        0.0877,
+        -0.032,
+        0.27000001
+      ],
+      "local_bounds_z_up_m": [
+        [
+          -0.044,
+          -0.0044,
+          -0.0665
+        ],
+        [
+          0.0,
+          0.0044,
+          0.0665
+        ]
+      ],
+      "mesh_parts": 5
+    },
+    {
+      "name": "m2_ssd",
+      "obj": "../../objects/pc_m2_ssd/m2_ssd.obj",
+      "mtl": "../../objects/pc_m2_ssd/m2_ssd.mtl",
+      "source_nodes": [
+        "M2_SSD_ec17b8",
+        "M2_SSD_bc6c93",
+        "M2_SSD_916d8d",
+        "M2_SSD_4937f4"
+      ],
+      "source_root_translation_y_up_m": [
+        0.0877,
+        0.229,
+        -0.05
+      ],
+      "assembly_translation_z_up_m": [
+        0.0877,
+        0.05,
+        0.229
+      ],
+      "local_bounds_z_up_m": [
+        [
+          -0.009,
+          -0.04,
+          -0.011
+        ],
+        [
+          0.0008,
+          0.04,
+          0.011
+        ]
+      ],
+      "mesh_parts": 4
+    },
+    {
+      "name": "cpu",
+      "obj": "../../objects/pc_cpu/cpu.obj",
+      "mtl": "../../objects/pc_cpu/cpu.mtl",
+      "source_nodes": [
+        "CPU_a9018b",
+        "CPU_21da34"
+      ],
+      "source_root_translation_y_up_m": [
+        0.0852,
+        0.27000001,
+        -0.05
+      ],
+      "assembly_translation_z_up_m": [
+        0.0852,
+        0.05,
+        0.27000001
+      ],
+      "local_bounds_z_up_m": [
+        [
+          -0.004,
+          -0.0225,
+          -0.0225
+        ],
+        [
+          0.0,
+          0.0225,
+          0.0225
+        ]
+      ],
+      "mesh_parts": 2
+    },
+    {
+      "name": "cpu_cooler",
+      "obj": "../../objects/pc_cpu_cooler/cpu_cooler.obj",
+      "mtl": "../../objects/pc_cpu_cooler/cpu_cooler.mtl",
+      "source_nodes": [
+        "CPU_COOLER_befcb7",
+        "CPU_COOLER_8265cf",
+        "CPU_COOLER_311b9c"
+      ],
+      "source_root_translation_y_up_m": [
+        0.0812,
+        0.27000001,
+        -0.05
+      ],
+      "assembly_translation_z_up_m": [
+        0.0812,
+        0.05,
+        0.27000001
+      ],
+      "local_bounds_z_up_m": [
+        [
+          -0.0785,
+          -0.06,
+          -0.06310002
+        ],
+        [
+          -1e-08,
+          0.06,
+          0.05999998
+        ]
+      ],
+      "mesh_parts": 3
+    },
+    {
+      "name": "gpu",
+      "obj": "../../objects/pc_gpu/gpu.obj",
+      "mtl": "../../objects/pc_gpu/gpu.mtl",
+      "source_nodes": [
+        "GPU_99e703",
+        "GPU_40da86",
+        "GPU_49802b",
+        "GPU_561764",
+        "GPU_b15026",
+        "GPU_504553",
+        "GPU_7af018",
+        "GPU_eb3f43"
+      ],
+      "source_root_translation_y_up_m": [
+        0.08769999,
+        0.171,
+        -0.04
+      ],
+      "assembly_translation_z_up_m": [
+        0.08769999,
+        0.04,
+        0.171
+      ],
+      "local_bounds_z_up_m": [
+        [
+          -0.12619999,
+          -0.141,
+          -0.04600001
+        ],
+        [
+          0.0,
+          0.1452,
+          0.025
+        ]
+      ],
+      "mesh_parts": 8
+    },
+    {
+      "name": "storage",
+      "obj": "../../objects/pc_storage/storage.obj",
+      "mtl": "../../objects/pc_storage/storage.mtl",
+      "source_nodes": [
+        "STORAGE_a307b0",
+        "STORAGE_5e1f43",
+        "STORAGE_510aa7"
+      ],
+      "source_root_translation_y_up_m": [
+        -0.02,
+        0.09,
+        0.14
+      ],
+      "assembly_translation_z_up_m": [
+        -0.02,
+        -0.14,
+        0.09
+      ],
+      "local_bounds_z_up_m": [
+        [
+          -0.035,
+          -0.05,
+          -1e-08
+        ],
+        [
+          0.035,
+          0.05,
+          0.00899999
+        ]
+      ],
+      "mesh_parts": 3
+    },
+    {
+      "name": "psu",
+      "obj": "../../objects/pc_psu/psu.obj",
+      "mtl": "../../objects/pc_psu/psu.mtl",
+      "source_nodes": [
+        "PSU_3654c4",
+        "PSU_522a86",
+        "PSU_4e86e3",
+        "PSU_c32c48"
+      ],
+      "source_root_translation_y_up_m": [
+        0.03,
+        0.002,
+        -0.148
+      ],
+      "assembly_translation_z_up_m": [
+        0.03,
+        0.148,
+        0.002
+      ],
+      "local_bounds_z_up_m": [
+        [
+          -0.0757,
+          -0.07000001,
+          0.0
+        ],
+        [
+          0.076,
+          0.0702,
+          0.086
+        ]
+      ],
+      "mesh_parts": 4
+    }
+  ]
+}

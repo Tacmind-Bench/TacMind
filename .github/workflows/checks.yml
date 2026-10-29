@@ -1,0 +1,67 @@
+name: Source checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install build dependencies
+        run: |
+          python -m pip install 'setuptools>=77' wheel
+          python -m pip install --no-deps --no-build-isolation -e .
+      - name: Check documentation and conversion commands
+        run: |
+          python -m benchmark.tools.documentation
+          tacmind learning convert --config examples/learning/convert_precision0.json --dry-run
+      - name: Build and exercise the installed wheel outside the checkout
+        run: |
+          python -m pip wheel --no-deps --no-build-isolation --wheel-dir tmp/wheels .
+          python -m venv tmp/wheel-env
+          tmp/wheel-env/bin/pip install --no-deps tmp/wheels/*.whl
+          cd /tmp
+          "$GITHUB_WORKSPACE/tmp/wheel-env/bin/tacmind" --help
+          "$GITHUB_WORKSPACE/tmp/wheel-env/bin/tacmind" catalog --suite precision
+          "$GITHUB_WORKSPACE/tmp/wheel-env/bin/tacmind" collect --help
+          "$GITHUB_WORKSPACE/tmp/wheel-env/bin/tacmind" learning evaluate --help
+          "$GITHUB_WORKSPACE/tmp/wheel-env/bin/tacmind" learning evaluate --help-advanced
+          "$GITHUB_WORKSPACE/tmp/wheel-env/bin/python" - <<'PY'
+          import json
+          from pathlib import Path
+          import subprocess
+          import sys
+          import policy
+
+          root = Path(policy.__file__).parent
+          for relative in ("act_tactile/detr/models/detr_vae.py",
+                           "act_tactile/detr/models/backbone.py",
+                           "act_tactile/detr/util/misc.py",
+                           "act_tactile/LICENSE", "act_tactile/LICENSE.UniVTAC",
+                           "act_tactile/detr/LICENSE"):
+              if not (root / relative).is_file():
+                  raise SystemExit(f"Installed policy resource missing: {relative}")
+          for kind in policy.POLICY_TYPES:
+              relative = f"{kind}/config.json" if kind in ("act", "diffusion") else f"configs/{kind}.json"
+              result = subprocess.run([sys.executable, "-m", "benchmark", "learning", "train", "--config",
+                                       str(root / relative), "--dry-run"],
+                                      capture_output=True, text=True, check=True)
+              json.loads(result.stdout)
+              print(f"Installed policy configuration: {kind}")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: built-wheel
+          path: tmp/wheels/

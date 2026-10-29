@@ -1,0 +1,43 @@
+#usda 1.0
+(
+    defaultPrim = "TestTubeHoleSlot"
+    metersPerUnit = 1
+    subLayers = [@test_tube_hole_slot.usd@]
+    upAxis = "Z"
+)
+
+over "TestTubeHoleSlot" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysxRigidBodyAPI"]
+)
+{
+    bool physics:kinematicEnabled = true
+    bool physics:rigidBodyEnabled = true
+    float physics:density = 5000
+    bool physxRigidBody:disableGravity = true
+
+    over "mesh" (
+        prepend apiSchemas = ["PhysicsMeshCollisionAPI", "MaterialBindingAPI", "PhysxCollisionAPI", "PhysxSDFMeshCollisionAPI"]
+    )
+    {
+        rel material:binding:physics = </TestTubeHoleSlot/PhysicsMaterial> (
+            bindMaterialAs = "strongerThanDescendants"
+        )
+        uniform token physics:approximation = "sdf"
+        float physxCollision:contactOffset = 0.00005
+        float physxCollision:restOffset = -0.00002
+        uniform float physxSDFMeshCollision:sdfMargin = 0
+        uniform float physxSDFMeshCollision:sdfNarrowBandThickness = 0.01
+        uniform int physxSDFMeshCollision:sdfResolution = 512
+    }
+
+    def Material "PhysicsMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI", "PhysxMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.2
+        float physics:restitution = 0
+        float physics:staticFriction = 0.25
+        uniform token physxMaterial:frictionCombineMode = "min"
+        uniform token physxMaterial:restitutionCombineMode = "min"
+    }
+}

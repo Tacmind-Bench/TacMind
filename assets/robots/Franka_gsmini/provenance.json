@@ -1,0 +1,136 @@
+{
+  "code_repository": "https://github.com/NathanWu7/Tabero",
+  "code_revision": "56a3b9055bfe7dc157583cc10e121c7a7781cf8f",
+  "asset_repository": "https://huggingface.co/datasets/china-sae-robotics/Tactile_Manipulation_Dataset",
+  "asset_revision": "9929b1a9e16b51d2d9b93c6733bc8efe91c83c05",
+  "files": [
+    {
+      "path": "robots/Franka_gsmini/meshes/collision/finger.stl",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/collision/finger.stl"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/collision/hand.stl",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/collision/hand.stl"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/collision/link0.stl",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/collision/link0.stl"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/collision/link1.stl",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/collision/link1.stl"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/collision/link2.stl",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/collision/link2.stl"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/collision/link3.stl",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/collision/link3.stl"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/collision/link4.stl",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/collision/link4.stl"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/collision/link5.stl",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/collision/link5.stl"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/collision/link6.stl",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/collision/link6.stl"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/collision/link7.stl",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/collision/link7.stl"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/visual/finger.dae",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/visual/finger.dae"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/visual/hand.dae",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/visual/hand.dae"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/visual/link0.dae",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/visual/link0.dae"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/visual/link1.dae",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/visual/link1.dae"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/visual/link2.dae",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/visual/link2.dae"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/visual/link3.dae",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/visual/link3.dae"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/visual/link4.dae",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/visual/link4.dae"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/visual/link5.dae",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/visual/link5.dae"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/visual/link6.dae",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/visual/link6.dae"
+    },
+    {
+      "path": "robots/Franka_gsmini/meshes/visual/link7.dae",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/meshes/visual/link7.dae"
+    },
+    {
+      "path": "robots/Franka_gsmini/panda_arm_hand/instanceable_meshes.usd",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/panda_arm_hand/instanceable_meshes.usd"
+    },
+    {
+      "path": "robots/Franka_gsmini/panda_arm_hand/panda_arm_hand.urdf",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/panda_arm_hand/panda_arm_hand.urdf"
+    },
+    {
+      "path": "robots/Franka_gsmini/panda_arm_hand/panda_arm_hand.usd",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/panda_arm_hand/panda_arm_hand.usd"
+    },
+    {
+      "path": "robots/Franka_gsmini/physx_rigid_gelpads.usd",
+      "upstream_path": "assets/data/Robots/Franka_gsmini/physx_rigid_gelpads.usd"
+    },
+    {
+      "path": "sensors/GelSight_Mini/Case.usd",
+      "upstream_path": "assets/data/Sensors/GelSight_Mini/Case.usd"
+    },
+    {
+      "path": "sensors/GelSight_Mini/Gelpad_low_res.usd",
+      "upstream_path": "assets/data/Sensors/GelSight_Mini/Gelpad_low_res.usd"
+    },
+    {
+      "path": "sensors/GelSight_Mini/calibs/640x480/0.png",
+      "upstream_path": "assets/data/Sensors/GelSight_Mini/calibs/640x480/0.png"
+    },
+    {
+      "path": "sensors/GelSight_Mini/calibs/640x480/dataPack.npz",
+      "upstream_path": "assets/data/Sensors/GelSight_Mini/calibs/640x480/dataPack.npz"
+    },
+    {
+      "path": "sensors/GelSight_Mini/calibs/640x480/gelmap.npy",
+      "upstream_path": "assets/data/Sensors/GelSight_Mini/calibs/640x480/gelmap.npy"
+    },
+    {
+      "path": "sensors/GelSight_Mini/calibs/640x480/params.json",
+      "upstream_path": "assets/data/Sensors/GelSight_Mini/calibs/640x480/params.json"
+    },
+    {
+      "path": "sensors/GelSight_Mini/calibs/640x480/polycalib.npz",
+      "upstream_path": "assets/data/Sensors/GelSight_Mini/calibs/640x480/polycalib.npz"
+    },
+    {
+      "path": "sensors/GelSight_Mini/calibs/640x480/shadowTable.npz",
+      "upstream_path": "assets/data/Sensors/GelSight_Mini/calibs/640x480/shadowTable.npz"
+    }
+  ]
+}

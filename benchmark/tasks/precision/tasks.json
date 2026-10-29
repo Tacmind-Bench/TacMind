@@ -1,0 +1,1982 @@
+{
+  "task_suite_name": "tac_precision",
+  "total_tasks": 6,
+  "tasks": [
+    {
+      "task_id": 0,
+      "task_name": "tube_target_material_select_3",
+      "language_instruction": "pick up the tube and insert it into the black rubber hole base",
+      "problem_name": "tactile_tabletop_manipulation",
+      "bddl_file": "",
+      "fixtures": {
+        "living_room_table": {
+          "type": "living_room_table",
+          "xml_path": "",
+          "scale": [
+            1.5,
+            1.5,
+            1.5
+          ],
+          "initial_pose": [
+            0.0,
+            0.21,
+            -0.005
+          ],
+          "initial_quat": [
+            0.707,
+            0.0,
+            0.0,
+            0.707
+          ]
+        }
+      },
+      "workspace_name": "living_room_table",
+      "workspace_full_size": [
+        0.7,
+        1.6,
+        0.024
+      ],
+      "workspace_offset": [
+        0,
+        0,
+        0.41
+      ],
+      "robot_base_pos": [
+        -0.51,
+        0.0,
+        0.42
+      ],
+      "robot_base_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": {
+        "test_tube_base_source_1": {
+          "type": "test_tube_base",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "density": 1500.0,
+          "initial_region": "test_tube_base_source_1_region"
+        },
+        "test_tube_insert_1": {
+          "type": "test_tube_insert",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "density": 800.0,
+          "initial_region": "test_tube_insert_1_region",
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/Plastic_Yellow_A/Plastic_Yellow_A.mdl",
+            "project_uvw": true
+          }
+        },
+        "test_tube_hole_slot_target_1": {
+          "type": "test_tube_hole_slot",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "kinematic": true,
+          "initial_region": "test_tube_hole_slot_target_1_region",
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/Plastic_Yellow_A/Plastic_Yellow_A.mdl",
+            "project_uvw": true
+          }
+        },
+        "test_tube_hole_slot_target_2": {
+          "type": "test_tube_hole_slot",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "kinematic": true,
+          "initial_region": "test_tube_hole_slot_target_2_region",
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/Plastic_Orange_A/Plastic_Orange_A.mdl",
+            "project_uvw": true
+          }
+        },
+        "test_tube_hole_slot_target_3": {
+          "type": "test_tube_hole_slot",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "kinematic": true,
+          "initial_region": "test_tube_hole_slot_target_3_region",
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/Rubber_Black_Rough_A/Rubber_Black_Rough_A.mdl",
+            "project_uvw": true
+          }
+        }
+      },
+      "regions": {
+        "test_tube_base_source_1_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              0.098,
+              0.182
+            ],
+            "y": [
+              -0.232,
+              -0.128
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "test_tube_insert_1_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              0.098,
+              0.182
+            ],
+            "y": [
+              -0.232,
+              -0.128
+            ],
+            "z": [
+              0.46,
+              0.46
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "test_tube_hole_slot_target_1_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              -0.112,
+              -0.08800000000000001
+            ],
+            "y": [
+              -0.192,
+              -0.16799999999999998
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "test_tube_hole_slot_target_2_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              -0.112,
+              -0.08800000000000001
+            ],
+            "y": [
+              -0.012,
+              0.012
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "test_tube_hole_slot_target_3_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              -0.112,
+              -0.08800000000000001
+            ],
+            "y": [
+              0.16799999999999998,
+              0.192
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "randomization_groups": {
+        "source_assembly_1": {
+          "pose_range": {
+            "x": [
+              0.098,
+              0.163
+            ],
+            "y": [
+              -0.192,
+              0.192
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          },
+          "members": {
+            "test_tube_base_source_1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "test_tube_insert_1": [
+              0.0,
+              0.0,
+              0.04999999999999999
+            ]
+          }
+        }
+      },
+      "randomization_permutations": [
+        {
+          "units": [
+            [
+              "test_tube_hole_slot_target_1"
+            ],
+            [
+              "test_tube_hole_slot_target_2"
+            ],
+            [
+              "test_tube_hole_slot_target_3"
+            ]
+          ],
+          "slot_centers": [
+            [
+              -0.1,
+              -0.18
+            ],
+            [
+              -0.1,
+              0.0
+            ],
+            [
+              -0.1,
+              0.18
+            ]
+          ],
+          "jitter": 0.012
+        }
+      ],
+      "obj_of_interest": [
+        "test_tube_insert_1"
+      ],
+      "targets": [
+        "test_tube_hole_slot_target_3"
+      ],
+      "tactile_targets": [
+        "test_tube_insert_1"
+      ],
+      "goals": [
+        {
+          "relationship": "in",
+          "ref_obj": "test_tube_insert_1",
+          "target": "test_tube_hole_slot_target_3",
+          "xy_threshold": 0.005,
+          "height_threshold": 0.008,
+          "height_diff": 0.0,
+          "enable_force_threshold": "True",
+          "force_threshold": 0.25,
+          "require_contact": true,
+          "target_local_offset": [
+            0.02373,
+            0.0,
+            0.06
+          ],
+          "insertion_entry_local": [
+            0.0,
+            0.0,
+            0.1
+          ],
+          "expected_object_local_quat_format": "wxyz",
+          "expected_object_local_quat": [
+            0.9659258263,
+            0.0,
+            -0.2588190451,
+            0.0
+          ]
+        }
+      ],
+      "background": "brown_photostudio/brown_photostudio.hdr",
+      "source_task_id": 71,
+      "source_group": "tactile_core",
+      "layout_xy_range": {
+        "x": [
+          -0.045,
+          0.003
+        ],
+        "y": [
+          -0.008,
+          0.008
+        ]
+      },
+      "sensor_profile": "gsmini",
+      "episode_config": {
+        "expert_family": "tube",
+        "sensor_profile": "gsmini",
+        "expert_variant": 0
+      }
+    },
+    {
+      "task_id": 1,
+      "task_name": "key_target_material_select_3",
+      "language_instruction": "pick up the key and insert it into the blue plastic lock",
+      "problem_name": "tactile_tabletop_manipulation",
+      "bddl_file": "",
+      "fixtures": {
+        "living_room_table": {
+          "type": "living_room_table",
+          "xml_path": "",
+          "scale": [
+            1.5,
+            1.5,
+            1.5
+          ],
+          "initial_pose": [
+            0.0,
+            0.21,
+            -0.005
+          ],
+          "initial_quat": [
+            0.707,
+            0.0,
+            0.0,
+            0.707
+          ]
+        }
+      },
+      "workspace_name": "living_room_table",
+      "workspace_full_size": [
+        0.7,
+        1.6,
+        0.024
+      ],
+      "workspace_offset": [
+        0,
+        0,
+        0.41
+      ],
+      "robot_base_pos": [
+        -0.51,
+        0.0,
+        0.42
+      ],
+      "robot_base_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": {
+        "key_slot_source_1": {
+          "type": "key_slot",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "kinematic": false,
+          "initial_region": "key_slot_source_1_region"
+        },
+        "key_insert_1": {
+          "type": "key_insert",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "density": 2000.0,
+          "initial_region": "key_insert_1_region",
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/Brass/Brass.mdl",
+            "project_uvw": true
+          }
+        },
+        "key_slot_target_1": {
+          "type": "key_slot",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "kinematic": false,
+          "initial_region": "key_slot_target_1_region",
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/Brass/Brass.mdl",
+            "project_uvw": true
+          }
+        },
+        "key_slot_target_2": {
+          "type": "key_slot",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "kinematic": false,
+          "initial_region": "key_slot_target_2_region",
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/Plastic_Red_A/Plastic_Red_A.mdl",
+            "project_uvw": true
+          }
+        },
+        "key_slot_target_3": {
+          "type": "key_slot",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "kinematic": false,
+          "initial_region": "key_slot_target_3_region",
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/Plastic_Blue_A/Plastic_Blue_A.mdl",
+            "project_uvw": true
+          }
+        }
+      },
+      "regions": {
+        "key_slot_source_1_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              0.128,
+              0.15200000000000002
+            ],
+            "y": [
+              -0.192,
+              -0.16799999999999998
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "key_insert_1_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              0.126,
+              0.15
+            ],
+            "y": [
+              -0.192,
+              -0.16799999999999998
+            ],
+            "z": [
+              0.525,
+              0.525
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "key_slot_target_1_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              -0.112,
+              -0.088
+            ],
+            "y": [
+              -0.192,
+              -0.168
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "key_slot_target_2_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              -0.112,
+              -0.088
+            ],
+            "y": [
+              -0.012,
+              0.012
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "key_slot_target_3_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              -0.112,
+              -0.088
+            ],
+            "y": [
+              0.168,
+              0.192
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "randomization_groups": {
+        "source_assembly_1": {
+          "pose_range": {
+            "x": [
+              0.083,
+              0.107
+            ],
+            "y": [
+              -0.221,
+              -0.081
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          },
+          "members": {
+            "key_slot_source_1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "key_insert_1": [
+              -0.002,
+              0,
+              0.105
+            ]
+          }
+        }
+      },
+      "randomization_permutations": [
+        {
+          "units": [
+            [
+              "key_slot_target_1"
+            ],
+            [
+              "key_slot_target_2"
+            ],
+            [
+              "key_slot_target_3"
+            ]
+          ],
+          "slot_centers": [
+            [
+              -0.1,
+              -0.18
+            ],
+            [
+              -0.1,
+              0.0
+            ],
+            [
+              -0.1,
+              0.18
+            ]
+          ],
+          "jitter": 0.012
+        }
+      ],
+      "obj_of_interest": [
+        "key_insert_1"
+      ],
+      "targets": [
+        "key_slot_target_3"
+      ],
+      "tactile_targets": [
+        "key_insert_1"
+      ],
+      "goals": [
+        {
+          "relationship": "in",
+          "ref_obj": "key_insert_1",
+          "target": "key_slot_target_3",
+          "xy_threshold": 0.003,
+          "height_threshold": 0.005,
+          "height_diff": 0.0,
+          "enable_force_threshold": "True",
+          "require_contact": true,
+          "target_local_offset": [
+            -0.002,
+            0,
+            0.0785
+          ],
+          "expected_object_local_quat": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "background": "hotel_room_4k/hotel_room_4k.hdr",
+      "source_task_id": 59,
+      "source_group": "tactile_core",
+      "layout_xy_range": {
+        "x": [
+          -0.045,
+          0.034
+        ],
+        "y": [
+          0.03,
+          0.06
+        ]
+      },
+      "sensor_profile": "gsmini",
+      "episode_config": {
+        "expert_family": "key",
+        "sensor_profile": "gsmini",
+        "expert_variant": 12
+      }
+    },
+    {
+      "task_id": 2,
+      "task_name": "hdmi_target_material_select_3",
+      "language_instruction": "pick up the connector and insert it into the orange port",
+      "problem_name": "tactile_tabletop_manipulation",
+      "bddl_file": "",
+      "fixtures": {
+        "living_room_table": {
+          "type": "living_room_table",
+          "xml_path": "",
+          "scale": [
+            1.5,
+            1.5,
+            1.5
+          ],
+          "initial_pose": [
+            0.0,
+            0.21,
+            -0.005
+          ],
+          "initial_quat": [
+            0.707,
+            0.0,
+            0.0,
+            0.707
+          ]
+        }
+      },
+      "workspace_name": "living_room_table",
+      "workspace_full_size": [
+        0.7,
+        1.6,
+        0.024
+      ],
+      "workspace_offset": [
+        0,
+        0,
+        0.41
+      ],
+      "robot_base_pos": [
+        -0.51,
+        0.0,
+        0.42
+      ],
+      "robot_base_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": {
+        "hdmi_slot_source_1": {
+          "type": "hdmi_slot",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "kinematic": true,
+          "initial_region": "hdmi_slot_source_1_region"
+        },
+        "hdmi_connector_1": {
+          "type": "hdmi_connector",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "density": 1000.0,
+          "initial_region": "hdmi_connector_1_region",
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/Plastic_Rough_Black_A/Plastic_Rough_Black_A.mdl",
+            "project_uvw": true
+          }
+        },
+        "hdmi_slot_target_1": {
+          "type": "hdmi_slot",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "kinematic": true,
+          "initial_region": "hdmi_slot_target_1_region",
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/Plastic_Rough_Black_A/Plastic_Rough_Black_A.mdl",
+            "project_uvw": true
+          }
+        },
+        "hdmi_slot_target_2": {
+          "type": "hdmi_slot",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "kinematic": true,
+          "initial_region": "hdmi_slot_target_2_region",
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/Plastic_Blue_A/Plastic_Blue_A.mdl",
+            "project_uvw": true
+          }
+        },
+        "hdmi_slot_target_3": {
+          "type": "hdmi_slot",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "kinematic": true,
+          "initial_region": "hdmi_slot_target_3_region",
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/Plastic_Orange_A/Plastic_Orange_A.mdl",
+            "project_uvw": true
+          }
+        }
+      },
+      "regions": {
+        "hdmi_slot_source_1_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              0.128,
+              0.152
+            ],
+            "y": [
+              -0.204,
+              -0.156
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "hdmi_connector_1_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              0.128,
+              0.152
+            ],
+            "y": [
+              -0.204,
+              -0.156
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "hdmi_slot_target_1_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              -0.112,
+              -0.088
+            ],
+            "y": [
+              -0.204,
+              -0.156
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "hdmi_slot_target_2_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              -0.112,
+              -0.088
+            ],
+            "y": [
+              -0.024,
+              0.024
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "hdmi_slot_target_3_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              -0.112,
+              -0.088
+            ],
+            "y": [
+              0.156,
+              0.204
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "randomization_groups": {
+        "source_assembly_1": {
+          "pose_range": {
+            "x": [
+              0.128,
+              0.146
+            ],
+            "y": [
+              -0.2,
+              -0.12
+            ],
+            "z": [
+              0.42,
+              0.42
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          },
+          "members": {
+            "hdmi_slot_source_1": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "hdmi_connector_1": [
+              0.0,
+              0.0,
+              0.005
+            ]
+          }
+        }
+      },
+      "randomization_permutations": [
+        {
+          "units": [
+            [
+              "hdmi_slot_target_1"
+            ],
+            [
+              "hdmi_slot_target_2"
+            ],
+            [
+              "hdmi_slot_target_3"
+            ]
+          ],
+          "slot_centers": [
+            [
+              -0.1,
+              -0.18
+            ],
+            [
+              -0.1,
+              0.0
+            ],
+            [
+              -0.1,
+              0.18
+            ]
+          ],
+          "jitter": [
+            0.012,
+            0.024
+          ]
+        }
+      ],
+      "obj_of_interest": [
+        "hdmi_connector_1"
+      ],
+      "targets": [
+        "hdmi_slot_target_3"
+      ],
+      "tactile_targets": [
+        "hdmi_connector_1"
+      ],
+      "goals": [
+        {
+          "relationship": "in",
+          "ref_obj": "hdmi_connector_1",
+          "target": "hdmi_slot_target_3",
+          "xy_threshold": 0.004,
+          "height_threshold": 0.006,
+          "height_diff": 0.0,
+          "enable_force_threshold": "True",
+          "require_contact": true,
+          "target_local_offset": [
+            0.0,
+            0.0,
+            0.005
+          ]
+        }
+      ],
+      "background": "aircraft_workshop_01_2k/aircraft_workshop_01_2k.hdr",
+      "source_task_id": 47,
+      "source_group": "tactile_core",
+      "layout_xy_range": {
+        "x": [
+          -0.045,
+          0.007
+        ],
+        "y": [
+          -0.015,
+          0.045
+        ]
+      },
+      "sensor_profile": "gsmini",
+      "episode_config": {
+        "expert_family": "hdmi",
+        "sensor_profile": "gsmini",
+        "expert_variant": 24
+      }
+    },
+    {
+      "task_id": 3,
+      "task_name": "gear_target_material_select_3",
+      "language_instruction": "pick up the gear and insert it into the white painted base",
+      "problem_name": "tactile_tabletop_manipulation",
+      "bddl_file": "",
+      "fixtures": {
+        "living_room_table": {
+          "type": "living_room_table",
+          "xml_path": "",
+          "scale": [
+            1.5,
+            1.5,
+            1.5
+          ],
+          "initial_pose": [
+            0.0,
+            0.21,
+            -0.005
+          ],
+          "initial_quat": [
+            0.707,
+            0.0,
+            0.0,
+            0.707
+          ]
+        }
+      },
+      "workspace_name": "living_room_table",
+      "workspace_full_size": [
+        0.7,
+        1.6,
+        0.024
+      ],
+      "workspace_offset": [
+        0,
+        0,
+        0.41
+      ],
+      "robot_base_pos": [
+        -0.51,
+        0.0,
+        0.42
+      ],
+      "robot_base_ori": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "objects": {
+        "gear_large_1": {
+          "type": "gear_large",
+          "xml_path": "",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "initial_region": "gear_large_1_region",
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/Steel_A/Steel_A.mdl",
+            "project_uvw": true
+          }
+        },
+        "gear_base_target_1": {
+          "type": "gear_base",
+          "xml_path": "",
+          "scale": [
+            0.995,
+            0.995,
+            0.995
+          ],
+          "initial_region": "gear_base_target_1_region",
+          "contact_offset": 0.0002,
+          "rest_offset": 0.0,
+          "static_friction": 1.1,
+          "dynamic_friction": 0.85,
+          "restitution": 0.0,
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/Steel_A/Steel_A.mdl",
+            "project_uvw": true
+          }
+        },
+        "gear_base_target_2": {
+          "type": "gear_base",
+          "xml_path": "",
+          "scale": [
+            0.995,
+            0.995,
+            0.995
+          ],
+          "initial_region": "gear_base_target_2_region",
+          "contact_offset": 0.0002,
+          "rest_offset": 0.0,
+          "static_friction": 1.1,
+          "dynamic_friction": 0.85,
+          "restitution": 0.0,
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/Metal_Painted_Green_A/Metal_Painted_Green_A.mdl",
+            "project_uvw": true
+          }
+        },
+        "gear_base_target_3": {
+          "type": "gear_base",
+          "xml_path": "",
+          "scale": [
+            0.995,
+            0.995,
+            0.995
+          ],
+          "initial_region": "gear_base_target_3_region",
+          "contact_offset": 0.0002,
+          "rest_offset": 0.0,
+          "static_friction": 1.1,
+          "dynamic_friction": 0.85,
+          "restitution": 0.0,
+          "visual_material": {
+            "kind": "mdl",
+            "path": "assets/materials/MetalPainted_White_Glossy_A/MetalPainted_White_Glossy_A.mdl",
+            "project_uvw": true
+          }
+        }
+      },
+      "regions": {
+        "gear_large_1_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              0.085,
+              0.152
+            ],
+            "y": [
+              -0.219,
+              -0.11
+            ],
+            "z": [
+              0.448,
+              0.448
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "gear_base_target_1_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              -0.1456,
+              -0.0544
+            ],
+            "y": [
+              -0.2906,
+              -0.1794
+            ],
+            "z": [
+              0.43865625,
+              0.43865625
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "gear_base_target_2_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              -0.1456,
+              -0.0544
+            ],
+            "y": [
+              -0.0556,
+              0.0556
+            ],
+            "z": [
+              0.43865625,
+              0.43865625
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "gear_base_target_3_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              -0.1456,
+              -0.0544
+            ],
+            "y": [
+              0.1794,
+              0.2906
+            ],
+            "z": [
+              0.43865625,
+              0.43865625
+            ],
+            "roll": [
+              0.0,
+              0.0
+            ],
+            "pitch": [
+              0.0,
+              0.0
+            ],
+            "yaw": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "randomization_permutations": [
+        {
+          "units": [
+            [
+              "gear_base_target_1"
+            ],
+            [
+              "gear_base_target_2"
+            ],
+            [
+              "gear_base_target_3"
+            ]
+          ],
+          "slot_centers": [
+            [
+              -0.1,
+              -0.235
+            ],
+            [
+              -0.1,
+              0.0
+            ],
+            [
+              -0.1,
+              0.188
+            ]
+          ],
+          "jitter": 0.0156
+        }
+      ],
+      "obj_of_interest": [
+        "gear_large_1"
+      ],
+      "targets": [
+        "gear_base_target_3"
+      ],
+      "tactile_targets": [
+        "gear_large_1"
+      ],
+      "goals": [
+        {
+          "relationship": "in",
+          "ref_obj": "gear_large_1",
+          "target": "gear_base_target_3",
+          "xy_threshold": 0.004,
+          "height_threshold": 0.006,
+          "height_diff": 0.0,
+          "enable_force_threshold": "True",
+          "force_threshold": 0.25,
+          "require_contact": true,
+          "target_local_offset": [
+            -0.0451481,
+            0.0,
+            0.00755625
+          ],
+          "expected_object_local_quat": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "background": "industrial_pipe_and_valve_01_2k/industrial_pipe_and_valve_01_2k.hdr",
+      "source_task_id": 35,
+      "source_group": "tactile_core",
+      "layout_xy_range": {
+        "x": [
+          -0.045,
+          -0.009
+        ],
+        "y": [
+          0.022,
+          0.032
+        ]
+      },
+      "sensor_profile": "gsmini",
+      "episode_config": {
+        "expert_family": "gear",
+        "sensor_profile": "gsmini",
+        "expert_variant": 36
+      },
+      "randomization_groups": {}
+    },
+    {
+      "task_id": 4,
+      "task_name": "tactile_power_insertion",
+      "language_instruction": "insert the three-prong power plug into the power socket",
+      "problem_name": "tactile_tabletop_manipulation",
+      "env_id": "Isaac-Tac-Franka-IK-Camera-Tactile-v0",
+      "obj_of_interest": [
+        "power_plug_1"
+      ],
+      "targets": [
+        "power_socket_1"
+      ],
+      "tactile_targets": [
+        "power_plug_1"
+      ],
+      "goals": [
+        {
+          "relationship": "in",
+          "ref_obj": "power_plug_1",
+          "target": "power_socket_1",
+          "xy_threshold": 0.002,
+          "height_threshold": 0.012,
+          "height_diff": 0,
+          "height_range": [
+            -0.001,
+            0.004
+          ],
+          "enable_force_threshold": "False",
+          "require_contact": false,
+          "target_local_offset": [
+            -0.00475,
+            0.003406,
+            0.00916
+          ],
+          "axis_alignment_threshold": 0.98,
+          "orientation_quat_threshold": 0.98,
+          "expected_object_local_quat_format": "wxyz",
+          "expected_object_local_quat": [
+            0,
+            0.120557548,
+            0,
+            0.99270634
+          ],
+          "alignment_axis": [
+            0,
+            0,
+            1
+          ],
+          "target_alignment_axis": [
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "fixtures": {
+        "living_room_table": {
+          "type": "living_room_table",
+          "scale": [
+            1.5,
+            1.5,
+            1.5
+          ],
+          "initial_pose": [
+            0,
+            0.21,
+            -0.005
+          ],
+          "initial_quat": [
+            0.707,
+            0,
+            0,
+            0.707
+          ]
+        }
+      },
+      "objects": {
+        "power_plug_1": {
+          "type": "power_plug",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "density": 1000,
+          "static_friction": 2.0,
+          "dynamic_friction": 1.5,
+          "contact_offset": 0.0001,
+          "rest_offset": 0.0,
+          "disable_gravity": false,
+          "initial_region": "power_plug_1_region"
+        },
+        "power_socket_1": {
+          "type": "power_socket",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "density": 8000,
+          "kinematic": true,
+          "disable_gravity": true,
+          "contact_offset": 0.0001,
+          "rest_offset": 0.0,
+          "static_friction": 0.5,
+          "dynamic_friction": 0.5,
+          "initial_region": "power_socket_1_region"
+        }
+      },
+      "regions": {
+        "power_plug_1_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              0.12,
+              0.12
+            ],
+            "y": [
+              -0.08,
+              -0.08
+            ],
+            "z": [
+              0.416782,
+              0.416782
+            ],
+            "roll": [
+              0,
+              0
+            ],
+            "pitch": [
+              0,
+              0
+            ],
+            "yaw": [
+              0,
+              0
+            ]
+          }
+        },
+        "power_socket_1_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              -0.06,
+              0.04
+            ],
+            "y": [
+              -0.05,
+              0.05
+            ],
+            "z": [
+              0.416534,
+              0.416534
+            ],
+            "roll": [
+              0,
+              0
+            ],
+            "pitch": [
+              0,
+              0
+            ],
+            "yaw": [
+              0,
+              0
+            ]
+          }
+        }
+      },
+      "workspace_name": "living_room_table",
+      "workspace_full_size": [
+        0.7,
+        1.6,
+        0.024
+      ],
+      "workspace_offset": [
+        0,
+        0,
+        0.41
+      ],
+      "robot_base_pos": [
+        -0.51,
+        0,
+        0.42
+      ],
+      "robot_base_ori": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "reset_contract": {
+        "mode": "in_hand",
+        "object": "power_plug_1",
+        "fingertip_height": 0.15,
+        "replay_seed_reset_only": false,
+        "tac_gripper_center_correction": 0.055,
+        "grasp_center_local_xy": [
+          0.01715,
+          0
+        ],
+        "plug_length": 0.05,
+        "socket_height": 0.028,
+        "in_hand_buffer": 1.0,
+        "clearance_fixture": "power_socket_1",
+        "clearance_margin_m": 0.005,
+        "initial_spawn_z": 0.5,
+        "rotation_noise": [
+          0,
+          0,
+          0
+        ],
+        "source_gripper_joint_pos": 0.012,
+        "gripper_joint_pos": 0.019
+      },
+      "background": "home_office/home_office.exr",
+      "source_task_id": 5,
+      "source_group": "precision_family",
+      "sensor_profile": "gsmini",
+      "episode_config": {
+        "expert_family": "tactile_insertion",
+        "sensor_profile": "gsmini",
+        "expert_variant": 51
+      }
+    },
+    {
+      "task_id": 5,
+      "task_name": "tactile_bulb_insertion",
+      "language_instruction": "insert the bulb into the bulb socket",
+      "problem_name": "tactile_tabletop_manipulation",
+      "env_id": "Isaac-Tac-Franka-IK-Camera-Tactile-v0",
+      "obj_of_interest": [
+        "bulb_1"
+      ],
+      "targets": [
+        "bulb_socket_1"
+      ],
+      "tactile_targets": [
+        "bulb_1"
+      ],
+      "goals": [
+        {
+          "relationship": "in",
+          "ref_obj": "bulb_1",
+          "target": "bulb_socket_1",
+          "xy_threshold": 0.003,
+          "height_threshold": 0.002,
+          "height_diff": 0,
+          "height_range": [
+            -0.008,
+            0.004
+          ],
+          "enable_force_threshold": "True",
+          "require_contact": true,
+          "force_threshold": 0.25,
+          "target_local_offset": [
+            0,
+            0,
+            0.0013
+          ],
+          "axis_alignment_threshold": 0.9,
+          "alignment_axis": [
+            0,
+            0,
+            1
+          ],
+          "target_alignment_axis": [
+            0,
+            0,
+            1
+          ],
+          "min_thread_yaw_rad": 1.8,
+          "thread_engage_xy_threshold": 0.004,
+          "thread_engagement_range": [
+            0.024,
+            0.028
+          ]
+        }
+      ],
+      "fixtures": {
+        "living_room_table": {
+          "type": "living_room_table",
+          "scale": [
+            1.5,
+            1.5,
+            1.5
+          ],
+          "initial_pose": [
+            0,
+            0.21,
+            -0.005
+          ],
+          "initial_quat": [
+            0.707,
+            0,
+            0,
+            0.707
+          ]
+        }
+      },
+      "objects": {
+        "bulb_1": {
+          "type": "tactile_bulb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "density": 8000,
+          "static_friction": 0.5,
+          "dynamic_friction": 0.5,
+          "contact_offset": 0.0001,
+          "rest_offset": 0.0,
+          "disable_gravity": false,
+          "initial_region": "bulb_1_region",
+          "initial_quat": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bulb_socket_1": {
+          "type": "tactile_bulb_socket",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "density": 8000,
+          "kinematic": true,
+          "disable_gravity": true,
+          "contact_offset": 0.0001,
+          "rest_offset": 0.0,
+          "static_friction": 0.5,
+          "dynamic_friction": 0.5,
+          "initial_region": "bulb_socket_1_region"
+        }
+      },
+      "regions": {
+        "bulb_1_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              0.08,
+              0.08
+            ],
+            "y": [
+              -0.028,
+              -0.028
+            ],
+            "z": [
+              0.442,
+              0.442
+            ],
+            "roll": [
+              0,
+              0
+            ],
+            "pitch": [
+              0,
+              0
+            ],
+            "yaw": [
+              0,
+              0
+            ]
+          }
+        },
+        "bulb_socket_1_region": {
+          "target": "living_room_table",
+          "pose_range": {
+            "x": [
+              -0.06,
+              0.04
+            ],
+            "y": [
+              -0.05,
+              0.05
+            ],
+            "z": [
+              0.4405,
+              0.4405
+            ],
+            "roll": [
+              0,
+              0
+            ],
+            "pitch": [
+              0,
+              0
+            ],
+            "yaw": [
+              0,
+              0
+            ]
+          }
+        }
+      },
+      "workspace_name": "living_room_table",
+      "workspace_full_size": [
+        0.7,
+        1.6,
+        0.024
+      ],
+      "workspace_offset": [
+        0,
+        0,
+        0.41
+      ],
+      "robot_base_pos": [
+        -0.51,
+        0,
+        0.42
+      ],
+      "robot_base_ori": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "reset_contract": {
+        "mode": "in_hand",
+        "object": "bulb_1",
+        "fingertip_height": 0.24,
+        "grasp_point_local": [
+          0.0,
+          0.0,
+          0.07
+        ],
+        "source_gripper_joint_pos": 0.0185,
+        "gripper_joint_pos": 0.013
+      },
+      "background": "home_office/home_office.exr",
+      "source_task_id": 4,
+      "source_group": "precision_family",
+      "sensor_profile": "gsmini",
+      "episode_config": {
+        "expert_family": "tactile_threading",
+        "sensor_profile": "gsmini",
+        "expert_variant": 52
+      }
+    }
+  ],
+  "sensor_profiles": [
+    "gsmini"
+  ],
+  "validation": {
+    "primary_sensor": "gsmini"
+  }
+}

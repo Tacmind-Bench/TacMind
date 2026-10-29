@@ -1,0 +1,48 @@
+{
+  "asset": "extra_inspection_bump",
+  "model": "Independently authored bolted rigid inspection coupon; 1.5 mm rounded raised boss on defective plate. No deformation or damage model.",
+  "body_mass_properties": {
+    "mass_kg": 0.1,
+    "center_of_mass_m": [
+      0.006370609088218661,
+      -4.078932372566966e-22,
+      0.03465675833640366
+    ],
+    "diagonal_inertia_kg_m2": [
+      1.5253462780543136e-05,
+      0.00013837253224132694,
+      0.0001404652286253425
+    ],
+    "principal_axes_wxyz": [
+      1.6053429272727522e-16,
+      0.6521075291191996,
+      -1.555956669120509e-16,
+      0.7581264871154761
+    ]
+  },
+  "kinematic_bench_mount": true,
+  "joints": {},
+  "physics_material": {
+    "static_friction": 0.6,
+    "dynamic_friction": 0.5,
+    "restitution": 0.0,
+    "combine": "average"
+  },
+  "contact_offset_m": 0.0003,
+  "rest_offset_m": 0.0,
+  "bounds_m": [
+    [
+      -0.008,
+      -0.02,
+      0.0
+    ],
+    [
+      0.032,
+      0.02,
+      0.105
+    ]
+  ],
+  "research_sources": [
+    "https://arxiv.org/abs/2309.04590"
+  ]
+}

@@ -1,0 +1,53 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    subLayers = [
+        @gear_large.usd@
+    ]
+    upAxis = "Z"
+)
+
+over "World" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysxRigidBodyAPI"]
+)
+{
+    bool physics:kinematicEnabled = 0
+    float physics:mass = 0.05
+    bool physics:rigidBodyEnabled = 1
+    bool physxRigidBody:disableGravity = 0
+    bool physxRigidBody:enableCCD = 1
+
+    over "gear_large_collision" (
+        prepend apiSchemas = ["PhysicsMeshCollisionAPI", "MaterialBindingAPI", "PhysxCollisionAPI", "PhysxConvexDecompositionCollisionAPI", "PhysicsCollisionAPI", "PhysxSDFMeshCollisionAPI"]
+    )
+    {
+        rel material:binding:physics = </World/PhysicsMaterial> (
+            bindMaterialAs = "strongerThanDescendants"
+        )
+        uniform token physics:approximation = "sdf"
+        bool physics:collisionEnabled = 1
+        float physxCollision:contactOffset = 0.0003
+        float physxCollision:restOffset = 0
+        float physxConvexDecompositionCollision:errorPercentage = 1
+        int physxConvexDecompositionCollision:maxConvexHulls = 128
+        float physxConvexDecompositionCollision:minThickness = 0.0001
+        bool physxConvexDecompositionCollision:shrinkWrap = 1
+        int physxConvexDecompositionCollision:voxelResolution = 2000000
+        uniform float physxSDFMeshCollision:sdfMargin = 0
+        uniform float physxSDFMeshCollision:sdfNarrowBandThickness = 0.01
+        uniform int physxSDFMeshCollision:sdfResolution = 512
+    }
+
+    def Material "PhysicsMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI", "PhysxMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.5
+        float physics:restitution = 0
+        float physics:staticFriction = 0.6
+        uniform token physxMaterial:frictionCombineMode = "average"
+        uniform token physxMaterial:restitutionCombineMode = "min"
+    }
+}
+
